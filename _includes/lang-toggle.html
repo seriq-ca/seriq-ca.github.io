@@ -1,8 +1,4 @@
-{%- comment -%}
-  Finds this page's counterpart by its `ref` key and links to it.
-  If no translation exists, falls back to that language's home page
-  rather than 404ing (TODO.md §2).
-{%- endcomment -%}
+{%- comment -%} Counterpart by `ref`; falls back to that language's home page. {%- endcomment -%}
 {%- if page.lang == "fr" -%}{%- assign alt_lang = "en" -%}
 {%- else -%}{%- assign alt_lang = "fr" -%}{%- endif -%}
 {%- assign translatable = site.pages | concat: site.events -%}

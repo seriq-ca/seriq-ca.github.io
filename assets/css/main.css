@@ -1,11 +1,4 @@
-/* SERIQ — Direction B ("Systèmes").
-   Archivo for prose, IBM Plex Mono for labels and data. Sections are
-   separated by ground colour rather than rules. */
-
-/* Self-hosted subsets (latin, latin-ext) of Archivo and IBM Plex Mono, so the
-   site makes no third-party font request. Both are SIL OFL 1.1; the licences
-   ship alongside the files in assets/fonts/. Archivo is a variable font — one
-   file covers every weight we use, hence the 100-900 range. */
+/* Self-hosted Archivo (variable, 100-900) and IBM Plex Mono, SIL OFL 1.1. */
 
 @font-face {
   font-family: 'Archivo';

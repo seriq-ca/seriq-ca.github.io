@@ -15,15 +15,10 @@ permalink: /en/people/
 
 <section class="band band--paper">
   <div class="wrap">
-    {%- assign members = site.data.members | where: "visible", true | sort: "name" -%}
+    {%- assign members = site.data.members | sort: "name" -%}
     <ul class="member-list">
       {%- for m in members %}
       <li>
-        {%- comment -%}
-          Photos are self-hosted and lazy-loaded: they sit below the fold on every
-          viewport, and the fixed width/height reserves the box so nothing shifts as
-          they arrive. alt is empty because the name sits right beside the image.
-        {%- endcomment -%}
         {%- if m.photo %}
         <img class="portrait" src="{{ '/assets/img/members/' | append: m.photo | relative_url }}"
              alt="" width="72" height="72" loading="lazy" decoding="async">
