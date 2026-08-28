@@ -1,0 +1,11 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-name">{{ site.description | strip_newlines }} (SERIQ)</p>
+    <p class="footer-meta">
+      <a href="https://semtl.github.io/">{{ t.footer.archive }}</a>
+      · <a href="https://github.com/seriq-ca">GitHub</a>
+    </p>
+    <p class="footer-meta">© {{ site.time | date: "%Y" }} SERIQ. {{ t.footer.rights }}</p>
+  </div>
+</footer>

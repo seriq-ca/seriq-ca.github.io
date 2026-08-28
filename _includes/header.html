@@ -1,0 +1,16 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- if page.lang == "fr" -%}{%- assign home = "/" -%}
+{%- else -%}{%- assign home = "/en/" -%}{%- endif -%}
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ home | relative_url }}">
+      <span class="brand-mark">SERIQ</span>
+      <span class="brand-sub">{{ site.description | strip_newlines }}</span>
+    </a>
+    <nav class="site-nav" aria-label="{{ t.nav.home }}">
+      <!-- TODO: expand as pages land (PLAN.md §6.1) -->
+      <a href="{{ home | relative_url }}" aria-current="page">{{ t.nav.home }}</a>
+      {% include lang-toggle.html %}
+    </nav>
+  </div>
+</header>

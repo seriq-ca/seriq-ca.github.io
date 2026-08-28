@@ -1,0 +1,35 @@
+title: SERIQ
+description: >-
+  Centre interuniversitaire de recherche en génie logiciel
+  pour la société numérique
+url: "https://seriq.ca"
+baseurl: ""
+
+# Bilingual: French is the default and lives at /, English at /en/.
+# Language is assigned by path — never hand-write `lang:` in front matter.
+lang_default: fr
+languages: [fr, en]
+
+defaults:
+  # General rule first, specific second: on a conflict Jekyll's LAST match wins.
+  - scope: { path: "" }
+    values: { lang: "fr" }
+  - scope: { path: "en" }
+    values: { lang: "en" }
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Belt and braces: even if one of these is ever committed, Jekyll must not
+# copy it into _site/ and publish it. Mirrors .gitignore.
+exclude:
+  - context
+  - scripts
+  - serve.sh
+  - Gemfile
+  - Gemfile.lock
+  - PLAN.md
+  - README.md
+  - vendor
+  - "*.pdf"

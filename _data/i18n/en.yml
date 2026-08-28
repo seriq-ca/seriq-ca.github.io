@@ -1,0 +1,33 @@
+lang_name: English
+lang_switch_to: Français
+skip_to_content: Skip to content
+
+nav:
+  home: Home
+  about: About
+  research: Research
+  people: Members
+  meetings: Meetings
+  news: News
+  contact: Contact
+
+acronym_note: >-
+  SERIQ is an acronym; it does not stand for an expanded English name.
+
+footer:
+  archive: SEMTL archive
+  rights: All rights reserved.
+
+months:
+  - January
+  - February
+  - March
+  - April
+  - May
+  - June
+  - July
+  - August
+  - September
+  - October
+  - November
+  - December

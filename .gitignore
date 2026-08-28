@@ -1,0 +1,21 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+node_modules/
+.idea/
+
+# Gemfile.lock is intentionally NOT ignored — it is committed so that CI
+# (ruby/setup-ruby with bundler-cache) builds the same gem versions you do.
+
+# Working material — never published, never committed.
+context/
+PLAN.md
+*.pdf
+
+# OS and editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/

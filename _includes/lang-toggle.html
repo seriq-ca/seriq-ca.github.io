@@ -1,0 +1,18 @@
+{%- comment -%}
+  Finds this page's counterpart by its `ref` key and links to it.
+  If no translation exists, falls back to that language's home page
+  rather than 404ing (PLAN.md §4.2).
+{%- endcomment -%}
+{%- if page.lang == "fr" -%}{%- assign alt_lang = "en" -%}
+{%- else -%}{%- assign alt_lang = "fr" -%}{%- endif -%}
+{%- assign alt = site.pages | where: "ref", page.ref | where_exp: "p", "p.lang == alt_lang" | first -%}
+{%- if alt -%}
+  {%- assign alt_url = alt.url -%}
+{%- elsif alt_lang == "en" -%}
+  {%- assign alt_url = "/en/" -%}
+{%- else -%}
+  {%- assign alt_url = "/" -%}
+{%- endif -%}
+<a class="lang-toggle" href="{{ alt_url | relative_url }}"
+   lang="{{ alt_lang }}" hreflang="{{ alt_lang }}"
+   rel="alternate">{{ site.data.i18n[alt_lang].lang_name }}</a>
