@@ -20,6 +20,12 @@ footer:
   archive: Archives SEMTL
   rights: Tous droits réservés.
 
+axes:
+  hybrid: Systèmes hybrides
+  ecosystems: Écosystèmes et infrastructures
+  interdisciplinary: Développement interdisciplinaire
+  human: Aspects humains
+
 months:
   - janvier
   - février

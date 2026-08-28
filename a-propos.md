@@ -60,7 +60,7 @@ permalink: /a-propos/
     </p>
     <ol class="axes">
       <li data-label="Axe">
-        <h3>Systèmes hybrides</h3>
+        <h3>{{ site.data.i18n[page.lang].axes.hybrid }}</h3>
         <p>
           Le logiciel ne se limite plus à des systèmes purement numériques&nbsp;: il
           s'intègre à des contextes physiques, biologiques et sociaux. Jumeaux
@@ -68,7 +68,7 @@ permalink: /a-propos/
         </p>
       </li>
       <li data-label="Axe">
-        <h3>Écosystèmes et infrastructures</h3>
+        <h3>{{ site.data.i18n[page.lang].axes.ecosystems }}</h3>
         <p>
           Les infrastructures logicielles s'appuient sur l'infonuagique, des
           plateformes partagées et des chaînes d'approvisionnement hétérogènes, ce qui
@@ -76,7 +76,7 @@ permalink: /a-propos/
         </p>
       </li>
       <li data-label="Axe">
-        <h3>Développement interdisciplinaire</h3>
+        <h3>{{ site.data.i18n[page.lang].axes.interdisciplinary }}</h3>
         <p>
           Le développement logiciel ne repose pas sur la seule expertise
           informatique. Cet axe porte sur les méthodes, les outils de modélisation
@@ -85,7 +85,7 @@ permalink: /a-propos/
         </p>
       </li>
       <li data-label="Axe">
-        <h3>Aspects humains</h3>
+        <h3>{{ site.data.i18n[page.lang].axes.human }}</h3>
         <p>
           L'humain reste au cœur des systèmes logiciels, comme utilisateur, opérateur
           ou concepteur. Études empiriques, impact sociétal, développement

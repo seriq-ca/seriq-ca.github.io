@@ -56,7 +56,7 @@ permalink: /en/about/
     </p>
     <ol class="axes">
       <li data-label="Axis">
-        <h3>Hybrid systems</h3>
+        <h3>{{ site.data.i18n[page.lang].axes.hybrid }}</h3>
         <p>
           Software is no longer confined to purely digital systems; it is embedded in
           physical, biological and social contexts. Digital twins, the internet of
@@ -64,7 +64,7 @@ permalink: /en/about/
         </p>
       </li>
       <li data-label="Axis">
-        <h3>Ecosystems and infrastructure</h3>
+        <h3>{{ site.data.i18n[page.lang].axes.ecosystems }}</h3>
         <p>
           Software infrastructure now rests on cloud services, shared platforms and
           heterogeneous supply chains, raising problems of security, resilience and
@@ -72,7 +72,7 @@ permalink: /en/about/
         </p>
       </li>
       <li data-label="Axis">
-        <h3>Interdisciplinary development</h3>
+        <h3>{{ site.data.i18n[page.lang].axes.interdisciplinary }}</h3>
         <p>
           Software development does not rest on computing expertise alone. This axis
           covers the methods, collaborative modelling tools and languages that let
@@ -80,7 +80,7 @@ permalink: /en/about/
         </p>
       </li>
       <li data-label="Axis">
-        <h3>Human aspects</h3>
+        <h3>{{ site.data.i18n[page.lang].axes.human }}</h3>
         <p>
           People remain at the centre of software systems, as users, operators and
           designers. Empirical studies, societal impact, collaborative development,
