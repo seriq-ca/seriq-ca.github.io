@@ -1,13 +1,19 @@
 {%- comment -%}
   Locale-aware date. Jekyll has no built-in localized date filter, so month
-  names come from _data/i18n/<lang>.yml.
+  and weekday names come from _data/i18n/<lang>.yml.
+
   Usage: {% include date.html date=page.event_date lang=page.lang %}
+         {% include date.html date=page.event_date lang=page.lang weekday=true %}
 {%- endcomment -%}
 {%- assign t = site.data.i18n[include.lang] -%}
 {%- assign midx = include.date | date: "%-m" | plus: 0 | minus: 1 -%}
 {%- assign month = t.months[midx] -%}
+{%- if include.weekday -%}
+  {%- assign didx = include.date | date: "%w" | plus: 0 -%}
+  {%- assign day = t.days[didx] -%}
+{%- endif -%}
 {%- if include.lang == "fr" -%}
-{{ include.date | date: "%-d" }} {{ month }} {{ include.date | date: "%Y" }}
+{% if day %}{{ day }} {% endif %}{{ include.date | date: "%-d" }} {{ month }} {{ include.date | date: "%Y" }}
 {%- else -%}
-{{ month }} {{ include.date | date: "%-d" }}, {{ include.date | date: "%Y" }}
+{% if day %}{{ day }}, {% endif %}{{ month }} {{ include.date | date: "%-d" }}, {{ include.date | date: "%Y" }}
 {%- endif -%}

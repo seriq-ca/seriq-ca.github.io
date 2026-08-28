@@ -3,6 +3,8 @@ layout: default
 ref: home
 title: Accueil
 event_date: 2026-10-29
+event_time: de 15 h à 19 h
+event_venue: Université de Montréal
 ---
 
 <div class="hero">
@@ -18,12 +20,17 @@ event_date: 2026-10-29
 <section class="band">
   <div class="wrap">
     <div class="event">
-      <p class="kicker">Prochaine rencontre</p>
-      <p class="when">{% include date.html date=page.event_date lang=page.lang %}</p>
+      <p class="kicker">Rentrée SERIQ</p>
+      <p class="when">{% include date.html date=page.event_date lang=page.lang weekday=true %}</p>
+      <dl class="event-details">
+        <dt>Heure</dt><dd>{{ page.event_time }}</dd>
+        <dt>Lieu</dt><dd>{{ page.event_venue }}</dd>
+      </dl>
       <p>
-        Première rencontre sous la bannière SERIQ, dans la continuité des
-        rencontres SEMTL.
-        <!-- TODO: lieu, horaire, programme, inscription -->
+        La rentrée marque la reprise des rencontres sous la bannière SERIQ,
+        dans la continuité du réseau SEMTL et de ses plus de dix années
+        d'activité.
+        <!-- TODO: pavillon et local, programme, inscription -->
       </p>
     </div>
   </div>
@@ -35,8 +42,9 @@ event_date: 2026-10-29
     <p>
       Le Centre interuniversitaire de recherche en génie logiciel pour la société
       numérique (SERIQ) est une initiative interuniversitaire qui s'inscrit dans la
-      continuité du réseau SEMTL <i lang="en">(Software Engineering at Montreal)</i>.
-      Il vise à structurer la recherche en génie logiciel à Montréal et au Québec.
+      continuité du réseau SEMTL <i lang="en">(Software Engineering at Montreal)</i>
+      et de ses plus de dix années d'activité. Il vise à structurer la recherche en
+      génie logiciel à Montréal et au Québec.
     </p>
     <!-- TODO (PLAN.md §6.2) : mission, gouvernance, axes de recherche,
          établissements partenaires. Ne pas publier de liste d'établissements
@@ -48,8 +56,11 @@ event_date: 2026-10-29
   <div class="wrap">
     <h2>Archives SEMTL</h2>
     <p>
-      Les rencontres antérieures demeurent consultables sur le site SEMTL.
-      <!-- TODO (PLAN.md §7) : remplacer par l'archive portée sur ce site. -->
+      Le réseau SEMTL a animé la communauté pendant plus de dix ans. Les
+      rencontres archivées en ligne, de 2019 à 2026, demeurent consultables à
+      leur adresse d'origine; elles ne sont pas reprises ici.
+      <!-- Décision (PLAN.md §7) : l'archive reste sur semtl.github.io. Aucune
+           URL ne change, aucune redirection n'est requise. -->
     </p>
     <p><a href="https://semtl.github.io/">semtl.github.io</a></p>
   </div>

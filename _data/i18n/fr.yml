@@ -7,7 +7,7 @@ nav:
   about: À propos
   research: Recherche
   people: Membres
-  meetings: Rencontres
+  events: Événements
   news: Nouvelles
   contact: Contact
 
@@ -31,3 +31,12 @@ months:
   - octobre
   - novembre
   - décembre
+
+days:
+  - dimanche
+  - lundi
+  - mardi
+  - mercredi
+  - jeudi
+  - vendredi
+  - samedi

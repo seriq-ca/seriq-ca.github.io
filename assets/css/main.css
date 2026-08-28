@@ -88,6 +88,12 @@ section.band p { max-width: var(--measure); }
 }
 .event .when { margin: 0 0 .4rem; font-size: 1.3rem; font-weight: 700; }
 .event p:last-child { margin-bottom: 0; }
+.event-details {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: .15rem .75rem; margin: 0 0 .9rem;
+}
+.event-details dt { font-weight: 600; }
+.event-details dd { margin: 0; }
 
 /* Footer */
 .site-footer { padding: 2rem 0 3rem; font-size: .875rem; color: var(--ink-soft); }

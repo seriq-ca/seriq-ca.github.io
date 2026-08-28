@@ -3,6 +3,8 @@ layout: default
 ref: home
 title: Home
 event_date: 2026-10-29
+event_time: 3:00–7:00 p.m.
+event_venue: Université de Montréal
 ---
 
 <div class="hero">
@@ -18,12 +20,17 @@ event_date: 2026-10-29
 <section class="band">
   <div class="wrap">
     <div class="event">
-      <p class="kicker">Next meeting</p>
-      <p class="when">{% include date.html date=page.event_date lang=page.lang %}</p>
+      <p class="kicker" lang="fr">Rentrée SERIQ</p>
+      <p class="when">{% include date.html date=page.event_date lang=page.lang weekday=true %}</p>
+      <dl class="event-details">
+        <dt>Time</dt><dd>{{ page.event_time }}</dd>
+        <dt>Venue</dt><dd lang="fr">{{ page.event_venue }}</dd>
+      </dl>
       <p>
-        The first meeting under the SERIQ banner, continuing the SEMTL
-        meeting series.
-        <!-- TODO: venue, schedule, programme, registration -->
+        The <i lang="fr">rentrée</i> marks the return of the meeting series
+        under the SERIQ banner, continuing the SEMTL network and its more than
+        ten years of activity.
+        <!-- TODO: building and room, programme, registration -->
       </p>
     </div>
   </div>
@@ -34,8 +41,9 @@ event_date: 2026-10-29
     <h2>About</h2>
     <p>
       SERIQ is an inter-university research centre continuing the work of the
-      SEMTL (Software Engineering at Montreal) network, structuring software
-      engineering research in Montréal and across Québec. Its official name is
+      SEMTL (Software Engineering at Montreal) network and its more than ten
+      years of activity, structuring software engineering research in Montréal
+      and across Québec. Its official name is
       French: <i lang="fr">Centre interuniversitaire de recherche en génie
       logiciel pour la société numérique</i>. SERIQ is an acronym and is not
       expanded in English.
@@ -49,8 +57,11 @@ event_date: 2026-10-29
   <div class="wrap">
     <h2>SEMTL archive</h2>
     <p>
-      Past meetings remain available on the SEMTL site.
-      <!-- TODO (PLAN.md §7): replace with the archive once ported here. -->
+      The SEMTL network brought this community together for more than ten
+      years. The meetings archived online, from 2019 to 2026, remain available
+      at their original addresses; they are not reproduced here.
+      <!-- Decision (PLAN.md §7): the archive stays on semtl.github.io. No URL
+           changes, no redirects required. -->
     </p>
     <p><a href="https://semtl.github.io/">semtl.github.io</a></p>
   </div>
