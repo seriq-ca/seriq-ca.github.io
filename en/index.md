@@ -40,26 +40,13 @@ event_venue: Université de Montréal
     <h2>About</h2>
     <p>
       SERIQ is an inter-university research centre continuing the work of the
-      SEMTL (Software Engineering at Montreal) network and its more than ten
+      <a href="https://semtl.github.io/">SEMTL</a> (Software Engineering at
+      Montreal) network and its more than ten
       years of activity, structuring software engineering research in Montréal
       and across Québec. Its official name is
       French: <i lang="fr">Centre interuniversitaire de recherche en génie
       logiciel pour la société numérique</i>. SERIQ is an acronym and is not
       expanded in English.
     </p>
-  </div>
-</section>
-
-<section class="band band--paper">
-  <div class="wrap">
-    <h2>SEMTL archive</h2>
-    <p>
-      The SEMTL network brought this community together for more than ten
-      years. The meetings archived online, from 2019 to 2026, remain available
-      at their original addresses; they are not reproduced here.
-      <!-- Decision (TODO.md §5): the archive stays on semtl.github.io. No URL
-           changes, no redirects required. -->
-    </p>
-    <p><a href="https://semtl.github.io/">semtl.github.io</a></p>
   </div>
 </section>

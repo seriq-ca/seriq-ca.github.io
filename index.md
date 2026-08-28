@@ -41,23 +41,10 @@ event_venue: Université de Montréal
     <p>
       Le Centre interuniversitaire de recherche en génie logiciel pour la société
       numérique (SERIQ) est une initiative interuniversitaire qui s'inscrit dans la
-      continuité du réseau SEMTL <i lang="en">(Software Engineering at Montreal)</i>
+      continuité du réseau <a href="https://semtl.github.io/">SEMTL</a>
+      <i lang="en">(Software Engineering at Montreal)</i>
       et de ses plus de dix années d'activité. Il vise à structurer la recherche en
       génie logiciel à Montréal et au Québec.
     </p>
-  </div>
-</section>
-
-<section class="band band--paper">
-  <div class="wrap">
-    <h2>Archives SEMTL</h2>
-    <p>
-      Le réseau SEMTL a animé la communauté pendant plus de dix ans. Les
-      rencontres archivées en ligne, de 2019 à 2026, demeurent consultables à
-      leur adresse d'origine; elles ne sont pas reprises ici.
-      <!-- Décision (TODO.md §5) : l'archive reste sur semtl.github.io. Aucune
-           URL ne change, aucune redirection n'est requise. -->
-    </p>
-    <p><a href="https://semtl.github.io/">semtl.github.io</a></p>
   </div>
 </section>

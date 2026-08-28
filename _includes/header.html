@@ -8,7 +8,13 @@
       <span class="brand-sub">{{ t.brand_sub }}</span>
     </a>
     <nav class="site-nav" aria-label="{{ t.nav.home }}">
-      <a href="{{ home | relative_url }}" aria-current="page">{{ t.nav.home }}</a>
+      <a href="{{ home | relative_url }}"
+         {% if page.ref == "home" %}aria-current="page"{% endif %}>{{ t.nav.home }}</a>
+      {%- assign about = site.pages | where: "ref", "about" | where_exp: "p", "p.lang == page.lang" | first -%}
+      {%- if about %}
+      <a href="{{ about.url | relative_url }}"
+         {% if page.ref == "about" %}aria-current="page"{% endif %}>{{ t.nav.about }}</a>
+      {%- endif %}
       {% include lang-toggle.html %}
     </nav>
   </div>

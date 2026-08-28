@@ -263,3 +263,21 @@ section.band p:last-child { margin-bottom: 0; }
 /* The hero is a surface band in all but name. */
 .hero + section.band--surface { border-top: 1px solid var(--rule); }
 .band--feature + section.band { border-top: 0; }
+
+/* Prose */
+section.band ul, section.band ol { max-width: var(--measure); margin: 0 0 .8rem; padding-left: 1.25rem; }
+section.band li { margin-bottom: .45rem; }
+section.band li:last-child { margin-bottom: 0; }
+section.band h3 { margin: 0 0 .3rem; font-size: var(--t-base); font-weight: 700; }
+
+/* Research axes — numbered because the axes are numbered in the charter */
+.axes { list-style: none; padding: 0; margin-top: 1.5rem; max-width: none;
+        display: grid; gap: 1.5rem; counter-reset: axis; }
+@media (min-width: 44rem) { .axes { grid-template-columns: 1fr 1fr; gap: 1.75rem 3rem; } }
+.axes > li { counter-increment: axis; margin: 0; padding-top: .9rem; border-top: 2px solid var(--accent); }
+.axes > li::before {
+  content: attr(data-label) " " counter(axis); display: block; margin-bottom: .45rem;
+  font-family: var(--f-mono); font-size: var(--t-xs); font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
+}
+.axes p { margin: 0; max-width: none; color: var(--ink-2); font-size: var(--t-sm); }
