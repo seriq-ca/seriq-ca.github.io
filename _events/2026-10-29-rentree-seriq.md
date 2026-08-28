@@ -36,7 +36,25 @@ event_venue: Université de Montréal
 <section class="band band--paper">
   <div class="wrap">
     <h2>Programme</h2>
-    <p>Le programme sera publié sur cette page.</p>
+    <p class="note">Le programme est préliminaire.</p>
+    <ul>
+      <li>
+        Quatre ou cinq conférencières et conférenciers invités, 15 minutes
+        chacun, provenant d'ici et de l'étranger, du milieu de la recherche
+        comme de l'industrie.
+      </li>
+      <li>
+        Une table ronde où les conférencières et conférenciers discutent plus
+        largement des sujets abordés.
+      </li>
+      <li>
+        Des représentantes et représentants des universités prennent ensuite
+        la parole.
+      </li>
+      <li>
+        Une période de réseautage, avec des affiches étudiantes.
+      </li>
+    </ul>
   </div>
 </section>
 

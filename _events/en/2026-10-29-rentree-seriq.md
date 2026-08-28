@@ -36,7 +36,22 @@ event_venue: Université de Montréal
 <section class="band band--paper">
   <div class="wrap">
     <h2>Programme</h2>
-    <p>The programme will be published on this page.</p>
+    <p class="note">The programme is preliminary.</p>
+    <ul>
+      <li>
+        Four or five guest speakers, 15 minutes each, a mix of local and
+        international speakers from research and industry.
+      </li>
+      <li>
+        A panel where the speakers discuss the topics more broadly.
+      </li>
+      <li>
+        University representatives speak after the panel.
+      </li>
+      <li>
+        A networking reception, with student posters.
+      </li>
+    </ul>
   </div>
 </section>
 
