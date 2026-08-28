@@ -26,7 +26,7 @@ event_venue: Université de Montréal
         <dt>Time</dt><dd>{{ page.event_time }}</dd>
         <dt>Venue</dt><dd lang="fr">{{ page.event_venue }}</dd>
       </dl>
-      <p>
+      <p class="note">
         The <i lang="fr">rentrée</i> marks the return of the meeting series
         under the SERIQ banner, continuing the SEMTL network and its more than
         ten years of activity.

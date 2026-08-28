@@ -26,7 +26,7 @@ event_venue: Université de Montréal
         <dt>Heure</dt><dd>{{ page.event_time }}</dd>
         <dt>Lieu</dt><dd>{{ page.event_venue }}</dd>
       </dl>
-      <p>
+      <p class="note">
         La rentrée marque la reprise des rencontres sous la bannière SERIQ,
         dans la continuité du réseau SEMTL et de ses plus de dix années
         d'activité.

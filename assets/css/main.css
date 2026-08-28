@@ -169,6 +169,7 @@ a:focus-visible, .skip-link:focus {
 
 /* Hero — on surface, against the paper ground */
 .hero { background: var(--surface); padding: 2.75rem 0 2.5rem; }
+.hero .kicker { margin-bottom: .5rem; }
 .hero h1 {
   margin: 0; max-width: 23ch;
   font-size: var(--t-2xl); font-weight: 700; line-height: 1.08;
@@ -201,10 +202,10 @@ section.band p:last-child { margin-bottom: 0; }
   padding: 2.5rem 0 2.75rem;
 }
 .band--feature a { color: var(--feature-ink); }
-.event .kicker {
+.kicker {
   margin: 0 0 .6rem;
   font-family: var(--f-mono); font-size: var(--t-xs); font-weight: 500;
-  letter-spacing: .12em; text-transform: uppercase; color: var(--feature-ink-2);
+  letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
 }
 .event .when {
   margin: 0; font-size: var(--t-2xl); font-weight: 700;
@@ -217,13 +218,19 @@ section.band p:last-child { margin-bottom: 0; }
 }
 .event-details dt {
   font-family: var(--f-mono); font-size: var(--t-xs);
-  color: var(--feature-ink-2); letter-spacing: .04em; padding-top: .35em;
+  color: var(--ink-2); letter-spacing: .04em; padding-top: .35em;
 }
 .event-details dd { margin: 0; font-variant-numeric: tabular-nums; }
-.event > p:last-child {
+.event .note {
   margin: 1.25rem 0 0; max-width: 42ch;
-  color: var(--feature-ink-2); font-size: var(--t-sm);
+  color: var(--ink-2); font-size: var(--t-sm);
 }
+.event .more { margin: 1rem 0 0; font-size: var(--t-sm); }
+
+/* On the inverted band the same component takes the band's own tints. */
+.band--feature .kicker,
+.band--feature .event-details dt,
+.band--feature .event .note { color: var(--feature-ink-2); }
 
 /* Wide: date and details left, the note beside them rather than below */
 @media (min-width: 48rem) {
@@ -233,11 +240,12 @@ section.band p:last-child { margin-bottom: 0; }
     column-gap: 3.5rem;
   }
   .event .kicker, .event .when, .event-details { grid-column: 1; }
-  .event > p:last-child {
-    grid-column: 2; grid-row: 1 / span 3;
-    margin-top: .3rem; padding-left: 3.5rem;
-    border-left: 1px solid var(--feature-rule);
+  .event .note, .event .more {
+    grid-column: 2; margin-top: 0;
+    padding-left: 3.5rem; border-left: 1px solid var(--feature-rule);
   }
+  .event .note { grid-row: 1; padding-top: .3rem; }
+  .event .more { grid-row: 2; padding-bottom: .3rem; }
 }
 
 /* Footer — inverted ground closes the page */
