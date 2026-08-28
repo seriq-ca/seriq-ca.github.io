@@ -53,7 +53,13 @@ def front_matter(path):
 
 
 def lang_of(rel):
-    return "en" if rel.parts[0] == "en" else "fr"
+    # Pages: en/ at the top level. Collection documents: _events/en/, since a
+    # collection directory has to come first in the path.
+    if rel.parts[0] == "en":
+        return "en"
+    if rel.parts[0].startswith("_") and len(rel.parts) > 1 and rel.parts[1] == "en":
+        return "en"
+    return "fr"
 
 
 def main():

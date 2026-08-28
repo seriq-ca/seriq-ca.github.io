@@ -31,6 +31,7 @@ event_venue: Université de Montréal
         under the SERIQ banner, continuing the SEMTL network and its more than
         ten years of activity.
       </p>
+      <p class="more"><a href="/en/events/2026-10-29-rentree-seriq/">Meeting details</a></p>
     </div>
   </div>
 </section>

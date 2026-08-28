@@ -10,11 +10,25 @@ baseurl: ""
 lang_default: fr
 languages: [fr, en]
 
+# Event documents are named YYYY-MM-DD-slug, and Jekyll reads that date off the
+# filename exactly as it does for posts. Without `future`, an upcoming event is
+# treated as unpublished and silently dropped from the build until its own date.
+future: true
+
+collections:
+  events:
+    output: true
+
 defaults:
   # General rule first, specific second: on a conflict Jekyll's LAST match wins.
   - scope: { path: "" }
     values: { lang: "fr" }
   - scope: { path: "en" }
+    values: { lang: "en" }
+  # Collection documents live outside the en/ tree, so they need their own rule.
+  - scope: { path: "", type: "events" }
+    values: { layout: "default", lang: "fr" }
+  - scope: { path: "_events/en", type: "events" }
     values: { lang: "en" }
 
 plugins:

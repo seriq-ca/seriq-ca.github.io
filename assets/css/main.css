@@ -289,3 +289,36 @@ section.band h3 { margin: 0 0 .3rem; font-size: var(--t-base); font-weight: 700;
   letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
 }
 .axes p { margin: 0; max-width: none; color: var(--ink-2); font-size: var(--t-sm); }
+
+/* Event listing */
+.event-list { list-style: none; padding: 0; margin: 1.25rem 0 0; max-width: none; }
+.event-list li { margin: 0; padding: 1rem 0; border-top: 1px solid var(--rule); }
+.event-list li:last-child { border-bottom: 1px solid var(--rule); }
+.event-list .name { margin: 0; font-size: var(--t-md); font-weight: 700; letter-spacing: -.015em; }
+.event-list .name a { text-decoration: none; color: var(--ink); }
+.event-list .name a:hover { text-decoration: underline; }
+.event-list .meta {
+  margin: .3rem 0 0; font-family: var(--f-mono); font-size: var(--t-xs);
+  color: var(--ink-2); letter-spacing: .02em;
+}
+.event-list + .year { margin-top: 1.75rem; }
+.year {
+  margin: 1.25rem 0 0; font-family: var(--f-mono); font-weight: 500;
+  font-size: var(--t-xs); letter-spacing: .12em; color: var(--accent);
+}
+
+/* Members. Entries are short — name plus institution — so they run in two
+   columns once there is room, rather than as one tall single-file list. */
+.member-list {
+  list-style: none; padding: 0; margin: 1.25rem 0 0; max-width: none;
+  display: grid; grid-template-columns: 1fr; gap: 0;
+}
+.member-list li { margin: 0; padding: 1rem 0; border-top: 1px solid var(--rule); }
+.member-list .name { margin: 0; font-size: var(--t-md); font-weight: 700; letter-spacing: -.015em; }
+.member-list .name a { text-decoration: none; color: var(--ink); }
+.member-list .name a:hover { text-decoration: underline; }
+.member-list .meta {
+  margin: .3rem 0 0; font-family: var(--f-mono); font-size: var(--t-xs);
+  color: var(--ink-2); letter-spacing: .02em;
+}
+@media (min-width: 44rem) { .member-list { grid-template-columns: 1fr 1fr; column-gap: 3rem; } }

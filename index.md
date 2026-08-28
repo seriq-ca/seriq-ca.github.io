@@ -31,6 +31,7 @@ event_venue: Université de Montréal
         dans la continuité du réseau SEMTL et de ses plus de dix années
         d'activité.
       </p>
+      <p class="more"><a href="/evenements/2026-10-29-rentree-seriq/">Détails de la rencontre</a></p>
     </div>
   </div>
 </section>

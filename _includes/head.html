@@ -4,7 +4,8 @@
 <meta name="description" content="{{ page.description | default: site.description | strip_newlines }}">
 
 {%- comment -%} hreflang alternates for the translation pair {%- endcomment -%}
-{%- assign pair = site.pages | where: "ref", page.ref -%}
+{%- assign translatable = site.pages | concat: site.events -%}
+{%- assign pair = translatable | where: "ref", page.ref -%}
 {%- for p in pair %}
 <link rel="alternate" hreflang="{{ p.lang }}" href="{{ p.url | absolute_url }}">
 {%- endfor %}

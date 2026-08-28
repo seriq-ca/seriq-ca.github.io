@@ -5,7 +5,8 @@
 {%- endcomment -%}
 {%- if page.lang == "fr" -%}{%- assign alt_lang = "en" -%}
 {%- else -%}{%- assign alt_lang = "fr" -%}{%- endif -%}
-{%- assign alt = site.pages | where: "ref", page.ref | where_exp: "p", "p.lang == alt_lang" | first -%}
+{%- assign translatable = site.pages | concat: site.events -%}
+{%- assign alt = translatable | where: "ref", page.ref | where_exp: "p", "p.lang == alt_lang" | first -%}
 {%- if alt -%}
   {%- assign alt_url = alt.url -%}
 {%- elsif alt_lang == "en" -%}

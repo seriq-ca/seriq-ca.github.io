@@ -15,6 +15,16 @@
       <a href="{{ about.url | relative_url }}"
          {% if page.ref == "about" %}aria-current="page"{% endif %}>{{ t.nav.about }}</a>
       {%- endif %}
+      {%- assign people = site.pages | where: "ref", "people" | where_exp: "p", "p.lang == page.lang" | first -%}
+      {%- if people %}
+      <a href="{{ people.url | relative_url }}"
+         {% if page.ref == "people" %}aria-current="page"{% endif %}>{{ t.nav.people }}</a>
+      {%- endif %}
+      {%- assign events = site.pages | where: "ref", "events" | where_exp: "p", "p.lang == page.lang" | first -%}
+      {%- if events %}
+      <a href="{{ events.url | relative_url }}"
+         {% if page.ref == "events" %}aria-current="page"{% endif %}>{{ t.nav.events }}</a>
+      {%- endif %}
       {% include lang-toggle.html %}
     </nav>
   </div>
