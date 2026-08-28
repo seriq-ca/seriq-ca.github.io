@@ -9,15 +9,15 @@ event_venue: Université de Montréal
 
 <div class="hero">
   <div class="wrap">
-    <h1 lang="fr">Centre interuniversitaire de recherche en génie logiciel pour la société numérique</h1>
+    <h1>Structuring software engineering research in Québec</h1>
     <p class="lede">
-      SERIQ brings together Québec's software engineering research community
-      around the software challenges of the digital society.
+      SERIQ brings together the software engineering research community around
+      the software challenges of the digital society.
     </p>
   </div>
 </div>
 
-<section class="band">
+<section class="band band--feature">
   <div class="wrap">
     <div class="event">
       <p class="kicker" lang="fr">Rentrée SERIQ</p>
@@ -35,7 +35,7 @@ event_venue: Université de Montréal
   </div>
 </section>
 
-<section class="band">
+<section class="band band--paper">
   <div class="wrap">
     <h2>About</h2>
     <p>
@@ -50,7 +50,7 @@ event_venue: Université de Montréal
   </div>
 </section>
 
-<section class="band">
+<section class="band band--paper">
   <div class="wrap">
     <h2>SEMTL archive</h2>
     <p>
