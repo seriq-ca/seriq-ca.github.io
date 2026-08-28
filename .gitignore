@@ -10,7 +10,7 @@ node_modules/
 
 # Working material — never published, never committed.
 context/
-PLAN.md
+TODO.md
 *.pdf
 
 # OS and editor cruft

@@ -30,7 +30,6 @@ event_venue: Université de Montréal
         The <i lang="fr">rentrée</i> marks the return of the meeting series
         under the SERIQ banner, continuing the SEMTL network and its more than
         ten years of activity.
-        <!-- TODO: building and room, programme, registration -->
       </p>
     </div>
   </div>
@@ -48,8 +47,6 @@ event_venue: Université de Montréal
       logiciel pour la société numérique</i>. SERIQ is an acronym and is not
       expanded in English.
     </p>
-    <!-- TODO (PLAN.md §6.2): mission, governance, research axes, partner
-         institutions. Do not publish an institution list before confirmation. -->
   </div>
 </section>
 
@@ -60,7 +57,7 @@ event_venue: Université de Montréal
       The SEMTL network brought this community together for more than ten
       years. The meetings archived online, from 2019 to 2026, remain available
       at their original addresses; they are not reproduced here.
-      <!-- Decision (PLAN.md §7): the archive stays on semtl.github.io. No URL
+      <!-- Decision (TODO.md §5): the archive stays on semtl.github.io. No URL
            changes, no redirects required. -->
     </p>
     <p><a href="https://semtl.github.io/">semtl.github.io</a></p>

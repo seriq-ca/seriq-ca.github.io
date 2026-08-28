@@ -30,7 +30,6 @@ event_venue: Université de Montréal
         La rentrée marque la reprise des rencontres sous la bannière SERIQ,
         dans la continuité du réseau SEMTL et de ses plus de dix années
         d'activité.
-        <!-- TODO: pavillon et local, programme, inscription -->
       </p>
     </div>
   </div>
@@ -46,9 +45,6 @@ event_venue: Université de Montréal
       et de ses plus de dix années d'activité. Il vise à structurer la recherche en
       génie logiciel à Montréal et au Québec.
     </p>
-    <!-- TODO (PLAN.md §6.2) : mission, gouvernance, axes de recherche,
-         établissements partenaires. Ne pas publier de liste d'établissements
-         avant confirmation. -->
   </div>
 </section>
 
@@ -59,7 +55,7 @@ event_venue: Université de Montréal
       Le réseau SEMTL a animé la communauté pendant plus de dix ans. Les
       rencontres archivées en ligne, de 2019 à 2026, demeurent consultables à
       leur adresse d'origine; elles ne sont pas reprises ici.
-      <!-- Décision (PLAN.md §7) : l'archive reste sur semtl.github.io. Aucune
+      <!-- Décision (TODO.md §5) : l'archive reste sur semtl.github.io. Aucune
            URL ne change, aucune redirection n'est requise. -->
     </p>
     <p><a href="https://semtl.github.io/">semtl.github.io</a></p>

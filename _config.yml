@@ -29,7 +29,7 @@ exclude:
   - serve.sh
   - Gemfile
   - Gemfile.lock
-  - PLAN.md
+  - TODO.md
   - README.md
   - vendor
   - "*.pdf"

@@ -33,7 +33,7 @@ def page_files():
         rel = path.relative_to(ROOT)
         if set(rel.parts) & SKIP_DIRS:
             continue
-        # Posts are the meeting archive: untranslated by design (PLAN.md §6.3).
+        # Posts are the meeting archive: untranslated by design (TODO.md §5).
         if rel.parts[0] == "_posts":
             continue
         yield rel, path
