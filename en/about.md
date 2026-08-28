@@ -23,6 +23,11 @@ permalink: /en/about/
       transformation of science and society. That research is organised around four
       complementary axes addressing the challenges of modern software development.
     </p>
+    <p>
+      The Centre is constituted by its partner institutions: Université de Montréal,
+      Polytechnique Montréal, McGill University and École de technologie supérieure.
+      Further universities may join the inter-university agreement.
+    </p>
     <p>The Centre's mission also covers the following:</p>
     <ul>
       <li>

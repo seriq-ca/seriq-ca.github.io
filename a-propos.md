@@ -25,6 +25,12 @@ permalink: /a-propos/
       s'articule autour de quatre axes complémentaires, qui répondent aux défis liés
       au développement des logiciels modernes.
     </p>
+    <p>
+      Le Centre relève de ses établissements partenaires&nbsp;: l'Université de
+      Montréal, Polytechnique Montréal, l'Université McGill et l'École de
+      technologie supérieure. D'autres établissements universitaires peuvent se
+      joindre au protocole d'entente interuniversitaire.
+    </p>
     <p>La mission du Centre s'articule aussi autour des points suivants&nbsp;:</p>
     <ul>
       <li>
