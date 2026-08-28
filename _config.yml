@@ -45,5 +45,7 @@ exclude:
   - Gemfile.lock
   - TODO.md
   - README.md
+  # `exclude` matches from the source root, so the nested one needs naming too.
+  - assets/img/members/README.md
   - vendor
   - "*.pdf"

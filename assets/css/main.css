@@ -313,12 +313,31 @@ section.band h3 { margin: 0 0 .3rem; font-size: var(--t-base); font-weight: 700;
   list-style: none; padding: 0; margin: 1.25rem 0 0; max-width: none;
   display: grid; grid-template-columns: 1fr; gap: 0;
 }
-.member-list li { margin: 0; padding: 1rem 0; border-top: 1px solid var(--rule); }
+.member-list li {
+  margin: 0; padding: 1rem 0; border-top: 1px solid var(--rule);
+  display: flex; gap: 1rem; align-items: flex-start;
+}
+.member-text { min-width: 0; }
+.portrait {
+  flex: none; width: 72px; height: 72px; border-radius: 2px;
+  object-fit: cover; background: var(--accent-soft);
+}
+.portrait--empty { border: 1px solid var(--rule); background: var(--paper); }
 .member-list .name { margin: 0; font-size: var(--t-md); font-weight: 700; letter-spacing: -.015em; }
 .member-list .name a { text-decoration: none; color: var(--ink); }
 .member-list .name a:hover { text-decoration: underline; }
 .member-list .meta {
   margin: .3rem 0 0; font-family: var(--f-mono); font-size: var(--t-xs);
   color: var(--ink-2); letter-spacing: .02em;
+}
+.member-list .role { color: var(--accent); }
+.member-axes {
+  list-style: none; display: flex; flex-wrap: wrap; gap: .3rem .4rem;
+  margin: .45rem 0 0; padding: 0; max-width: none;
+}
+.member-axes li {
+  margin: 0; padding: .15rem .45rem; border: 1px solid var(--rule); border-radius: 2px;
+  font-family: var(--f-mono); font-size: var(--t-xs); color: var(--ink-2);
+  letter-spacing: .02em;
 }
 @media (min-width: 44rem) { .member-list { grid-template-columns: 1fr 1fr; column-gap: 3rem; } }

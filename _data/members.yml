@@ -1,0 +1,45 @@
+- name: Baudry, Benoit
+  institution: udem
+  url: https://softwarediversity.eu/
+  role: director
+  axes: [ecosystems, human]
+
+- name: Bordeleau, Francis
+  institution: ets
+  url: https://www.linkedin.com/in/francis-bordeleau-b2aa273/
+  axes: [ecosystems, interdisciplinary]
+
+- name: El Boussaidi, Ghizlane
+  institution: ets
+  url: https://www.etsmtl.ca/programmes-et-formations/corps-enseignant/gelboussaidi
+  axes: [hybrid, interdisciplinary]
+
+- name: Famelis, Michalis
+  institution: udem
+  url: https://michalis.famelis.info/
+  axes: [interdisciplinary, human]
+
+- name: Moha, Naouel
+  institution: ets
+  url: https://www.etsmtl.ca/en/professors/nmoha
+  axes: [hybrid, ecosystems]
+
+- name: Oakes, Bentley
+  institution: poly
+  url: https://bentleyoakes.com/
+  axes: [hybrid]
+
+- name: Robillard, Martin
+  institution: mcgill
+  url: https://www.cs.mcgill.ca/~martin/
+  axes: [human]
+
+- name: Sahraoui, Houari
+  institution: udem
+  url: https://www.iro.umontreal.ca/~sahraouh/
+  axes: [interdisciplinary, human]
+
+- name: Syriani, Eugène
+  institution: udem
+  url: https://www.iro.umontreal.ca/~syriani/
+  axes: [interdisciplinary]

@@ -26,6 +26,20 @@ axes:
   interdisciplinary: Interdisciplinary development
   human: Human aspects
 
+institutions:
+  udem: Université de Montréal
+  poly: Polytechnique Montréal
+  mcgill: McGill University
+  ets: École de technologie supérieure
+
+people:
+  lede: >-
+    The Centre's researchers, at its four partner institutions.
+  list_heading: Members
+  roles:
+    director: Director
+  join_heading: Joining the Centre
+
 months:
   - January
   - February
