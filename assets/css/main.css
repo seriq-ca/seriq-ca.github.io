@@ -83,6 +83,10 @@
   /* Measure */
   --measure: 64ch;
   --wrap: 64rem;
+
+  /* Margin column that carries labels at wide widths */
+  --gutter: 7rem;
+  --gutter-gap: 3.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -162,7 +166,10 @@ a:focus-visible, .skip-link:focus {
 
 /* Hero — on surface, against the paper ground */
 .hero { background: var(--surface); padding: 2.75rem 0 2.5rem; }
-.hero .kicker { margin-bottom: .5rem; }
+.hero .wrap:has(.kicker) { display: grid; }
+.hero .wrap:has(.kicker) h1 { order: 1; }
+.hero .wrap:has(.kicker) .kicker { order: 2; margin: .45rem 0 0; }
+.hero .wrap:has(.kicker) .lede { order: 3; }
 .hero h1 {
   margin: 0; max-width: 23ch;
   font-size: var(--t-2xl); font-weight: 700; line-height: 1.08;
@@ -186,8 +193,8 @@ section.band h2 {
   margin: 0 0 .9rem;
   font-size: var(--t-lg); font-weight: 600; letter-spacing: -.015em;
 }
-section.band p { max-width: var(--measure); margin: 0 0 .8rem; }
-section.band p:last-child { margin-bottom: 0; }
+:where(section.band p) { max-width: var(--measure); margin: 0 0 .8rem; }
+:where(section.band p:last-child) { margin-bottom: 0; }
 
 /* Next meeting — the one time-critical item, so it gets the inverted band */
 .band--feature {
@@ -195,16 +202,21 @@ section.band p:last-child { margin-bottom: 0; }
   padding: 2.5rem 0 2.75rem;
 }
 .band--feature a { color: var(--feature-ink); }
+/* Labels. Set beside their subject in the margin at wide widths, and
+   underneath it when there is no room — never stacked above as a heading. */
 .kicker {
-  margin: 0 0 .6rem;
+  margin: 0;
   font-family: var(--f-mono); font-size: var(--t-xs); font-weight: 500;
-  letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
+  letter-spacing: .04em; color: var(--accent); line-height: 1.35;
 }
+.event { display: grid; }
 .event .when {
-  margin: 0; font-size: var(--t-2xl); font-weight: 700;
+  order: 1; margin: 0; font-size: var(--t-2xl); font-weight: 700;
   letter-spacing: -.025em; line-height: 1.02; text-wrap: balance;
 }
+.event .kicker { order: 2; margin: .45rem 0 0; }
 .event-details {
+  order: 3;
   display: grid; grid-template-columns: auto 1fr;
   gap: .25rem 1.15rem; margin: 1.1rem 0 0;
   font-size: var(--t-base);
@@ -215,27 +227,43 @@ section.band p:last-child { margin-bottom: 0; }
 }
 .event-details dd { margin: 0; font-variant-numeric: tabular-nums; }
 .event .note {
-  margin: 1.25rem 0 0; max-width: 42ch;
+  order: 4; margin: 1.25rem 0 0; max-width: 42ch;
   color: var(--ink-2); font-size: var(--t-sm);
 }
-.event .more { margin: 1rem 0 0; font-size: var(--t-sm); }
+.event .more { order: 5; margin: 1rem 0 0; font-size: var(--t-sm); }
 
 /* On the inverted band the same component takes the band's own tints. */
 .band--feature .kicker,
 .band--feature .event-details dt,
 .band--feature .event .note { color: var(--feature-ink-2); }
 
-/* Wide: date and details left, the note beside them rather than below */
+/* Wide: the label moves out into the margin column, and the note sits beside
+   the date rather than below it. */
 @media (min-width: 48rem) {
-  .event {
-    display: grid; align-items: start;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-    column-gap: 3.5rem;
+  .hero .wrap:has(.kicker) {
+    align-items: start;
+    grid-template-columns: var(--gutter) minmax(0, 1fr);
+    column-gap: var(--gutter-gap);
   }
-  .event .kicker, .event .when, .event-details { grid-column: 1; }
+  .hero .wrap:has(.kicker) .kicker {
+    grid-column: 1; grid-row: 1; margin: 0; padding-top: .4rem;
+  }
+  .hero .wrap:has(.kicker) h1 { grid-column: 2; grid-row: 1; }
+  .hero .wrap:has(.kicker) .lede { grid-column: 2; grid-row: 2; }
+
+  .event {
+    align-items: start;
+    grid-template-columns:
+      var(--gutter) minmax(0, 1.15fr) minmax(0, 1fr);
+    column-gap: var(--gutter-gap);
+  }
+  .event .kicker {
+    grid-column: 1; grid-row: 1; margin: 0; padding-top: .45rem;
+  }
+  .event .when, .event-details { grid-column: 2; }
   .event .note, .event .more {
-    grid-column: 2; margin-top: 0;
-    padding-left: 3.5rem; border-left: 1px solid var(--feature-rule);
+    grid-column: 3; margin-top: 0;
+    padding-left: var(--gutter-gap); border-left: 1px solid var(--feature-rule);
   }
   .event .note { grid-row: 1; padding-top: .3rem; }
   .event .more { grid-row: 2; padding-bottom: .3rem; }
@@ -265,23 +293,50 @@ section.band p:last-child { margin-bottom: 0; }
 .hero + section.band--surface { border-top: 1px solid var(--rule); }
 .band--feature + section.band { border-top: 0; }
 
-/* Prose */
-section.band ul, section.band ol { max-width: var(--measure); margin: 0 0 .8rem; padding-left: 1.25rem; }
-section.band li { margin-bottom: .45rem; }
-section.band li:last-child { margin-bottom: 0; }
-section.band h3 { margin: 0 0 .3rem; font-size: var(--t-base); font-weight: 700; }
-
-/* Research axes — numbered because the axes are numbered in the charter */
-.axes { list-style: none; padding: 0; margin-top: 1.5rem; max-width: none;
-        display: grid; gap: 1.5rem; counter-reset: axis; }
-@media (min-width: 44rem) { .axes { grid-template-columns: 1fr 1fr; gap: 1.75rem 3rem; } }
-.axes > li { counter-increment: axis; margin: 0; padding-top: .9rem; border-top: 2px solid var(--accent); }
-.axes > li::before {
-  content: attr(data-label) " " counter(axis); display: block; margin-bottom: .45rem;
-  font-family: var(--f-mono); font-size: var(--t-xs); font-weight: 500;
-  letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
+/* Prose. Zero-specificity defaults: they style unclassed markup inside a band
+   and step aside for any component class without needing to be outranked. */
+:where(section.band ul, section.band ol) {
+  max-width: var(--measure); margin: 0 0 .8rem; padding-left: 1.25rem;
 }
-.axes p { margin: 0; max-width: none; color: var(--ink-2); font-size: var(--t-sm); }
+:where(section.band li) { margin-bottom: .45rem; }
+:where(section.band li:last-child) { margin-bottom: 0; }
+:where(section.band h3) { margin: 0 0 .3rem; font-size: var(--t-base); font-weight: 700; }
+
+/* Research axes — numbered because the axes are numbered in the charter.
+   Four ruled rows, sharing the label / subject / prose skeleton of .event. */
+.axes {
+  list-style: none; padding: 0; margin: 1.5rem 0 0; max-width: none;
+  counter-reset: axis;
+}
+.axes > li {
+  counter-increment: axis; margin: 0;
+  padding: 1.1rem 0; border-top: 1px solid var(--rule);
+}
+.axes > li:last-child { border-bottom: 1px solid var(--rule); }
+.axes > li::before {
+  content: attr(data-label) " " counter(axis); display: block; margin-bottom: .4rem;
+  font-family: var(--f-mono); font-size: var(--t-xs); font-weight: 500;
+  letter-spacing: .04em; color: var(--accent);
+}
+.axes h3 {
+  margin: 0; font-size: var(--t-md); font-weight: 700; letter-spacing: -.015em;
+}
+.axes p {
+  margin: .35rem 0 0; max-width: var(--measure);
+  color: var(--ink-2); font-size: var(--t-sm);
+}
+
+@media (min-width: 48rem) {
+  .axes > li {
+    display: grid; align-items: start;
+    grid-template-columns:
+      var(--gutter) minmax(0, 1fr) minmax(0, 1.35fr);
+    column-gap: var(--gutter-gap);
+  }
+  .axes > li::before { margin-bottom: 0; padding-top: .4rem; }
+  .axes h3 { grid-column: 2; padding-top: .1rem; }
+  .axes p { grid-column: 3; grid-row: 1; margin: 0; max-width: none; }
+}
 
 /* Event listing */
 .event-list { list-style: none; padding: 0; margin: 1.25rem 0 0; max-width: none; }
@@ -297,7 +352,7 @@ section.band h3 { margin: 0 0 .3rem; font-size: var(--t-base); font-weight: 700;
 .event-list + .year { margin-top: 1.75rem; }
 .year {
   margin: 1.25rem 0 0; font-family: var(--f-mono); font-weight: 500;
-  font-size: var(--t-xs); letter-spacing: .12em; color: var(--accent);
+  font-size: var(--t-xs); letter-spacing: .04em; color: var(--accent);
 }
 
 /* Members. Entries are short — name plus institution — so they run in two
