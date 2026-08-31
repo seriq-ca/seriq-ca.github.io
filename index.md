@@ -4,12 +4,9 @@ ref: home
 title: Accueil
 title_head: "SERIQ · Centre de recherche en génie logiciel au Québec"
 description: "SERIQ est un centre interuniversitaire de recherche en génie logiciel, dans la continuité du réseau SEMTL. Rencontres, axes de recherche et membres."
-event_date: 2026-10-29
-event_time: de 15 h à 19 h
-event_venue: Université de Montréal
 ---
 
-<div class="hero">
+<div class="hero hero--home">
   <div class="wrap">
     <h1>Structurer la recherche en génie logiciel à Montréal et au Québec</h1>
     <p class="lede">
@@ -19,24 +16,7 @@ event_venue: Université de Montréal
   </div>
 </div>
 
-<section class="band band--feature">
-  <div class="wrap">
-    <div class="event">
-      <p class="kicker">Rentrée SERIQ</p>
-      <p class="when">{% include date.html date=page.event_date lang=page.lang weekday=true %}</p>
-      <dl class="event-details">
-        <dt>Heure</dt><dd>{{ page.event_time }}</dd>
-        <dt>Lieu</dt><dd>{{ page.event_venue }}</dd>
-      </dl>
-      <p class="note">
-        La rentrée marque la reprise des rencontres sous la bannière SERIQ,
-        dans la continuité du réseau SEMTL et de ses plus de dix années
-        d'activité.
-      </p>
-      <p class="more"><a href="/evenements/2026-10-29-rentree-seriq/">Détails de la rencontre</a></p>
-    </div>
-  </div>
-</section>
+{% include next-event.html %}
 
 <section class="band band--paper">
   <div class="wrap">

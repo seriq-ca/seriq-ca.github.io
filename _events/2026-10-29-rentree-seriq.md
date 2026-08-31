@@ -2,13 +2,18 @@
 ref: event-2026-10-29
 title: Rentrée SERIQ
 title_head: "Rentrée SERIQ · 29 octobre 2026"
-description: "Première rencontre sous la bannière SERIQ, le 29 octobre 2026 de 15 h à 19 h à l'Université de Montréal. Conférences invitées, table ronde et réseautage."
+description: "Première rencontre sous la bannière SERIQ et passage vers un réseau qui s'étendra au Québec. Le 29 octobre 2026 de 15 h à 19 h à l'Université de Montréal. Conférences invitées, table ronde et réseautage."
 permalink: /evenements/2026-10-29-rentree-seriq/
 event_date: 2026-10-29
 event_time: de 15 h à 19 h
 event_start: 2026-10-29T15:00:00-04:00
 event_end: 2026-10-29T19:00:00-04:00
 event_venue: Université de Montréal
+name_lang: fr
+summary: >-
+  La rentrée marque la reprise des rencontres sous la bannière SERIQ,
+  dans la continuité du réseau SEMTL et de ses plus de dix années
+  d'activité.
 ---
 
 <div class="hero">
@@ -17,7 +22,10 @@ event_venue: Université de Montréal
     <h1>Rentrée SERIQ</h1>
     <p class="lede">
       Première rencontre sous la bannière SERIQ, dans la continuité des
-      rencontres <a href="https://semtl.github.io/">SEMTL</a>.
+      rencontres <a href="https://semtl.github.io/">SEMTL</a>. Elle souligne le
+      passage vers un réseau plus large, qui s'étendra à l'ensemble du Québec,
+      et réunit la communauté pour discuter de l'apport du génie logiciel aux
+      enjeux de la société numérique.
     </p>
   </div>
 </div>

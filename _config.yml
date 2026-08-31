@@ -18,6 +18,11 @@ future: true
 collections:
   events:
     output: true
+  # The SEMTL-era archive, ported from the old site. English-only by design,
+  # so it sits outside the bilingual `events` collection and is exempt from the
+  # translation-parity check.
+  semtl:
+    output: true
 
 defaults:
   # General rule first, specific second: on a conflict Jekyll's LAST match wins.
@@ -30,6 +35,13 @@ defaults:
     values: { layout: "default", lang: "fr" }
   - scope: { path: "_events/en", type: "events" }
     values: { lang: "en" }
+  - scope: { path: "", type: "semtl" }
+    values: { layout: "semtl", lang: "en" }
+
+# Keep the compiled CSS readable: the comments in _sass/ explain the design
+# decisions, and they are worth shipping.
+sass:
+  style: expanded
 
 plugins:
   - jekyll-feed

@@ -1,0 +1,148 @@
+/* Decorations — the one place the site draws a wire.
+
+   The ornament vocabulary is three primitives: a RUN (a 2px line in utility
+   blue), a NODE (a 6px amber box centred on a run), and a DROP (a short run
+   at right angles, terminating one). Everything below is those three
+   assembled differently. The header braid is the sole exception, and the
+   sole ornament that repeats.
+
+   Even widths throughout, so a node centred on a run lands on whole pixels.
+   These rules load last, so a decoration wins any tie with its component. */
+:root {
+  --run:  2px;  /* line weight of a wire */
+  --node-size: 6px;  /* the box marking a junction or a terminal */
+  --drop: 6px;  /* how far a run turns at right angles before it ends */
+}
+
+/* The header braid: four strands, one per partner institution. Woven in
+   assets/img/braid.svg, not drawn here. */
+.site-header::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+  height: var(--braid-size);
+  background: var(--braid) repeat-x left center;
+  opacity: .75;
+}
+
+/* The section mark: a stub of run standing in for a heading rule. */
+section.band h2::before {
+  content: ""; display: block; width: 18px; height: var(--run);
+  background: var(--mark); margin-bottom: .55rem;
+}
+
+/* A routed wire under the home title. Not a divider: it enters at a
+   terminal, runs, turns a right angle, runs again, and ends at a second
+   terminal — the way a trace is routed on a board, never a straight line
+   from nowhere to nowhere. The asymmetry is the whole point; a centred
+   dash reads as ornament, a jog reads as wiring.
+
+       ■────────────┐
+                    └──────────────■
+
+   Geometry, so the arithmetic below is legible: the box is 148 x 16, the
+   upper run sits at y=2, the lower at y=10, and the turn is at x=62. Every
+   node is 6px centred on a 2px run, so each centre lands on a whole pixel. */
+.hero--home h1::after {
+  content: ""; display: block;
+  width: 148px; height: 16px; margin: 1.15rem 0 0;
+  background-repeat: no-repeat;
+  background-image:
+    /* Nodes first, so they are painted in front of the runs they cap. */
+    linear-gradient(var(--node), var(--node)),
+    linear-gradient(var(--node), var(--node)),
+    linear-gradient(var(--wire), var(--wire)),
+    linear-gradient(var(--wire), var(--wire)),
+    linear-gradient(var(--wire), var(--wire));
+  background-size:
+    var(--node-size) var(--node-size),   /* entry terminal */
+    var(--node-size) var(--node-size),   /* exit terminal  */
+    64px var(--run),                     /* upper run      */
+    var(--run) 10px,                     /* the turn       */
+    80px var(--run);                     /* lower run      */
+  background-position:
+    0 0,        /* centred on the upper run: 3 - 2/2 = 0   */
+    142px 8px,  /* centred on the lower run: 11 - 6/2 = 8  */
+    0 2px,
+    62px 2px,
+    62px 10px;
+}
+/* The centred hero centres its wire too. */
+.hero--home .wrap:not(:has(.kicker)) h1::after { margin-inline: auto; }
+
+/* Corner brackets on the meeting panel: a run along each arm, ending in a
+   node centred on it. The frame is inset so nothing clips. */
+.event {
+  --arm: 20px; --box: var(--node-size); --inset: 4px;
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--amber), var(--amber));
+  background-size:
+    var(--arm) var(--run),
+    var(--run) var(--arm),
+    var(--arm) var(--run),
+    var(--run) var(--arm),
+    var(--arm) var(--run),
+    var(--run) var(--arm),
+    var(--arm) var(--run),
+    var(--run) var(--arm),
+    var(--box) var(--box),
+    var(--box) var(--box),
+    var(--box) var(--box),
+    var(--box) var(--box),
+    var(--box) var(--box),
+    var(--box) var(--box),
+    var(--box) var(--box),
+    var(--box) var(--box);
+  background-position:
+    left var(--inset) top var(--inset),
+    left var(--inset) top var(--inset),
+    right var(--inset) top var(--inset),
+    right var(--inset) top var(--inset),
+    left var(--inset) bottom var(--inset),
+    left var(--inset) bottom var(--inset),
+    right var(--inset) bottom var(--inset),
+    right var(--inset) bottom var(--inset),
+    left calc(var(--inset) + var(--arm) - var(--box) / 2) top calc(var(--inset) + 1px - var(--box) / 2),
+    left calc(var(--inset) + 1px - var(--box) / 2) top calc(var(--inset) + var(--arm) - var(--box) / 2),
+    right calc(var(--inset) + var(--arm) - var(--box) / 2) top calc(var(--inset) + 1px - var(--box) / 2),
+    right calc(var(--inset) + 1px - var(--box) / 2) top calc(var(--inset) + var(--arm) - var(--box) / 2),
+    left calc(var(--inset) + var(--arm) - var(--box) / 2) bottom calc(var(--inset) + 1px - var(--box) / 2),
+    left calc(var(--inset) + 1px - var(--box) / 2) bottom calc(var(--inset) + var(--arm) - var(--box) / 2),
+    right calc(var(--inset) + var(--arm) - var(--box) / 2) bottom calc(var(--inset) + 1px - var(--box) / 2),
+    right calc(var(--inset) + 1px - var(--box) / 2) bottom calc(var(--inset) + var(--arm) - var(--box) / 2);
+}
+
+/* One run down the axes gutter, with a node on each row. The node is the
+   first background layer, so it is painted in front of the run. */
+@media (min-width: 48rem) {
+  .axes > li::after {
+    content: ""; position: absolute; top: 0; bottom: 0;
+    left: calc(var(--gutter) + var(--gutter-gap) / 2 - 3px); width: 6px;
+    background:
+      linear-gradient(var(--node), var(--node)) 0 20px / 6px 6px no-repeat,
+      linear-gradient(var(--wire), var(--wire)) 2px 0 / 2px 100% no-repeat;
+    opacity: .55;
+  }
+  .axes > li:first-child::after { background-position: 0 20px, 2px 20px; }
+  .axes > li:last-child::after { background-size: 6px 6px, 2px 23px; }
+}
+
+/* A bare node, marking each meeting in a listing. */
+.event-list .name::before {
+  content: ""; display: inline-block; width: 6px; height: 6px;
+  margin-right: .6rem; vertical-align: .16em; background: var(--node);
+}

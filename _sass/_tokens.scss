@@ -1,0 +1,104 @@
+:root {
+  /* Ground — cool paper, cool near-black ink */
+  --paper:   #f2f4f7;
+  --surface: #ffffff;
+  --ink:     #12161c;
+  --ink-2:   #4e5661;
+  --ink-3:   #6b727c;
+  --rule:    #cfd6de;
+
+  /* Utility blue carries the structure, amber marks it: wires and rules are
+     blue, the nodes and the ornament are amber. */
+  --blue:      #0f3a86;
+  --blue-soft: #e3e9f5;
+  --blue-deep: #0a2558;
+  --amber:     #f2a413;
+  /* Amber only carries on the blue grounds. On paper the ornament and
+     the nodes take the deeper cut, which clears 3:1 against the ground. */
+  --mark:      #bf7a00;
+  --amber-ink: #8a5200;
+  --amber-soft:#fdf0d6;
+
+  --wire: var(--blue);
+  --node: var(--mark);
+  --accent: var(--blue);
+  --accent-soft: var(--blue-soft);
+
+  /* The social register borrows the amber family, never the blue. */
+  --warm:      var(--amber);
+  --warm-ink:  var(--amber-ink);
+  --warm-soft: var(--amber-soft);
+
+  --feature-bg:   var(--blue-deep);
+  --feature-ink:  #eef2f9;
+  --feature-ink-2:#a8bbdd;
+  --feature-warm: var(--amber);
+  --feature-rule: rgba(255,255,255,.22);
+  --foot-bg:  #081b3f;
+  --foot-ink: #dbe3f0;
+  --foot-ink-2: #93a3bd;
+  --foot-rule: #16305c;
+
+  /* Type */
+  --f-display: "Inria Serif", Georgia, "Times New Roman", serif;
+  --f-body: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --t-xs:   .8125rem;
+  --t-sm:   .9375rem;
+  --t-base: 1rem;
+  --t-md:   1.125rem;
+  --t-lg:   1.375rem;
+  --t-xl:   1.75rem;
+  --t-2xl:  clamp(2rem, 4.5vw, 2.75rem);
+
+  /* Two shape languages. Square for the technical register, generous
+     radii for the social one. */
+  --r-tech: 0px;
+  --r-soft: 14px;
+
+  /* Ornament. Four strands — one per partner institution — woven on a 64px
+     period and used in exactly one place, under the header. The tiles carry
+     their own colours and casing ground, so they are drawn per theme by
+     scripts/make_braid.py; rerun it whenever the palette moves. */
+  --braid-size: 14px;
+  --braid: url(/assets/img/braid.svg);
+
+
+  /* Measure */
+  --measure: 64ch;
+  --wrap: 64rem;
+
+  /* Margin column that carries labels and the wire at wide widths */
+  --gutter: 8rem;
+  --gutter-gap: 3.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:   #0b1016;
+    --surface: #121820;
+    --ink:     #e6ebf2;
+    --ink-2:   #9aa5b3;
+    --ink-3:   #7d8794;
+    --rule:    #232c37;
+
+    --blue:      #7ea6ff;
+    --blue-soft: #14203a;
+    --blue-deep: #0b1c3d;
+    --amber:     #f5b73f;
+    --mark:      #f5b73f;
+    --amber-ink: #f0b352;
+    --amber-soft:#23190c;
+
+    --feature-bg:   #0d2148;
+    --feature-ink:  #eaf0fb;
+    --feature-ink-2:#a2b4d6;
+    --feature-rule: rgba(255,255,255,.16);
+    --foot-bg:  #060d18;
+    --foot-ink: #d5dcea;
+    --foot-ink-2: #8695ab;
+    --foot-rule: #182740;
+    --braid: url(/assets/img/braid-dark.svg);
+  }
+}

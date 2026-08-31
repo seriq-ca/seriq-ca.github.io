@@ -2,13 +2,18 @@
 ref: event-2026-10-29
 title: Rentrée SERIQ
 title_head: "Rentrée SERIQ · October 29, 2026"
-description: "The first meeting under the SERIQ banner, on October 29, 2026, from 3:00 to 7:00 p.m. at Université de Montréal. Guest talks, a panel and networking."
+description: "The first meeting under the SERIQ banner and the move to a larger network that will grow to cover Quebec. October 29, 2026, from 3:00 to 7:00 p.m. at Université de Montréal. Guest talks, a panel and networking."
 permalink: /en/events/2026-10-29-rentree-seriq/
 event_date: 2026-10-29
 event_time: 3:00–7:00 p.m.
 event_start: 2026-10-29T15:00:00-04:00
 event_end: 2026-10-29T19:00:00-04:00
 event_venue: Université de Montréal
+name_lang: fr
+summary: >-
+  The <i lang="fr">rentrée</i> marks the return of the meeting series
+  under the SERIQ banner, continuing the SEMTL network and its more than
+  ten years of activity.
 ---
 
 <div class="hero">
@@ -17,7 +22,10 @@ event_venue: Université de Montréal
     <h1 lang="fr">Rentrée SERIQ</h1>
     <p class="lede">
       The first meeting under the SERIQ banner, continuing the
-      <a href="https://semtl.github.io/">SEMTL</a> meeting series.
+      <a href="https://semtl.github.io/">SEMTL</a> meeting series. It marks the
+      move to a larger network, one that will grow to cover Quebec, and brings
+      the community together to discuss what software engineering contributes
+      to the challenges of the digital society.
     </p>
   </div>
 </div>

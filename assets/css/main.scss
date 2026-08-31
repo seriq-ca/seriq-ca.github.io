@@ -1,0 +1,12 @@
+---
+# Front matter is required: it tells Jekyll to run this file through Sass.
+# The partials live in _sass/ and are plain CSS; Sass only concatenates them,
+# so the output is one file and one request, exactly as before.
+---
+
+@use "fonts";
+@use "tokens";
+@use "base";
+@use "layout";
+@use "components";
+@use "decorations";

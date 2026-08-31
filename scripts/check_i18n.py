@@ -33,8 +33,9 @@ def page_files():
         rel = path.relative_to(ROOT)
         if set(rel.parts) & SKIP_DIRS:
             continue
-        # Posts are the meeting archive: untranslated by design.
-        if rel.parts[0] == "_posts":
+        # The SEMTL-era archive is untranslated by design, as it was on the
+        # old site. `_posts` is kept here in case one is ever added back.
+        if rel.parts[0] in ("_posts", "_semtl"):
             continue
         yield rel, path
 

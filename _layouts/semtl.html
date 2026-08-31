@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="hero hero--archive">
+  <div class="wrap">
+    <p class="kicker">{{ site.data.i18n[page.lang].events.archive_kicker }}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="archive-meta">
+      {% include date.html date=page.event_date lang=page.lang %}{% if page.event_venue %} · {{ page.event_venue }}{% endif %}{% if page.author %} · {{ page.author }}{% endif %}
+    </p>
+  </div>
+</div>
+
+<section class="band band--paper">
+  <div class="wrap">
+    {{ content }}
+    <p class="note archive-source">
+      {{ site.data.i18n[page.lang].events.archive_source }}
+      <a href="{{ page.source_url }}">{{ page.source_url }}</a>
+    </p>
+  </div>
+</section>

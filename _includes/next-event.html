@@ -1,0 +1,51 @@
+{%- comment -%}
+  The next upcoming meeting, rendered from the events collection so the home
+  page and the events index cannot drift apart. Both used to hardcode it.
+
+  Dates are compared as YYYYMMDD integers because `where_exp` takes no filters,
+  so the "first event not yet past" search is a hand-rolled loop. Emits nothing
+  when every event is in the past.
+
+  `name_lang` on the event marks the language of its title and venue, so the
+  proper names carry a lang attribute when the surrounding page is in the
+  other language.
+{%- endcomment -%}
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign today = site.time | date: "%Y%m%d" | plus: 0 -%}
+{%- assign upcoming = site.events | where_exp: "e", "e.lang == page.lang" | sort: "event_date" -%}
+{%- assign next_event = nil -%}
+{%- for e in upcoming -%}
+  {%- assign d = e.event_date | date: "%Y%m%d" | plus: 0 -%}
+  {%- if d >= today and next_event == nil -%}{%- assign next_event = e -%}{%- endif -%}
+{%- endfor -%}
+{%- if next_event -%}
+{%- comment -%}
+  Built as a whole attribute rather than tested inline: an empty string is
+  truthy in Liquid, so testing the bare variable emits lang="" on the page
+  whose own language already matches.
+{%- endcomment -%}
+{%- assign name_attr = "" -%}
+{%- if next_event.name_lang and next_event.name_lang != page.lang -%}
+  {%- capture name_attr %} lang="{{ next_event.name_lang }}"{% endcapture -%}
+{%- endif %}
+<section class="band band--feature">
+  <div class="wrap">
+    <div class="event">
+      <p class="kicker"{{ name_attr }}>{{ next_event.title }}</p>
+      <p class="when">{% include date.html date=next_event.event_date lang=page.lang weekday=true %}</p>
+      <dl class="event-details">
+        {%- if next_event.event_time %}
+        <dt>{{ t.events.time }}</dt><dd>{{ next_event.event_time }}</dd>
+        {%- endif %}
+        {%- if next_event.event_venue %}
+        <dt>{{ t.events.venue }}</dt><dd{{ name_attr }}>{{ next_event.event_venue }}</dd>
+        {%- endif %}
+      </dl>
+      {%- if next_event.summary %}
+      <p class="note">{{ next_event.summary }}</p>
+      {%- endif %}
+      <p class="more"><a href="{{ next_event.url | relative_url }}">{{ t.events.next_details }}</a></p>
+    </div>
+  </div>
+</section>
+{%- endif -%}

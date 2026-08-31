@@ -15,7 +15,6 @@ nav:
   contact: Contact
 
 footer:
-  archive: SEMTL archive
   rights: All rights reserved.
 
 axes:
@@ -36,6 +35,15 @@ people:
   list_heading: Members
   roles:
     director: Director
+
+events:
+  archive_kicker: SEMTL meeting
+  time: Time
+  venue: Venue
+  next_details: Meeting details
+  past_heading: Past meetings
+  archive_source: >-
+    Originally published on the SEMTL site:
 
 months:
   - January

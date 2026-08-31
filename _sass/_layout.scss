@@ -1,0 +1,118 @@
+/* Header */
+.site-header {
+  background: var(--paper); position: relative;
+  padding-bottom: var(--braid-size);
+}
+.header-inner {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  align-items: center; justify-content: space-between;
+  padding-top: 1.15rem; padding-bottom: 1.15rem;
+}
+.brand { text-decoration: none; color: inherit; display: block; }
+.brand-mark {
+  display: block; font-family: var(--f-display); font-size: var(--t-xl);
+  font-weight: 700;  letter-spacing: -.01em; line-height: 1; color: var(--ink);
+}
+.brand-sub {
+  display: block; margin-top: .3rem;
+  font-family: var(--f-mono); font-size: var(--t-xs); font-weight: 400;
+  line-height: 1.45; color: var(--ink-2);
+}
+.site-nav {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: .5rem 1.25rem; font-size: var(--t-sm);
+}
+.site-nav a { text-decoration: none; }
+.site-nav a:hover { text-decoration: underline; }
+.lang-toggle {
+  font-family: var(--f-mono); font-size: var(--t-xs);
+  border: 1px solid var(--rule); border-radius: var(--r-tech);
+  padding: .3rem .6rem;
+}
+.lang-toggle:hover { background: var(--wire-soft); text-decoration: none; }
+
+/* Hero — on surface, against the paper ground */
+.hero {
+  background: var(--surface); padding: 2.75rem 0 2.5rem;
+  position: relative;
+}
+/* With no label in the margin the hero has nothing holding its right side,
+   so it is centred instead of sitting left of a wide empty column. */
+.hero .wrap:not(:has(.kicker)) { text-align: center; }
+.hero .wrap:not(:has(.kicker)) h1 { max-width: 24ch; margin-inline: auto; }
+.hero .wrap:not(:has(.kicker)) .lede { margin-inline: auto; }
+
+.hero .wrap:has(.kicker) { display: grid; }
+.hero .wrap:has(.kicker) h1 { order: 1; }
+.hero .wrap:has(.kicker) .kicker { order: 2; margin: .45rem 0 0; }
+.hero .wrap:has(.kicker) .lede { order: 3; }
+.hero h1 {
+  margin: 0; max-width: 23ch;
+  font-family: var(--f-display); font-size: var(--t-2xl); font-weight: 700;
+  line-height: 1.1; letter-spacing: -.015em; text-wrap: balance;
+}
+.hero .lede {
+  margin: 1rem 0 0; max-width: var(--measure);
+  font-size: var(--t-md); color: var(--ink-2);
+}
+
+/* Sections. Ground colour carries the rhythm; rules only where two
+   same-coloured bands meet. */
+section.band { padding: 2rem 0; position: relative; }
+section.band + section.band { border-top: 1px solid var(--rule); }
+.band--surface { background: var(--surface); }
+.band--paper { background: var(--paper); }
+.band--surface + .band--paper,
+.band--paper + .band--surface { border-top: 0; }
+
+section.band h2 {
+  margin: 0 0 .9rem;
+  font-family: var(--f-display); font-size: var(--t-lg); font-weight: 700;
+  letter-spacing: -.01em;
+}
+:where(section.band p) { max-width: var(--measure); margin: 0 0 .8rem; }
+:where(section.band p:last-child) { margin-bottom: 0; }
+
+/* Next meeting — the one time-critical item, so it gets the inverted band */
+.band--feature {
+  background: var(--feature-bg); color: var(--feature-ink);
+  padding: 2.5rem 0 2.75rem; position: relative;
+}
+.band--feature a { color: var(--feature-ink); }
+
+/* Footer — inverted ground closes the page */
+.site-footer {
+  background: var(--foot-bg); color: var(--foot-ink-2);
+  padding: 2.25rem 0 2.5rem; font-size: var(--t-sm); position: relative;
+}
+.site-footer a { color: var(--foot-ink); }
+.footer-name {
+  margin: 0 0 .9rem; max-width: var(--measure);
+  color: var(--foot-ink); font-size: var(--t-xs);
+  font-family: var(--f-mono);
+  line-height: 1.6;
+}
+.footer-meta { margin: .3rem 0; }
+.footer-meta + .footer-meta {
+  margin-top: .9rem; padding-top: .9rem; border-top: 1px solid var(--foot-rule);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* The hero is a surface band in all but name. */
+.hero + section.band--surface { border-top: 1px solid var(--rule); }
+.band--feature + section.band { border-top: 0; }
+
+/* Prose. Zero-specificity defaults: they style unclassed markup inside a band
+   and step aside for any component class without needing to be outranked. */
+:where(section.band ul, section.band ol) {
+  max-width: var(--measure); margin: 0 0 .8rem; padding-left: 1.25rem;
+}
+:where(section.band li) { margin-bottom: .45rem; }
+:where(section.band li:last-child) { margin-bottom: 0; }
+:where(section.band h3) {
+  margin: 0 0 .3rem; font-family: var(--f-display);
+  font-size: var(--t-md); font-weight: 700;
+}

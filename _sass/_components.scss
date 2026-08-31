@@ -1,0 +1,230 @@
+/* Labels. Set beside their subject in the margin at wide widths, and
+   underneath it when there is no room — never stacked above as a heading. */
+.kicker {
+  margin: 0;
+  font-family: var(--f-mono); font-size: var(--t-xs); font-weight: 500;
+  letter-spacing: .02em; color: var(--wire); line-height: 1.4;
+  text-transform: uppercase;
+}
+.event {
+  display: grid;
+  padding: 1.35rem 1.4rem;
+}
+/* The date is data, not display: it belongs to the technical register.
+   Archivo drawn narrow and heavy, the way utility signage sets a number. */
+.event .when {
+  order: 1; margin: 0; font-family: var(--f-body);
+  font-size: var(--t-2xl); font-weight: 700;
+  font-stretch: 88%;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.01em; line-height: 1.04; text-wrap: balance;
+}
+.event .kicker { order: 2; margin: .45rem 0 0; }
+.event-details {
+  order: 3;
+  display: grid; grid-template-columns: auto 1fr;
+  gap: .25rem 1.15rem; margin: 1.1rem 0 0;
+  font-size: var(--t-base);
+}
+.event-details dt {
+  font-family: var(--f-mono); font-size: var(--t-xs);
+  text-transform: uppercase;
+  color: var(--ink-2); letter-spacing: .02em; padding-top: .4em;
+}
+.event-details dd { margin: 0; font-variant-numeric: tabular-nums; }
+.event .note {
+  order: 4; margin: 1.25rem 0 0; max-width: 42ch;
+  color: var(--ink-2); font-size: var(--t-sm);
+}
+.event .more { order: 5; margin: 1rem 0 0; font-size: var(--t-sm); }
+
+/* On the inverted band the same component takes the band's own tints. */
+.band--feature .kicker { color: var(--feature-warm); }
+.band--feature .event-details dt,
+.band--feature .event .note { color: var(--feature-ink-2); }
+
+/* Wide: the label moves out into the margin column, and the note sits beside
+   the date rather than below it. */
+@media (min-width: 48rem) {
+  .hero .wrap:has(.kicker) {
+    align-items: start;
+    grid-template-columns: var(--gutter) minmax(0, 1fr);
+    column-gap: var(--gutter-gap);
+  }
+  .hero .wrap:has(.kicker) .kicker {
+    grid-column: 1; grid-row: 1; margin: 0; padding-top: .4rem;
+  }
+  .hero .wrap:has(.kicker) h1 { grid-column: 2; grid-row: 1; }
+  .hero .wrap:has(.kicker) .lede { grid-column: 2; grid-row: 2; }
+  .hero .wrap:has(.kicker) .archive-meta { grid-column: 2; grid-row: 2; }
+
+  /* One row per meeting instead of two stacked lines: the date moves out into
+     the margin column and the venue/author sit right of the title. 32 entries
+     of a short title left almost the whole row empty otherwise. */
+  .event-list--archive li {
+    display: grid; align-items: baseline;
+    grid-template-columns: var(--gutter) minmax(0, 1.6fr) minmax(0, 1fr);
+    column-gap: var(--gutter-gap);
+  }
+  .event-list--archive .when { grid-column: 1; grid-row: 1; margin-top: 0; }
+  .event-list--archive .name { grid-column: 2; grid-row: 1; }
+  .event-list--archive .where { grid-column: 3; grid-row: 1; margin-top: 0; }
+
+  .event {
+    align-items: start;
+    grid-template-columns:
+      var(--gutter) minmax(0, 1.15fr) minmax(0, 1fr);
+    column-gap: var(--gutter-gap);
+  }
+  .event .kicker {
+    grid-column: 1; grid-row: 1; margin: 0; padding-top: .45rem;
+  }
+  .event .when, .event-details { grid-column: 2; }
+  .event .note, .event .more {
+    grid-column: 3; margin-top: 0;
+    padding-left: var(--gutter-gap); border-left: 1px solid var(--feature-rule);
+  }
+  .event .note { grid-row: 1; padding-top: .3rem; }
+  .event .more { grid-row: 2; padding-bottom: .3rem; }
+}
+
+/* Research axes — numbered because the axes are numbered in the charter.
+   Four ruled rows, sharing the label / subject / prose skeleton of .event. */
+.axes {
+  list-style: none; padding: 0; margin: 1.5rem 0 0; max-width: none;
+  counter-reset: axis;
+}
+.axes > li {
+  counter-increment: axis; margin: 0; position: relative;
+  padding: 1.1rem 0; border-top: 1px solid var(--rule);
+}
+.axes > li:last-child { border-bottom: 1px solid var(--rule); }
+.axes > li::before {
+  content: attr(data-label) " " counter(axis); display: block; margin-bottom: .4rem;
+  font-family: var(--f-mono); font-size: var(--t-xs); font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .02em; color: var(--wire);
+}
+.axes h3 {
+  margin: 0; font-family: var(--f-display); font-size: var(--t-md);
+  font-weight: 700;  letter-spacing: -.01em;
+}
+.axes p {
+  margin: .35rem 0 0; max-width: var(--measure);
+  color: var(--ink-2); font-size: var(--t-sm);
+}
+
+@media (min-width: 48rem) {
+  .axes > li {
+    display: grid; align-items: start;
+    grid-template-columns:
+      var(--gutter) minmax(0, 1fr) minmax(0, 1.35fr);
+    column-gap: var(--gutter-gap);
+  }
+  .axes > li::before { margin-bottom: 0; padding-top: .4rem; }
+
+  .axes h3 { grid-column: 2; padding-top: .1rem; }
+  .axes p { grid-column: 3; grid-row: 1; margin: 0; max-width: none; }
+}
+
+/* Event listing */
+.event-list { list-style: none; padding: 0; margin: 1.25rem 0 0; max-width: none; }
+.event-list li { margin: 0; padding: 1rem 0; border-top: 1px solid var(--rule); }
+.event-list li:last-child { border-bottom: 1px solid var(--rule); }
+.event-list .name {
+  margin: 0; font-family: var(--f-display); font-size: var(--t-md);
+  font-weight: 700;  letter-spacing: -.01em;
+}
+.event-list .name a { text-decoration: none; color: var(--ink); }
+.event-list .name a:hover { text-decoration: underline; }
+.event-list .meta {
+  margin: .3rem 0 0 1.1rem; font-family: var(--f-mono); font-size: var(--t-xs);
+  color: var(--ink-2); letter-spacing: .02em;
+}
+.event-list + .year { margin-top: 1.75rem; }
+
+/* Archive variant, for the SEMTL-era meetings. Same structure as the list
+   above it, stepped down so the predecessor era reads as background: prose
+   face instead of display, no node marker, lighter ink, tighter rows. There
+   are 31 of them against a handful of SERIQ meetings, so without this the
+   archive dominates the page it is a footnote to. */
+.event-list--archive li { padding: .6rem 0; }
+.event-list--archive .name {
+  font-family: var(--f-body); font-size: var(--t-sm);
+  font-weight: 400; letter-spacing: 0;
+}
+.event-list--archive .name::before { display: none; }
+.event-list--archive .name a { color: var(--ink-2); }
+.event-list--archive .when,
+.event-list--archive .where {
+  margin: .2rem 0 0; font-family: var(--f-mono); font-size: var(--t-xs);
+  color: var(--ink-3); letter-spacing: .02em;
+}
+.event-list--archive .when { font-variant-numeric: tabular-nums; }
+
+/* SEMTL archive pages. The body is ported markdown, so it leans on the
+   zero-specificity prose defaults above; only the hero and the provenance
+   line need saying. Same step-down as the archive listing: this is a record
+   of what happened, not a page competing with the current meeting. */
+.hero--archive { padding: 2.25rem 0 1.75rem; }
+.hero--archive h1 { font-size: var(--t-xl); }
+.archive-meta {
+  order: 3; margin: .55rem 0 0; font-family: var(--f-mono);
+  font-size: var(--t-xs); color: var(--ink-2); letter-spacing: .02em;
+}
+/* Ported bodies carry hand-written <img> with inline widths. */
+section.band img { max-width: 100%; height: auto; }
+/* Markdown h3s run together without space above; the first still sits tight. */
+:where(section.band h3) { margin-top: 1.4rem; }
+:where(section.band > h3:first-child) { margin-top: 0; }
+.archive-source {
+  margin-top: 1.75rem; padding-top: .9rem; border-top: 1px solid var(--rule);
+  font-family: var(--f-mono); font-size: var(--t-xs); color: var(--ink-3);
+  overflow-wrap: anywhere;
+}
+.year {
+  margin: 1.25rem 0 0; font-family: var(--f-mono); font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  font-size: var(--t-xs); letter-spacing: .02em; color: var(--wire);
+}
+
+/* Members. The social register: no rules and no corners, just soft panels.
+   Entries are short — name plus institution — so they run in two columns
+   once there is room. */
+.member-list {
+  list-style: none; padding: 0; margin: 1.25rem 0 0; max-width: none;
+  display: grid; grid-template-columns: 1fr; gap: .75rem;
+}
+.member-list li {
+  margin: 0; padding: 1rem 1.1rem;
+  background: var(--warm-soft); border-radius: var(--r-soft);
+  display: flex; gap: 1rem; align-items: flex-start;
+}
+.member-text { min-width: 0; }
+.portrait {
+  flex: none; width: 72px; height: 72px; border-radius: 50%;
+  object-fit: cover; background: var(--surface);
+}
+.portrait--empty { background: var(--surface); }
+.member-list .name {
+  margin: 0; font-family: var(--f-display); font-size: var(--t-md);
+  font-weight: 700;  letter-spacing: -.01em;
+}
+.member-list .name a { text-decoration: none; color: var(--ink); }
+.member-list .name a:hover { text-decoration: underline; }
+.member-list .meta {
+  margin: .3rem 0 0; font-family: var(--f-mono); font-size: var(--t-xs);
+  color: var(--ink-2); letter-spacing: .02em;
+}
+.member-list .role { color: var(--warm-ink); }
+.member-axes {
+  list-style: none; display: flex; flex-wrap: wrap; gap: .35rem;
+  margin: .55rem 0 0; padding: 0; max-width: none;
+}
+.member-axes li {
+  margin: 0; padding: .2rem .6rem; border-radius: 999px;
+  background: var(--surface); color: var(--ink-2);
+  font-family: var(--f-mono); font-size: var(--t-xs);
+  letter-spacing: .02em;
+}
+@media (min-width: 44rem) { .member-list { grid-template-columns: 1fr 1fr; gap: .75rem; } }

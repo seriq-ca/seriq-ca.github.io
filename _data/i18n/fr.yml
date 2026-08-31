@@ -15,7 +15,6 @@ nav:
   contact: Contact
 
 footer:
-  archive: Archives SEMTL
   rights: Tous droits réservés.
 
 axes:
@@ -37,6 +36,15 @@ people:
   list_heading: Membres
   roles:
     director: Directeur
+
+events:
+  archive_kicker: Rencontre SEMTL
+  time: Heure
+  venue: Lieu
+  next_details: Détails de la rencontre
+  past_heading: Rencontres passées
+  archive_source: >-
+    Publié à l'origine sur le site SEMTL :
 
 months:
   - janvier
