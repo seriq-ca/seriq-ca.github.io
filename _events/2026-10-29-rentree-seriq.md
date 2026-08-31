@@ -6,6 +6,8 @@ description: "Première rencontre sous la bannière SERIQ, le 29 octobre 2026 de
 permalink: /evenements/2026-10-29-rentree-seriq/
 event_date: 2026-10-29
 event_time: de 15 h à 19 h
+event_start: 2026-10-29T15:00:00-04:00
+event_end: 2026-10-29T19:00:00-04:00
 event_venue: Université de Montréal
 ---
 
