@@ -2,6 +2,7 @@
 layout: default
 ref: people
 title: Members
+description: "The Centre's researchers at its four partner institutions: Université de Montréal, Polytechnique Montréal, McGill University and the ÉTS."
 permalink: /en/people/
 ---
 
@@ -20,7 +21,11 @@ permalink: /en/people/
       {%- for m in members %}
       <li>
         {%- if m.photo %}
-        <img class="portrait" src="{{ '/assets/img/members/' | append: m.photo | relative_url }}"
+        {%- comment %} Interim: absolute URLs hotlink institutional portraits.
+             Replace with self-hosted filenames — see assets/img/members/README.md. {% endcomment -%}
+        {%- if m.photo contains '://' %}{% assign photo_src = m.photo %}
+        {%- else %}{% assign photo_src = '/assets/img/members/' | append: m.photo | relative_url %}{% endif %}
+        <img class="portrait" src="{{ photo_src }}" referrerpolicy="no-referrer"
              alt="" width="72" height="72" loading="lazy" decoding="async">
         {%- else %}
         <span class="portrait portrait--empty" aria-hidden="true"></span>
@@ -44,14 +49,5 @@ permalink: /en/people/
       </li>
       {%- endfor %}
     </ul>
-  </div>
-</section>
-
-<section class="band band--surface">
-  <div class="wrap">
-    <h2>{{ t.people.join_heading }}</h2>
-    <p>
-      Membership arrangements will be set out before the Centre's first meeting.
-    </p>
   </div>
 </section>

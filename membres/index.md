@@ -2,6 +2,7 @@
 layout: default
 ref: people
 title: Membres
+description: "Les chercheuses et chercheurs du Centre, dans ses quatre établissements partenaires : UdeM, Polytechnique Montréal, McGill et l'ÉTS."
 permalink: /membres/
 ---
 
@@ -20,7 +21,11 @@ permalink: /membres/
       {%- for m in members %}
       <li>
         {%- if m.photo %}
-        <img class="portrait" src="{{ '/assets/img/members/' | append: m.photo | relative_url }}"
+        {%- comment %} Interim: absolute URLs hotlink institutional portraits.
+             Replace with self-hosted filenames — see assets/img/members/README.md. {% endcomment -%}
+        {%- if m.photo contains '://' %}{% assign photo_src = m.photo %}
+        {%- else %}{% assign photo_src = '/assets/img/members/' | append: m.photo | relative_url %}{% endif %}
+        <img class="portrait" src="{{ photo_src }}" referrerpolicy="no-referrer"
              alt="" width="72" height="72" loading="lazy" decoding="async">
         {%- else %}
         <span class="portrait portrait--empty" aria-hidden="true"></span>
@@ -44,14 +49,5 @@ permalink: /membres/
       </li>
       {%- endfor %}
     </ul>
-  </div>
-</section>
-
-<section class="band band--surface">
-  <div class="wrap">
-    <h2>{{ t.people.join_heading }}</h2>
-    <p>
-      Les modalités d'adhésion seront précisées d'ici la rentrée du Centre.
-    </p>
   </div>
 </section>
