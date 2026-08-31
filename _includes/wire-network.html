@@ -1,0 +1,31 @@
+{%- comment -%}
+  The home title's wire network. Inline SVG rather than a stack of gradients:
+  a graph needs branches and turns, and the two colours have to follow the
+  theme, which a background-image cannot do. Purely decorative, so it is
+  hidden from assistive tech. Styled in _sass/_decorations.scss.
+
+  Geometry, in viewBox units, which are CSS pixels at full width: the bus
+  runs at y=26 between two risers that turn up at x=3 and x=517, bracketing
+  the title above. Four branches tap the bus downward and end in nodes —
+  everything above the bus frames, everything below it branches. Every
+  segment is orthogonal; every node is 6 units centred on a 2-unit run, so
+  centres land on whole units.
+{%- endcomment -%}
+<svg class="wire-net" viewBox="0 0 520 54" width="520" height="54"
+     aria-hidden="true" focusable="false">
+  <g class="wire-net__run" fill="none" stroke-width="2">
+    <path d="M3 8 V26 H517 V8"/>
+    <path d="M88 26 V42"/>
+    <path d="M168 26 V42 H232"/>
+    <path d="M336 26 V48"/>
+    <path d="M430 26 V42"/>
+  </g>
+  <g class="wire-net__node">
+    <rect x="0"   y="5"  width="6" height="6"/>
+    <rect x="514" y="5"  width="6" height="6"/>
+    <rect x="85"  y="39" width="6" height="6"/>
+    <rect x="229" y="39" width="6" height="6"/>
+    <rect x="333" y="45" width="6" height="6"/>
+    <rect x="427" y="39" width="6" height="6"/>
+  </g>
+</svg>

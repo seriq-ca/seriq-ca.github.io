@@ -9,6 +9,7 @@ description: "SERIQ is an inter-university software engineering research centre 
 <div class="hero hero--home">
   <div class="wrap">
     <h1>Structuring software engineering research in Montréal and Québec</h1>
+    {% include wire-network.html %}
     <p class="lede">
       SERIQ brings together the software engineering research community around
       the software challenges of the digital society.

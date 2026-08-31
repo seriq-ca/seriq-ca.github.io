@@ -9,6 +9,7 @@ description: "SERIQ est un centre interuniversitaire de recherche en génie logi
 <div class="hero hero--home">
   <div class="wrap">
     <h1>Structurer la recherche en génie logiciel à Montréal et au Québec</h1>
+    {% include wire-network.html %}
     <p class="lede">
       SERIQ réunit la communauté de recherche en génie logiciel autour des
       enjeux logiciels de la société numérique.
