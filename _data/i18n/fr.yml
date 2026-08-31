@@ -5,6 +5,7 @@ skip_to_content: Aller au contenu
 brand_sub: Centre interuniversitaire de recherche
 
 nav:
+  label: Menu principal
   home: Accueil
   about: À propos
   research: Recherche
@@ -12,9 +13,6 @@ nav:
   events: Événements
   news: Nouvelles
   contact: Contact
-
-acronym_note: >-
-  SERIQ est un acronyme; il ne correspond pas à une dénomination développée.
 
 footer:
   archive: Archives SEMTL
@@ -34,12 +32,11 @@ institutions:
 
 people:
   lede: >-
-    Les chercheuses et chercheurs du Centre, dans ses quatre établissements
+    Les chercheuses et chercheurs du Centre dans ses quatre établissements
     partenaires.
   list_heading: Membres
   roles:
     director: Directeur
-  join_heading: Se joindre au Centre
 
 months:
   - janvier

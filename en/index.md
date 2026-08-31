@@ -2,6 +2,8 @@
 layout: default
 ref: home
 title: Home
+title_head: "SERIQ · Software engineering research centre in Québec"
+description: "SERIQ is an inter-university software engineering research centre continuing the SEMTL network. Meetings, research axes and members."
 event_date: 2026-10-29
 event_time: 3:00–7:00 p.m.
 event_venue: Université de Montréal
@@ -9,7 +11,7 @@ event_venue: Université de Montréal
 
 <div class="hero">
   <div class="wrap">
-    <h1>Structuring software engineering research in Québec</h1>
+    <h1>Structuring software engineering research in Montréal and Québec</h1>
     <p class="lede">
       SERIQ brings together the software engineering research community around
       the software challenges of the digital society.
@@ -42,12 +44,9 @@ event_venue: Université de Montréal
     <p>
       SERIQ is an inter-university research centre continuing the work of the
       <a href="https://semtl.github.io/">SEMTL</a> (Software Engineering at
-      Montreal) network and its more than ten
-      years of activity, structuring software engineering research in Montréal
-      and across Québec. Its official name is
-      French: <i lang="fr">Centre interuniversitaire de recherche en génie
-      logiciel pour la société numérique</i>. SERIQ is an acronym and is not
-      expanded in English.
+      Montreal) network and its more than ten years of activity. SEMTL structured
+      software engineering research in Montréal. The Centre now extends that work
+      across Québec.
     </p>
   </div>
 </section>

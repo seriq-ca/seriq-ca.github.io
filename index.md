@@ -2,6 +2,8 @@
 layout: default
 ref: home
 title: Accueil
+title_head: "SERIQ · Centre de recherche en génie logiciel au Québec"
+description: "SERIQ est un centre interuniversitaire de recherche en génie logiciel, dans la continuité du réseau SEMTL. Rencontres, axes de recherche et membres."
 event_date: 2026-10-29
 event_time: de 15 h à 19 h
 event_venue: Université de Montréal
@@ -9,7 +11,7 @@ event_venue: Université de Montréal
 
 <div class="hero">
   <div class="wrap">
-    <h1>Structurer la recherche en génie logiciel au Québec</h1>
+    <h1>Structurer la recherche en génie logiciel à Montréal et au Québec</h1>
     <p class="lede">
       SERIQ réunit la communauté de recherche en génie logiciel autour des
       enjeux logiciels de la société numérique.
@@ -41,11 +43,12 @@ event_venue: Université de Montréal
     <h2>À propos</h2>
     <p>
       Le Centre interuniversitaire de recherche en génie logiciel pour la société
-      numérique (SERIQ) est une initiative interuniversitaire qui s'inscrit dans la
-      continuité du réseau <a href="https://semtl.github.io/">SEMTL</a>
+      numérique (SERIQ) s'inscrit dans la continuité du réseau
+      <a href="https://semtl.github.io/">SEMTL</a>
       <i lang="en">(Software Engineering at Montreal)</i>
-      et de ses plus de dix années d'activité. Il vise à structurer la recherche en
-      génie logiciel à Montréal et au Québec.
+      et de ses plus de dix années d'activité. SEMTL a structuré la recherche en
+      génie logiciel à Montréal. Le Centre étend maintenant ce travail à
+      l'ensemble du Québec.
     </p>
   </div>
 </section>

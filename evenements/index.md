@@ -2,6 +2,7 @@
 layout: default
 ref: events
 title: Événements
+description: "Les rencontres SERIQ, ainsi que les écoles, ateliers et séminaires du Centre. Les rencontres SEMTL de 2019 à 2026 demeurent consultables en ligne."
 permalink: /evenements/
 ---
 

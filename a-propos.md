@@ -2,6 +2,7 @@
 layout: default
 ref: about
 title: À propos
+description: "La mission du Centre, ses quatre axes de recherche, ses établissements partenaires, et le parcours des rencontres SEMTL au centre SERIQ."
 permalink: /a-propos/
 ---
 
@@ -26,9 +27,9 @@ permalink: /a-propos/
       au développement des logiciels modernes.
     </p>
     <p>
-      Le Centre relève de ses établissements partenaires&nbsp;: l'Université de
-      Montréal, Polytechnique Montréal, l'Université McGill et l'École de
-      technologie supérieure. D'autres établissements universitaires peuvent se
+      Les établissements partenaires du Centre sont l'Université de Montréal,
+      Polytechnique Montréal, l'Université McGill et l'École de technologie
+      supérieure. D'autres établissements universitaires peuvent se
       joindre au protocole d'entente interuniversitaire.
     </p>
     <p>La mission du Centre s'articule aussi autour des points suivants&nbsp;:</p>

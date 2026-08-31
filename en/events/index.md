@@ -2,6 +2,7 @@
 layout: default
 ref: events
 title: Events
+description: "SERIQ meetings, along with the Centre's schools, workshops and seminars. The SEMTL meetings from 2019 to 2026 remain available online."
 permalink: /en/events/
 ---
 

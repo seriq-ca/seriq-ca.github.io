@@ -2,6 +2,7 @@
 layout: default
 ref: about
 title: About
+description: "The Centre's mission, its four research axes, its partner institutions, and the history from the SEMTL meetings to the SERIQ centre."
 permalink: /en/about/
 ---
 
@@ -24,8 +25,8 @@ permalink: /en/about/
       complementary axes addressing the challenges of modern software development.
     </p>
     <p>
-      The Centre is constituted by its partner institutions: Université de Montréal,
-      Polytechnique Montréal, McGill University and École de technologie supérieure.
+      The Centre's partner institutions are Université de Montréal, Polytechnique
+      Montréal, McGill University and École de technologie supérieure.
       Further universities may join the inter-university agreement.
     </p>
     <p>The Centre's mission also covers the following:</p>
@@ -97,17 +98,16 @@ permalink: /en/about/
     <p>
       SEMTL (Software Engineering at Montreal) has brought together Montréal's
       software engineering research community for more than ten years. The meetings
-      recorded
-      online begin in 2019: seven were held that year, then two in early 2020, before
-      the pandemic interrupted them.
+      recorded online began in 2019: seven were held that year, then two in early
+      2020, before the pandemic interrupted them.
     </p>
     <p>
       Meetings resumed in August 2022, at a rate of roughly one every two months.
-      They are hosted and supported in turn by the six Montréal universities, and are
-      also held alongside conferences such as ICSE, MODELS and SEMLA.
+      They have been hosted and supported in turn by the six Montréal universities,
+      and have also been held alongside conferences such as ICSE, MODELS and SEMLA.
     </p>
     <p>
-      In October 2026, SEMTL became SERIQ. The meeting series continues, with a wider
+      In October 2026, SEMTL becomes SERIQ. The meeting series continues, with a wider
       scope and mission: the centre extends across Québec and organises its research
       around the four axes.
     </p>

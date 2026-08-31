@@ -5,6 +5,7 @@ skip_to_content: Skip to content
 brand_sub: Inter-university research centre
 
 nav:
+  label: Main menu
   home: Home
   about: About
   research: Research
@@ -12,9 +13,6 @@ nav:
   events: Events
   news: News
   contact: Contact
-
-acronym_note: >-
-  SERIQ is an acronym; it does not stand for an expanded English name.
 
 footer:
   archive: SEMTL archive
@@ -34,11 +32,10 @@ institutions:
 
 people:
   lede: >-
-    The Centre's researchers, at its four partner institutions.
+    The Centre's researchers at its four partner institutions.
   list_heading: Members
   roles:
     director: Director
-  join_heading: Joining the Centre
 
 months:
   - January

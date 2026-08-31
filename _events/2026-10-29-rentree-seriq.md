@@ -1,6 +1,8 @@
 ---
 ref: event-2026-10-29
 title: Rentrée SERIQ
+title_head: "Rentrée SERIQ · 29 octobre 2026"
+description: "Première rencontre sous la bannière SERIQ, le 29 octobre 2026 de 15 h à 19 h à l'Université de Montréal. Conférences invitées, table ronde et réseautage."
 permalink: /evenements/2026-10-29-rentree-seriq/
 event_date: 2026-10-29
 event_time: de 15 h à 19 h

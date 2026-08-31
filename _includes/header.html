@@ -7,7 +7,7 @@
       <span class="brand-mark">SERIQ</span>
       <span class="brand-sub">{{ t.brand_sub }}</span>
     </a>
-    <nav class="site-nav" aria-label="{{ t.nav.home }}">
+    <nav class="site-nav" aria-label="{{ t.nav.label }}">
       <a href="{{ home | relative_url }}"
          {% if page.ref == "home" %}aria-current="page"{% endif %}>{{ t.nav.home }}</a>
       {%- assign about = site.pages | where: "ref", "about" | where_exp: "p", "p.lang == page.lang" | first -%}
