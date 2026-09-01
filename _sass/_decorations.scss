@@ -116,8 +116,12 @@ section.band h2::before {
    parks past the end for the rest of the cycle, which is what makes the pulse
    a passing event rather than a loop. */
 .wire-net__pulse {
-  stroke: var(--pulse); stroke-width: 3; stroke-linecap: round;
-  stroke-dasharray: .05 2; stroke-dashoffset: .05;
+  stroke: var(--pulse); stroke-width: 4; stroke-linecap: round;
+  stroke-dasharray: .08 2; stroke-dashoffset: .08;
+  /* A signal reads as brighter than the wire it rides, not merely wider: the
+     glow is the same colour, so it lifts the dash off the run without adding
+     a second one. */
+  filter: drop-shadow(0 0 3px var(--pulse));
 }
 .wire-net__pulse--out {
   animation: pulse-out var(--pulse-period) var(--pulse-out-delay) ease-in-out infinite;
@@ -127,14 +131,14 @@ section.band h2::before {
 }
 
 @keyframes pulse-out {
-  0%   { stroke-dashoffset: .05; }
+  0%   { stroke-dashoffset: .08; }
   30%  { stroke-dashoffset: -1; }
   100% { stroke-dashoffset: -1; }
 }
 @keyframes pulse-in {
   0%   { stroke-dashoffset: -1; }
-  30%  { stroke-dashoffset: .05; }
-  100% { stroke-dashoffset: .05; }
+  30%  { stroke-dashoffset: .08; }
+  100% { stroke-dashoffset: .08; }
 }
 
 @keyframes wire-draw { to { stroke-dashoffset: 0; } }
