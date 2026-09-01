@@ -29,5 +29,6 @@ description: "SERIQ is an inter-university software engineering research centre 
       software engineering research in Montréal. The Centre now extends that work
       across Québec.
     </p>
+    {% include onward.html %}
   </div>
 </section>

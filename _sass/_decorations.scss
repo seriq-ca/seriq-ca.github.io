@@ -341,3 +341,12 @@ section.band h2::before {
   content: ""; display: inline-block; width: 6px; height: 6px;
   margin-right: .6rem; vertical-align: .16em; background: var(--node);
 }
+
+/* A node terminating each onward link, the same 6px box that ends every
+   branch of the home network above it. Baseline-aligned text sits the box
+   slightly high, so it is nudged down onto the line of the type. */
+.onward li::before {
+  content: ""; flex: none;
+  width: var(--node-size); height: var(--node-size);
+  background: var(--node); transform: translateY(.05em);
+}

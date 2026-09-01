@@ -35,6 +35,12 @@ faculties:
   mcgill-eng: Faculty of Engineering
   mcgill-sci: Faculty of Science
 
+home:
+  onward:
+    about: The Centre, its research axes and its partners
+    people: The members of the Centre
+    events: Upcoming and past meetings
+
 people:
   lede: >-
     The Centre's researchers at its four partner institutions.

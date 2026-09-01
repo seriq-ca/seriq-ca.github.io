@@ -357,3 +357,14 @@ section.band img { max-width: 100%; height: auto; }
 @media (prefers-reduced-motion: reduce) {
   .partner-logos a::before, .partner-logos .partner-logo { transition: none; }
 }
+
+/* Onward links: where the home page hands off to the rest of the site. A row
+   on a wide screen, a stack on a narrow one — flex-wrap does both, and the
+   row gap only applies once it has wrapped. Each item is marked with a node,
+   drawn in _decorations.scss. */
+.onward {
+  list-style: none; padding: 0; margin: 1.5rem 0 0; max-width: none;
+  display: flex; flex-wrap: wrap; gap: .6rem 2rem;
+  font-size: var(--t-sm);
+}
+.onward li { margin: 0; display: flex; align-items: baseline; gap: .6rem; }

@@ -35,6 +35,12 @@ faculties:
   mcgill-eng: Faculté de génie
   mcgill-sci: Faculté des sciences
 
+home:
+  onward:
+    about: Le Centre, ses axes de recherche et ses partenaires
+    people: Les membres du Centre
+    events: Les rencontres à venir et passées
+
 people:
   lede: >-
     Les chercheuses et chercheurs du Centre dans ses quatre établissements
