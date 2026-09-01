@@ -30,6 +30,11 @@ institutions:
   mcgill: McGill University
   ets: École de technologie supérieure
 
+faculties:
+  udem-fas:   Faculty of Arts and Science
+  mcgill-eng: Faculty of Engineering
+  mcgill-sci: Faculty of Science
+
 people:
   lede: >-
     The Centre's researchers at its four partner institutions.

@@ -1,0 +1,94 @@
+# The Centre's partner institutions, in the order the mission statement names
+# them. Display names come from `institutions:` in _data/i18n/*.yml, so this
+# file carries only what differs per institution: the logo and the homepage.
+#
+# `height` is the rendered height in CSS pixels, tuned per logo so the four read
+# as the same optical size despite their different proportions — the ÉTS mark is
+# a near-square lockup, the McGill one a long horizontal wordmark. `width` is
+# `height` times the logo's own aspect ratio; both are written to the <img> so
+# the row reserves its space before the images load.
+#
+# `faculties` is a list of keys into `faculties:` in _data/i18n/*.yml, naming
+# the partner unit within the institution. Only UdeM and McGill carry one:
+# they are the two partners with a faculty layer. Polytechnique and the ETS are
+# standalone engineering schools organised into departments, with no faculty to
+# name, so they are captioned by the institution alone rather than by a
+# department invented to fill the space.
+#
+# Provenance. Each file in assets/img/institutions/ is the institution's own
+# official mark, taken from the source below and cropped to its drawing bounds —
+# no recolouring, no redrawing. All four are vector. The graphic standards all require
+# the official asset used unaltered, so replacing one means fetching it again
+# rather than editing what is here. The page renders them monochrome and lifts
+# them to full colour on hover, which is a CSS filter over the unmodified file;
+# see `.partner-logos` in _sass/_components.scss.
+#
+#   udem.svg   Extracted from the base64 `.udem-logo-udem` background image in
+#              the compiled stylesheet at umontreal.ca; the site publishes no
+#              standalone logo file to link.
+#
+#   poly.svg   Converted from `Logo_Alternatif_Polytechnique_Montreal_noir_
+#              bande_4c.eps`, supplied by Polytechnique on request — nothing
+#              vector is published publicly. This is the *logo alternatif*, the
+#              logotype with the vertical colour band, which their standards
+#              prescribe for use alongside other logos, so it is the right
+#              variant for this row rather than the plain wordmark. The `noir`
+#              variant carries the black logotype, and `4c` is the CMYK file:
+#              its colours convert to RGB predictably, where the PMS files carry
+#              Pantone spot separations that only approximate on screen. Same
+#              conversion as ets.svg below.
+#
+#   mcgill.svg `logo-red.svg` from the moriarty theme at mcgill.ca/visual-identity,
+#              cropped to its drawing bounds and run through `npx svgo --multipass`.
+#              This is the all-red lockup — its only fills are #ED1B2F and white —
+#              not the red-shield-plus-black-wordmark variant. Both are official;
+#              this is the one McGill exposes publicly, the other being behind a
+#              login at mcgill.sharepoint.com. Do not recolour this file to
+#              imitate the black wordmark: that manufactures a lockup McGill does
+#              not publish. The difference shows only on hover, the row being
+#              greyscale otherwise.
+#
+#   ets.svg    Converted from `logo-ets-sans-devise-typogrise-d-fr.eps` in the
+#              logo library at etsmtl.ca/a-propos/logos-et-identite-visuelle,
+#              which publishes EPS alongside every PNG. The "sans devise" variant
+#              carries no motto, so it serves both languages. The EPS is 1.5 MB
+#              only because it embeds a TIFF preview. Converted with `inkscape
+#              --export-plain-svg --export-text-to-path --export-area-drawing`,
+#              then `npx svgo --multipass`.
+#
+# Each conversion was cropped to the same aspect the PNG it replaced had, so the
+# width/height pairs below did not change.
+
+- key: udem
+  logo: udem.svg
+  faculties: [udem-fas]
+  height: 35
+  width: 92
+  url:
+    fr: https://www.umontreal.ca/
+    en: https://www.umontreal.ca/en/
+
+- key: poly
+  logo: poly.svg
+  height: 29
+  width: 106
+  url:
+    fr: https://www.polymtl.ca/
+    en: https://www.polymtl.ca/en/
+
+- key: mcgill
+  logo: mcgill.svg
+  faculties: [mcgill-eng, mcgill-sci]
+  height: 31
+  width: 132
+  url:
+    fr: https://www.mcgill.ca/
+    en: https://www.mcgill.ca/
+
+- key: ets
+  logo: ets.svg
+  height: 46
+  width: 87
+  url:
+    fr: https://www.etsmtl.ca/
+    en: https://www.etsmtl.ca/en/

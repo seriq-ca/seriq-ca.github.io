@@ -30,6 +30,11 @@ institutions:
   mcgill: Université McGill
   ets: École de technologie supérieure
 
+faculties:
+  udem-fas:   Faculté des arts et des sciences
+  mcgill-eng: Faculté de génie
+  mcgill-sci: Faculté des sciences
+
 people:
   lede: >-
     Les chercheuses et chercheurs du Centre dans ses quatre établissements
