@@ -80,9 +80,11 @@ section.band > .wrap > :is(h2, h3, p, ul, ol, dl, blockquote):not([class]) {
   max-width: var(--prose);
   margin-inline: auto;
 }
-section.band > .wrap > p:not([class]) {
+/* Lists too, not just paragraphs: a list sits in the same column as the
+   paragraph that introduces it, and a ragged one under a justified one reads
+   as two different settings. Headings stay out — they are display type. */
+section.band > .wrap > :is(p, ul, ol, dl, blockquote):not([class]) {
   text-align: justify;
-  hyphens: auto;
 }
 
 /* Next meeting — the one time-critical item, so it gets the inverted band */
