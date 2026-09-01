@@ -26,9 +26,11 @@
   gap: .25rem 1.15rem; margin: 1.1rem 0 0;
   font-size: var(--t-base);
 }
+/* Labels flush against the values, not ragged: the column is sized to the
+   longest of them, so left-aligning leaves the shorter ones adrift. */
 .event-details dt {
   font-family: var(--f-mono); font-size: var(--t-xs);
-  text-transform: uppercase;
+  text-transform: uppercase; text-align: right;
   color: var(--ink-2); letter-spacing: .02em; padding-top: .4em;
 }
 .event-details dd { margin: 0; font-variant-numeric: tabular-nums; }

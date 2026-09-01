@@ -4,28 +4,73 @@
   theme, which a background-image cannot do. Purely decorative, so it is
   hidden from assistive tech. Styled in _sass/_decorations.scss.
 
-  Geometry, in viewBox units, which are CSS pixels at full width: the bus
-  runs at y=26 between two risers that turn up at x=3 and x=517, bracketing
-  the title above. Four branches tap the bus downward and end in nodes —
-  everything above the bus frames, everything below it branches. Every
-  segment is orthogonal; every node is 6 units centred on a 2-unit run, so
-  centres land on whole units.
+  Geometry, in viewBox units, which are CSS pixels at full width. The bus runs
+  at y=118 between two risers that turn up at x=6 and x=1018 and return inward
+  along the top, bracketing the title between them; the network is pulled up
+  over the title by a negative margin, so the risers run alongside it rather
+  than under it.
+
+  Under the centre of the bus hangs the hub — one oversized node, SERIQ — and
+  everything else leaves it. A secondary bus runs out from each side of the hub
+  at y=136; taps drop off it to y=152, and two of those turn and run again
+  before ending, so the fan branches three deep. The levels are 16 to 18 units
+  apart: any closer and they read as one thick band rather than as a network
+  once the SVG is scaled down on a narrow screen.
+
+  Every path is written outward from the hub — the frame in two halves meeting
+  at the stem, every branch starting where it taps — because the draw-in dashes
+  each one from its own start point. Reverse a d and that run grows the wrong
+  way. Every segment is orthogonal; every node is 6 units centred on a 2-unit
+  run, so centres land on whole units.
+
+  The third level and the taps that feed it carry .wire-net__detail: below the
+  wide breakpoint the SVG has scaled down far enough that they silt up into one
+  smudge, so they are dropped and the frame, hub and secondary buses carry the
+  figure alone.
+
+  --i is the element's place in that outward order and --dur is how long its
+  run takes to draw; the delays come off them in _decorations.scss.
+  pathLength="1" normalises every run to a length of 1, so the animation can
+  dash them without measuring a path.
 {%- endcomment -%}
-<svg class="wire-net" viewBox="0 0 520 54" width="520" height="54"
+<svg class="wire-net" viewBox="0 0 1024 172" width="1024" height="172"
      aria-hidden="true" focusable="false">
-  <g class="wire-net__run" fill="none" stroke-width="2">
-    <path d="M3 8 V26 H517 V8"/>
-    <path d="M88 26 V42"/>
-    <path d="M168 26 V42 H232"/>
-    <path d="M336 26 V48"/>
-    <path d="M430 26 V42"/>
+  <g id="wire-net-runs" class="wire-net__run" fill="none">
+    <path style="--i:0;--dur:.3s"  pathLength="1" d="M512 127 V118"/>
+    <path style="--i:1;--dur:1.3s" pathLength="1" d="M512 118 H6 V12 H96"/>
+    <path style="--i:1;--dur:1.3s" pathLength="1" d="M512 118 H1018 V12 H928"/>
+    <path style="--i:1;--dur:1s"   pathLength="1" d="M503 136 H140 V152"/>
+    <path style="--i:1;--dur:1s"   pathLength="1" d="M521 136 H884 V152"/>
+    <path style="--i:1;--dur:.35s" pathLength="1" d="M512 145 V162"/>
+    <path style="--i:3;--dur:.3s"  class="wire-net__detail" pathLength="1" d="M440 136 V158"/>
+    <path style="--i:3;--dur:.3s"  class="wire-net__detail" pathLength="1" d="M584 136 V158"/>
+    <path style="--i:6;--dur:.45s" class="wire-net__detail" pathLength="1" d="M320 136 V152 H392"/>
+    <path style="--i:6;--dur:.45s" class="wire-net__detail" pathLength="1" d="M704 136 V152 H632"/>
+    <path style="--i:8;--dur:.3s"  class="wire-net__detail" pathLength="1" d="M224 136 V152"/>
+    <path style="--i:8;--dur:.3s"  class="wire-net__detail" pathLength="1" d="M800 136 V152"/>
   </g>
+  {%- comment -%}
+    The signals. Each is the whole run group cloned, so a pulse rides every
+    wire at once and the geometry stays defined in one place — and because
+    every run is written hub-outward, one clone dashed forward travels away
+    from the hub and one dashed backward travels home to it.
+  {%- endcomment -%}
+  <use class="wire-net__pulse wire-net__pulse--out" href="#wire-net-runs"/>
+  <use class="wire-net__pulse wire-net__pulse--in"  href="#wire-net-runs"/>
   <g class="wire-net__node">
-    <rect x="0"   y="5"  width="6" height="6"/>
-    <rect x="514" y="5"  width="6" height="6"/>
-    <rect x="85"  y="39" width="6" height="6"/>
-    <rect x="229" y="39" width="6" height="6"/>
-    <rect x="333" y="45" width="6" height="6"/>
-    <rect x="427" y="39" width="6" height="6"/>
+    <rect style="--i:0"  x="503" y="127" width="18" height="18" class="wire-net__hub"/>
+    <rect style="--i:4"  x="509" y="159" width="6"  height="6"/>
+    <rect style="--i:6"  x="437" y="155" width="6"  height="6" class="wire-net__detail"/>
+    <rect style="--i:6"  x="581" y="155" width="6"  height="6" class="wire-net__detail"/>
+    <rect style="--i:6"  x="317" y="133" width="6"  height="6" class="wire-net__detail"/>
+    <rect style="--i:6"  x="701" y="133" width="6"  height="6" class="wire-net__detail"/>
+    <rect style="--i:11" x="389" y="149" width="6"  height="6" class="wire-net__detail"/>
+    <rect style="--i:11" x="629" y="149" width="6"  height="6" class="wire-net__detail"/>
+    <rect style="--i:11" x="221" y="149" width="6"  height="6" class="wire-net__detail"/>
+    <rect style="--i:11" x="797" y="149" width="6"  height="6" class="wire-net__detail"/>
+    <rect style="--i:11" x="137" y="149" width="6"  height="6"/>
+    <rect style="--i:11" x="881" y="149" width="6"  height="6"/>
+    <rect style="--i:13" x="93"  y="9"   width="6"  height="6"/>
+    <rect style="--i:13" x="925" y="9"   width="6"  height="6"/>
   </g>
 </svg>

@@ -14,8 +14,8 @@
   --drop: 6px;  /* how far a run turns at right angles before it ends */
 }
 
-/* The header braid: four strands, one per partner institution. Woven in
-   assets/img/braid.svg, not drawn here. */
+/* The header braid: two strands, wire blue and node amber, interlaced so
+   neither is always on top. Woven in assets/img/braid.svg, not drawn here. */
 .site-header::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: 0;
   height: var(--braid-size);
@@ -31,32 +31,108 @@ section.band h2::before {
 
 /* The home title's wire network. Markup in _includes/wire-network.html.
 
-   Not a divider: a bus with four branches tapped off it, ending in nodes,
-   and a riser at each end that turns up past the title's edges — so the
-   title sits inside an open bracket rather than on top of a line.
-   Everything above the bus frames, everything below it branches. Right
-   angles only, the way a trace is routed; no curves, no tapers.
+   Not a divider: a bus with four branches tapped off it, ending in nodes, and
+   a riser at each end that turns up past the title and returns inward along
+   the top — so the title sits inside a bracket rather than on top of a line.
+   Everything above the bus frames, everything below it branches. Right angles
+   only, the way a trace is routed; no curves, no tapers.
 
-       ■                                        ■
-       │                                        │
-       └──┬─────┬──────────┬──────────┬─────────┘
-          │     │          │          │
-          ■     └────■     │          ■
-                          ■
+       ──■                                    ■──
+         │                                    │
+         └──┬─────┬──────────┬──────────┬─────┘
+            │     │          │          │
+            ■     └────■     │          ■
+                            ■
 
    The SVG carries the geometry; this carries the colour, so both themes
    follow the same tokens as every other wire on the site. */
 .wire-net {
-  display: block; margin: 1.15rem auto 0;
-  width: 520px; max-width: 100%; height: auto;
+  display: block;
+  /* Wider than the text: the frame sits out in the wrap's padding, so the
+     risers clear the title's longest line. */
+  width: calc(100% + 3rem); margin-inline: -1.5rem;
+  max-width: none; height: auto;
   overflow: visible;
+  /* Pull the frame up over the title. The SVG scales with its container, so
+     the lift has to scale too — a percentage margin resolves against the
+     container's width, which is the one length that tracks that scale.
+     9% of the width is the 92 units between the riser tops and the bus. */
+  margin-top: calc(1.15rem - 9%);
 }
-.wire-net__run  { stroke: var(--wire); }
-.wire-net__node { fill: var(--node); }
 
-/* The centred hero centres its network; a hero with a label in the margin
-   would want it left, but the home hero never carries one. */
-.hero--home .wrap:not(:has(.kicker)) .wire-net { margin-inline: auto; }
+/* Narrow: the SVG scales with its container but the title does not, so the
+   frame ends up small beside a title that has grown to four lines. Lift it
+   further, until the risers again run alongside the last line rather than
+   enclosing empty space, and drop the fan's third level — at this scale its
+   runs are a few pixels apart and read as one smudge. */
+@media (max-width: 47.99rem) {
+  .wire-net { margin-top: calc(1.15rem - 16%); }
+  .wire-net__detail { display: none; }
+}
+/* Child combinators throughout, so none of this reaches the cloned copy of
+   the group inside a <use>: document rules do match into a use's shadow tree,
+   but the clone's parent there is the <use>, not .wire-net. That is what lets
+   the pulses inherit their own stroke and dash from the clone. */
+.wire-net > .wire-net__run { stroke: var(--wire); stroke-width: 2; }
+.wire-net > .wire-net__node { fill: var(--node); }
+
+/* Drawing in. Everything grows out of the hub: the node lands first, the stem
+   pushes up to the bus, and from there the frame and the two secondary buses
+   run outward together, each branch starting as the bus it taps reaches it. A
+   run strokes itself on from its own start point, which is why every d in the
+   markup is written hub-outward. --i is an element's place in that order and
+   --dur how long its run takes; symmetric pairs share both, so the two sides
+   grow together. Plays once, on load. Restored below for anyone who has asked
+   for less motion — the global kill switch stops the animation but would
+   otherwise leave these elements parked at their hidden starting state. */
+.wire-net > .wire-net__run > path {
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  animation: wire-draw var(--dur) calc(.2s + var(--i) * .11s) ease-out both;
+}
+.wire-net__node rect {
+  opacity: 0;
+  animation: node-on .3s calc(.15s + var(--i) * .11s) ease-out both;
+}
+
+/* The signals. A short dash rides out along every wire from the hub, and a
+   few seconds later another rides back in, then the network is still again.
+   Both are the run group cloned by <use>, which inherits stroke and dash from
+   the clone rather than from the group's own rules — so the same geometry
+   carries the runs and the pulses without either being written twice.
+
+   pathLength="1" normalises every run, so the dash is a fixed fraction of
+   whatever it rides and every pulse sets out and arrives together. The gap has
+   to be longer than the whole run — a gap that completes the period to exactly
+   1 makes the pattern repeat once per path, and the dash is then always
+   somewhere on the wire and can never travel off the end. With a long gap it
+   parks past the end for the rest of the cycle, which is what makes the pulse
+   a passing event rather than a loop. */
+.wire-net__pulse {
+  stroke: var(--pulse); stroke-width: 3; stroke-linecap: round;
+  stroke-dasharray: .05 2; stroke-dashoffset: .05;
+}
+.wire-net__pulse--out { animation: pulse-out 6s 2.4s ease-in-out infinite; }
+.wire-net__pulse--in  { animation: pulse-in  6s 5.1s ease-in-out infinite; }
+
+@keyframes pulse-out {
+  0%   { stroke-dashoffset: .05; }
+  30%  { stroke-dashoffset: -1; }
+  100% { stroke-dashoffset: -1; }
+}
+@keyframes pulse-in {
+  0%   { stroke-dashoffset: -1; }
+  30%  { stroke-dashoffset: .05; }
+  100% { stroke-dashoffset: .05; }
+}
+
+@keyframes wire-draw { to { stroke-dashoffset: 0; } }
+@keyframes node-on   { from { opacity: 0; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .wire-net > .wire-net__run > path { stroke-dashoffset: 0; }
+  .wire-net__node rect { opacity: 1; }
+  .wire-net__pulse { display: none; }
+}
 
 /* Corner brackets on the meeting panel: a run along each arm, ending in a
    node centred on it. The frame is inset so nothing clips. */
