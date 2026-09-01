@@ -12,6 +12,14 @@
   --run:  2px;  /* line weight of a wire */
   --node-size: 6px;  /* the box marking a junction or a terminal */
   --drop: 6px;  /* how far a run turns at right angles before it ends */
+
+  /* The rhythm of a signal on a wire, kept in one place so every pulse on the
+     site runs off the same clock: one leg of travel takes 30% of the period,
+     the outward leg sets out at --pulse-out-delay and the returning one 2.7s
+     behind it, and the wire rests for what is left of the cycle. */
+  --pulse-period: 6s;
+  --pulse-out-delay: 2.4s;
+  --pulse-in-delay:  5.1s;
 }
 
 /* The header braid: two strands, wire blue and node amber, interlaced so
@@ -111,8 +119,12 @@ section.band h2::before {
   stroke: var(--pulse); stroke-width: 3; stroke-linecap: round;
   stroke-dasharray: .05 2; stroke-dashoffset: .05;
 }
-.wire-net__pulse--out { animation: pulse-out 6s 2.4s ease-in-out infinite; }
-.wire-net__pulse--in  { animation: pulse-in  6s 5.1s ease-in-out infinite; }
+.wire-net__pulse--out {
+  animation: pulse-out var(--pulse-period) var(--pulse-out-delay) ease-in-out infinite;
+}
+.wire-net__pulse--in {
+  animation: pulse-in var(--pulse-period) var(--pulse-in-delay) ease-in-out infinite;
+}
 
 @keyframes pulse-out {
   0%   { stroke-dashoffset: .05; }
@@ -131,7 +143,7 @@ section.band h2::before {
 @media (prefers-reduced-motion: reduce) {
   .wire-net > .wire-net__run > path { stroke-dashoffset: 0; }
   .wire-net__node rect { opacity: 1; }
-  .wire-net__pulse { display: none; }
+  .wire-net__pulse, .axes::after { display: none; }
 }
 
 /* Corner brackets on the meeting panel: a run along each arm, ending in a
@@ -192,19 +204,77 @@ section.band h2::before {
     right calc(var(--inset) + 1px - var(--box) / 2) bottom calc(var(--inset) + var(--arm) - var(--box) / 2);
 }
 
-/* One run down the axes gutter, with a node on each row. The node is the
-   first background layer, so it is painted in front of the run. */
+/* One run down the axes gutter, with a node on each row and a signal riding
+   it. Both the run and the signal are drawn once, on the list, and both stop
+   dead on the terminal nodes: the rows are laid out as four equal ones here,
+   so the closing row's height is a quarter of the list and the distance from
+   the list's bottom to the last node can be written down. Sized to content it
+   could not be — the run would have to be reassembled row by row, and the
+   signal, which has to cross all four in one motion, could not be written at
+   all.
+
+   Every x comes off --wire-x, so the run, the signal and the nodes are centred
+   on each other by construction. The nodes sit level with the middle of their
+   row's first line — the label in the gutter and the heading beside it share
+   that line. Rows come after the run in tree order, so a node paints in front
+   of it. */
 @media (min-width: 48rem) {
-  .axes > li::after {
-    content: ""; position: absolute; top: 0; bottom: 0;
-    left: calc(var(--gutter) + var(--gutter-gap) / 2 - 3px); width: 6px;
-    background:
-      linear-gradient(var(--node), var(--node)) 0 20px / 6px 6px no-repeat,
-      linear-gradient(var(--wire), var(--wire)) 2px 0 / 2px 100% no-repeat;
-    opacity: .55;
+  .axes {
+    position: relative;
+    display: grid; grid-auto-rows: 1fr;
+    --wire-x: calc(var(--gutter) + var(--gutter-gap) / 2);
+    /* 1.1rem of row padding, .4rem above the label, half a label line. */
+    --node-y: 2.125rem;
+    /* The signal rides wider than the run it travels, as it does on the home
+       network, so it reads as something passing over the wire. */
+    --pulse-w: 4px;
+    --pulse-len: 3rem;
   }
-  .axes > li:first-child::after { background-position: 0 20px, 2px 20px; }
-  .axes > li:last-child::after { background-size: 6px 6px, 2px 23px; }
+  /* Node to node: down from the first row's node, and up from the last row's,
+     which sits --node-y into a row a quarter of the list tall. */
+  .axes::before, .axes::after {
+    content: ""; position: absolute;
+    top: var(--node-y); bottom: calc(25% - var(--node-y));
+  }
+  .axes::before {
+    left: calc(var(--wire-x) - var(--run) / 2); width: var(--run);
+    background: var(--wire); opacity: .55;
+  }
+  .axes > li::after {
+    content: ""; position: absolute;
+    left: calc(var(--wire-x) - var(--node-size) / 2);
+    top:  calc(var(--node-y) - var(--node-size) / 2);
+    width: var(--node-size); height: var(--node-size);
+    /* Opaque, so the run stops behind it rather than showing through and
+       striping it — the run is the muted one here, the node is the mark. */
+    background: var(--node);
+  }
+
+  /* The signal, the same one the home network carries and on the same clock: a
+     soft dash of --pulse rides down the run and, a beat later, back up it. It
+     is a gradient rather than a dash on a stroke because this run is a column,
+     not a path — sized to a fixed length, parked clear of the run at either
+     end, and moved by background-position, which resolves 100% as the far node
+     however tall the list turns out to be. Its ends are transparent, so it
+     rises out of the node it sets off from and sinks into the one it reaches
+     rather than arriving whole. */
+  .axes::after {
+    left: calc(var(--wire-x) - var(--pulse-w) / 2); width: var(--pulse-w);
+    background: linear-gradient(transparent, var(--pulse), transparent)
+                no-repeat 0 calc(var(--pulse-len) * -1) / 100% var(--pulse-len);
+    animation: axis-pulse calc(var(--pulse-period) * 2) var(--pulse-out-delay)
+               ease-in-out infinite;
+  }
+}
+
+/* Twice the period, so the run rests longer than the network's does — this one
+   sits beside prose that is being read. The stops are the shared rhythm inside
+   that cycle: 1.8s down, the return setting out 2.7s after the first leg, 1.8s
+   back, then still. */
+@keyframes axis-pulse {
+  0%           { background-position: 0 calc(var(--pulse-len) * -1); }
+  15%,   22.5% { background-position: 0 calc(100% + var(--pulse-len)); }
+  37.5%, 100%  { background-position: 0 calc(var(--pulse-len) * -1); }
 }
 
 /* A bare node, marking each meeting in a listing. */
