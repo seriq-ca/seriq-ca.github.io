@@ -4,6 +4,7 @@ description: >-
   pour la société numérique
 url: "https://seriq.ca"
 baseurl: ""
+repository_url: "https://github.com/seriq-ca/seriq-ca.github.io"
 
 # Bilingual: French is the default and lives at /, English at /en/.
 # Language is assigned by path — never hand-write `lang:` in front matter.
