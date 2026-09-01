@@ -25,10 +25,29 @@ permalink: /en/about/
       complementary axes addressing the challenges of modern software development.
     </p>
     <p>
-      The Centre's partner institutions are Université de Montréal, Polytechnique
-      Montréal, McGill University and École de technologie supérieure.
-      Further universities may join the inter-university agreement.
+      The Centre has four partner institutions. Further universities may join the
+      inter-university agreement.
     </p>
+    <ul class="partner-logos">
+      {%- for inst in site.data.institutions %}
+      <li>
+        <a href="{{ inst.url[page.lang] }}">
+          <img class="partner-logo" src="{{ '/assets/img/institutions/' | append: inst.logo | relative_url }}"
+               alt="{{ site.data.i18n[page.lang].institutions[inst.key] }}"
+               width="{{ inst.width }}" height="{{ inst.height }}"
+               style="--logo-h: {{ inst.height }}px"
+               loading="lazy" decoding="async">
+        </a>
+        {%- if inst.faculties %}
+        <p class="partner-faculty">
+          {%- for f in inst.faculties %}
+          <span>{{ site.data.i18n[page.lang].faculties[f] }}</span>
+          {%- endfor %}
+        </p>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
     <p>The Centre's mission also covers the following:</p>
     <ul>
       <li>

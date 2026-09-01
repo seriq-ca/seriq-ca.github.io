@@ -27,11 +27,29 @@ permalink: /a-propos/
       au développement des logiciels modernes.
     </p>
     <p>
-      Les établissements partenaires du Centre sont l'Université de Montréal,
-      Polytechnique Montréal, l'Université McGill et l'École de technologie
-      supérieure. D'autres établissements universitaires peuvent se
-      joindre au protocole d'entente interuniversitaire.
+      Le Centre compte quatre établissements partenaires. D'autres établissements
+      universitaires peuvent se joindre au protocole d'entente interuniversitaire.
     </p>
+    <ul class="partner-logos">
+      {%- for inst in site.data.institutions %}
+      <li>
+        <a href="{{ inst.url[page.lang] }}">
+          <img class="partner-logo" src="{{ '/assets/img/institutions/' | append: inst.logo | relative_url }}"
+               alt="{{ site.data.i18n[page.lang].institutions[inst.key] }}"
+               width="{{ inst.width }}" height="{{ inst.height }}"
+               style="--logo-h: {{ inst.height }}px"
+               loading="lazy" decoding="async">
+        </a>
+        {%- if inst.faculties %}
+        <p class="partner-faculty">
+          {%- for f in inst.faculties %}
+          <span>{{ site.data.i18n[page.lang].faculties[f] }}</span>
+          {%- endfor %}
+        </p>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
     <p>La mission du Centre s'articule aussi autour des points suivants&nbsp;:</p>
     <ul>
       <li>

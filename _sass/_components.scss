@@ -230,3 +230,85 @@ section.band img { max-width: 100%; height: auto; }
   letter-spacing: .02em;
 }
 @media (min-width: 44rem) { .member-list { grid-template-columns: 1fr 1fr; gap: .75rem; } }
+
+/* Partner logos. Four official marks in four different palettes and two
+   different proportions; greyscale is what makes them sit together as a row
+   rather than four competing signs. Hover restores the real colours, which is
+   also the only state where the institution's own branding is on show — the
+   filter is a display treatment over an unmodified file, never a recolour of
+   the mark itself.
+
+   Each mark carries the name of the partner faculty beneath it, where there is
+   one — see the `faculties` note in _data/institutions.yml. Those captions are
+   wider than the marks they sit under, so the four cannot share a line any
+   more; the set reads as a 2x2 block instead. */
+.partner-logos {
+  /* The band's prose column is `:not([class])`, so a classed component like
+     this one is expected to place itself. Repeat the prose measure rather than
+     break out of it: the block sits directly under the sentence that counts the
+     four institutions and should read as part of it. Each mark and its caption
+     are centred in their half of the measure, and the block is centred in the
+     prose — the marks differ too much in width to line up on a common left
+     edge without one of them looking adrift. */
+  list-style: none; padding-left: 0;
+  max-width: var(--prose); margin-inline: auto;
+  margin-top: 1.5rem; margin-bottom: 1.5rem;
+  display: grid; grid-template-columns: 1fr; gap: 1.5rem 1rem;
+}
+.partner-logos li {
+  margin: 0;
+  display: flex; flex-direction: column; align-items: center;
+}
+.partner-logos a {
+  display: flex; align-items: center;
+  /* One box height for all four, set by the tallest mark, so the logos centre
+     against a common line and every caption starts at the same height
+     regardless of how deep its logo is. */
+  min-height: 46px;
+  /* Shrink to the mark: the link would otherwise run the full column and the
+     dark-mode hover ground would show as a slab reaching well past the logo.
+     Being fit-content is also what lets the flex centring above place it. */
+  width: fit-content;
+  position: relative; isolation: isolate;
+}
+/* The hover ground, inset outward so it reads as a pad around the mark without
+   displacing it. Isolated so the negative z-index stays inside the link and
+   does not fall behind the section's own background. */
+.partner-logos a::before {
+  content: ''; position: absolute; inset: -.5rem; z-index: -1;
+  border-radius: var(--r-soft);
+  background: transparent; transition: background .18s ease;
+}
+.partner-logos .partner-logo {
+  display: block; width: auto; height: var(--logo-h);
+  filter: grayscale(1); opacity: .68;
+  transition: filter .18s ease, opacity .18s ease;
+}
+.partner-logos a:hover .partner-logo,
+.partner-logos a:focus-visible .partner-logo { filter: none; opacity: 1; }
+.partner-faculty {
+  /* Same label treatment as .member-list .meta — mono, quiet, one step down.
+     Centred on the mark it names. */
+  margin: .85rem 0 0; text-align: center;
+  font-family: var(--f-mono); font-size: var(--t-xs);
+  color: var(--ink-2); letter-spacing: .02em;
+}
+/* Stacked: McGill contributes two faculties under one mark. Balanced because
+   the longest name is wider than its column and breaks mid-phrase otherwise. */
+.partner-faculty span { display: block; text-wrap: balance; }
+
+@media (min-width: 34rem) { .partner-logos { grid-template-columns: 1fr 1fr; } }
+
+@media (prefers-color-scheme: dark) {
+  /* Every one of these marks is dark ink on transparent, so greyscale alone
+     would leave them invisible; inverting keeps the silhouette. Full colour
+     then needs a light ground under it, faded in on the same hover so the
+     logos never shift position. */
+  .partner-logos .partner-logo { filter: grayscale(1) invert(1); opacity: .78; }
+  .partner-logos a:hover::before,
+  .partner-logos a:focus-visible::before { background: #fff; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-logos a::before, .partner-logos .partner-logo { transition: none; }
+}
