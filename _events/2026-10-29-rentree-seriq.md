@@ -72,6 +72,17 @@ summary: >-
 
 <section class="band band--paper">
   <div class="wrap">
+    <h2>Affiches étudiantes</h2>
+    <p>
+      Les étudiantes et étudiants qui souhaitent présenter une affiche pendant
+      la période de réseautage peuvent soumettre leur proposition avec le
+      <a href="https://forms.gle/jUGuScfx11nuFTti7">formulaire de soumission</a>.
+    </p>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
     <h2>Inscription</h2>
     <p>Les modalités d'inscription seront publiées sur cette page.</p>
   </div>

@@ -69,6 +69,17 @@ summary: >-
 
 <section class="band band--paper">
   <div class="wrap">
+    <h2>Student posters</h2>
+    <p>
+      Students who would like to present a poster during the networking
+      reception can submit a proposal with the
+      <a href="https://forms.gle/jUGuScfx11nuFTti7">submission form</a>.
+    </p>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
     <h2>Registration</h2>
     <p>Registration details will be published on this page.</p>
   </div>
