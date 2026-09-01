@@ -107,6 +107,55 @@ permalink: /en/about/
         </p>
       </li>
     </ol>
+
+    <h2>Cross-cutting axes</h2>
+    <p>
+      Four concerns run across the four axes rather than belonging to any one of
+      them.
+    </p>
+    <ul class="cross-axes">
+      <li>
+        <h3>AI</h3>
+        <ul>
+          <li>AI for software engineering</li>
+          <li>Software engineering for AI</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Application domains</h3>
+        <ul>
+          <li>Science</li>
+          <li>Finance</li>
+          <li>Transport</li>
+          <li>Infrastructure</li>
+          <li>Civil society</li>
+          <li>Culture</li>
+          <li>Industry</li>
+          <li>Health</li>
+          <li>Aerospace</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Concerns and qualities</h3>
+        <ul>
+          <li>Security</li>
+          <li>Reliability</li>
+          <li>Adaptability</li>
+          <li>Performance</li>
+          <li>Sovereignty</li>
+          <li>Transparency</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Knowledge transfer</h3>
+        <ul>
+          <li>Scientific audiences</li>
+          <li>Industrial audiences</li>
+          <li>Governments</li>
+          <li>General public</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </section>
 

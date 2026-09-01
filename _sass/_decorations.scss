@@ -143,7 +143,7 @@ section.band h2::before {
 @media (prefers-reduced-motion: reduce) {
   .wire-net > .wire-net__run > path { stroke-dashoffset: 0; }
   .wire-net__node rect { opacity: 1; }
-  .wire-net__pulse, .axes::after { display: none; }
+  .wire-net__pulse, .axes::after, .cross-axes::after { display: none; }
 }
 
 /* Corner brackets on the meeting panel: a run along each arm, ending in a
@@ -275,6 +275,61 @@ section.band h2::before {
   0%           { background-position: 0 calc(var(--pulse-len) * -1); }
   15%,   22.5% { background-position: 0 calc(100% + var(--pulse-len)); }
   37.5%, 100%  { background-position: 0 calc(var(--pulse-len) * -1); }
+}
+
+/* The same run again, turned on its side and laid across the top of the
+   cross-cutting columns — one line above four headings, a node standing over
+   each, and the same signal crossing it. Horizontal, so it does the work the
+   column rules would otherwise do.
+
+       ■────────■────────■────────■
+
+   Node to node as before: the run stops on the outer two rather than carrying
+   on to the wrap's edges. Four equal columns with three gaps between them, so
+   a column is (100% - 3 gaps) / 4 wide and the first node's centre sits half
+   of that in from the left — the same distance the last one sits in from the
+   right, which is why one length serves both ends. */
+@media (min-width: 48rem) {
+  .cross-axes {
+    position: relative;
+    --node-x: calc((100% - 3 * var(--cross-gap)) / 8);
+    /* Half of the column's 1.6rem of top padding: the run sits midway between
+       the section's prose and the headings it marks. */
+    --node-y: .8rem;
+    --pulse-h: 4px;
+    --pulse-len: 3rem;
+  }
+  .cross-axes::before, .cross-axes::after {
+    content: ""; position: absolute;
+    left: var(--node-x); right: var(--node-x);
+  }
+  .cross-axes::before {
+    top: calc(var(--node-y) - var(--run) / 2); height: var(--run);
+    background: var(--wire); opacity: .55;
+  }
+  /* Columns come after the run in tree order, so a node paints in front of
+     it, opaque, the way the rows' nodes do on the vertical run. */
+  .cross-axes > li::before {
+    content: ""; position: absolute;
+    left: calc(50% - var(--node-size) / 2);
+    top:  calc(var(--node-y) - var(--node-size) / 2);
+    width: var(--node-size); height: var(--node-size);
+    background: var(--node);
+  }
+  .cross-axes::after {
+    top: calc(var(--node-y) - var(--pulse-h) / 2); height: var(--pulse-h);
+    background: linear-gradient(90deg, transparent, var(--pulse), transparent)
+                no-repeat calc(var(--pulse-len) * -1) 0 / var(--pulse-len) 100%;
+    animation: cross-pulse calc(var(--pulse-period) * 2) var(--pulse-out-delay)
+               ease-in-out infinite;
+  }
+}
+
+/* The vertical run's clock and stops, read left to right. */
+@keyframes cross-pulse {
+  0%           { background-position: calc(var(--pulse-len) * -1) 0; }
+  15%,   22.5% { background-position: calc(100% + var(--pulse-len)) 0; }
+  37.5%, 100%  { background-position: calc(var(--pulse-len) * -1) 0; }
 }
 
 /* A bare node, marking each meeting in a listing. */

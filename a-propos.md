@@ -110,6 +110,55 @@ permalink: /a-propos/
         </p>
       </li>
     </ol>
+
+    <h2>Axes transversaux</h2>
+    <p>
+      Quatre préoccupations traversent les quatre axes plutôt que d'appartenir à
+      l'un d'eux.
+    </p>
+    <ul class="cross-axes">
+      <li>
+        <h3>IA</h3>
+        <ul>
+          <li>IA pour le génie logiciel</li>
+          <li>Génie logiciel pour l'IA</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Domaines d'application</h3>
+        <ul>
+          <li>Science</li>
+          <li>Finance</li>
+          <li>Transport</li>
+          <li>Infrastructure</li>
+          <li>Société civile</li>
+          <li>Culture</li>
+          <li>Industrie</li>
+          <li>Santé</li>
+          <li>Aérospatiale</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Préoccupations et qualités</h3>
+        <ul>
+          <li>Sécurité</li>
+          <li>Fiabilité</li>
+          <li>Adaptabilité</li>
+          <li>Performance</li>
+          <li>Souveraineté</li>
+          <li>Transparence</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Transfert de connaissances</h3>
+        <ul>
+          <li>Milieux scientifiques</li>
+          <li>Milieux industriels</li>
+          <li>Gouvernements</li>
+          <li>Grand public</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </section>
 

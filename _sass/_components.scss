@@ -129,6 +129,49 @@
   .axes p { grid-column: 3; grid-row: 1; margin: 0; max-width: none; }
 }
 
+/* Cross-cutting axes — the .axes skeleton turned on its side. Not numbered:
+   these run across the four axes rather than being a fifth and sixth one, so
+   the only order is the reading order and there is no gutter label to carry a
+   count. Stacked and ruled on narrow screens; four columns on wide, where the
+   run drawn in _decorations takes the place of the rules. */
+/* Specific enough to beat the band's blanket h2 margin. */
+section.band .axes + h2 { margin-top: 2.75rem; }
+.cross-axes {
+  list-style: none; padding: 0; margin: 1.5rem 0 0; max-width: none;
+}
+.cross-axes > li {
+  margin: 0; position: relative;
+  padding: 1.1rem 0; border-top: 1px solid var(--rule);
+}
+.cross-axes > li:last-child { border-bottom: 1px solid var(--rule); }
+.cross-axes h3 {
+  margin: 0; font-family: var(--f-display); font-size: var(--t-base);
+  font-weight: 700; letter-spacing: -.01em;
+}
+.cross-axes ul {
+  list-style: none; margin: .4rem 0 0; padding: 0; max-width: none;
+  color: var(--ink-2); font-size: var(--t-sm); line-height: 1.5;
+}
+.cross-axes ul li { margin: 0; }
+
+@media (min-width: 48rem) {
+  .cross-axes {
+    /* Narrower than --gutter-gap: four columns share the measure the axes
+       list splits in two, so the gap has to give the words the room. */
+    --cross-gap: 1.75rem;
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: var(--cross-gap);
+  }
+  /* Centred on the node standing over the column, so the run reads as
+     feeding each heading rather than passing above them. The items follow
+     the heading — they are single words, and a centred title over a
+     left-ragged list would sit off its own column. Only here: stacked, the
+     rows are ruled prose and align left like everything else. */
+  .cross-axes > li, .cross-axes > li:last-child {
+    border: 0; padding: 1.6rem 0 0; text-align: center;
+  }
+}
+
 /* Event listing */
 .event-list { list-style: none; padding: 0; margin: 1.25rem 0 0; max-width: none; }
 .event-list li { margin: 0; padding: 1rem 0; border-top: 1px solid var(--rule); }
