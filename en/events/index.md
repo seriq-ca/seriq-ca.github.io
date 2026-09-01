@@ -55,8 +55,7 @@ permalink: /en/events/
   <div class="wrap">
     <h2>Before SERIQ</h2>
     <p>
-      Meetings held under the SEMTL banner, from 2019 to 2026, remain available at
-      their original addresses.
+      Meetings held under the SEMTL banner from 2019 to 2026 remain available.
     </p>
     {%- assign semtl = site.semtl | sort: "event_date" | reverse -%}
     {%- assign semtl_by_year = semtl | group_by_exp: "m", "m.event_date | date: '%Y'" -%}

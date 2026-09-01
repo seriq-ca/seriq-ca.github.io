@@ -55,8 +55,7 @@ permalink: /evenements/
   <div class="wrap">
     <h2>Avant SERIQ</h2>
     <p>
-      Les rencontres tenues sous la bannière SEMTL, de 2019 à 2026, demeurent
-      consultables à leur adresse d'origine.
+      Les rencontres tenues sous la bannière SEMTL de 2019 à 2026 demeurent consultables.
     </p>
     {%- assign semtl = site.semtl | sort: "event_date" | reverse -%}
     {%- assign semtl_by_year = semtl | group_by_exp: "m", "m.event_date | date: '%Y'" -%}

@@ -102,26 +102,26 @@ permalink: /a-propos/
     <h2>Des rencontres SEMTL au centre SERIQ</h2>
     <p>
       SEMTL <i lang="en">(Software Engineering at Montreal)</i> réunit depuis plus
-      de dix ans la communauté montréalaise de recherche en génie logiciel. Les
-      rencontres documentées en ligne commencent en 2019&nbsp;: sept éditions se
-      tiennent cette année-là, puis deux au début de 2020, avant que la pandémie ne
-      les interrompe.
+      de dix ans la communauté montréalaise de recherche en génie logiciel. Le
+      registre en ligne commence en 2019&nbsp;: sept rencontres cette année-là, puis
+      deux au début de 2020, avant que la pandémie ne les interrompe.
     </p>
     <p>
-      Les rencontres reprennent en août 2022, au rythme d'environ une tous les deux
-      mois. Elles sont accueillies et soutenues à tour de rôle par les six
-      universités montréalaises, et se tiennent aussi en marge de conférences comme
-      ICSE, MODELS et SEMLA.
+      Les rencontres reprennent en août 2022, environ tous les deux mois. Les six
+      universités montréalaises les accueillent et les soutiennent à tour de rôle,
+      et certaines se tiennent en marge de conférences comme
+      <a href="{{ '/semtl/2025-04-27-icse/' | relative_url }}">ICSE</a> et
+      <a href="{{ '/semtl/2026-06-03-polytechnique/' | relative_url }}">SEMLA</a>.
     </p>
     <p>
-      En octobre 2026, SEMTL devient SERIQ. La série de rencontres se poursuit, avec
-      une portée et une mission élargies&nbsp;: le centre s'étend à l'ensemble du
-      Québec et structure la recherche autour de ses quatre axes.
+      Les discussions de groupe entre les membres de SEMTL ont aussi donné lieu à un
+      article de vision, présenté dans la piste principale de
+      <a href="{{ '/semtl/2024-09-27-models/' | relative_url }}">MODELS 2024</a>.
     </p>
     <p>
-      Les rencontres antérieures demeurent consultables à leur adresse d'origine.
-      Elles ne sont pas reprises ici.
+      En octobre 2026, SEMTL devient SERIQ. La série de rencontres se poursuit. Le
+      centre s'étend à l'ensemble du Québec et structure la recherche autour des
+      quatre axes ci-dessus.
     </p>
-    <p><a href="https://semtl.github.io/">Archives SEMTL, 2019–2026</a></p>
   </div>
 </section>

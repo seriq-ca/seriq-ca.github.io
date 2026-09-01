@@ -97,24 +97,25 @@ permalink: /en/about/
     <h2>From SEMTL meetings to the SERIQ centre</h2>
     <p>
       SEMTL (Software Engineering at Montreal) has brought together Montréal's
-      software engineering research community for more than ten years. The meetings
-      recorded online began in 2019: seven were held that year, then two in early
-      2020, before the pandemic interrupted them.
+      software engineering research community for more than ten years. The online
+      record begins in 2019: seven meetings that year, then two in early 2020,
+      before the pandemic interrupted them.
     </p>
     <p>
-      Meetings resumed in August 2022, at a rate of roughly one every two months.
-      They have been hosted and supported in turn by the six Montréal universities,
-      and have also been held alongside conferences such as ICSE, MODELS and SEMLA.
+      Meetings resumed in August 2022, roughly every two months. The six Montréal
+      universities have hosted and supported them in turn, and some have been held
+      alongside conferences such as
+      <a href="{{ '/semtl/2025-04-27-icse/' | relative_url }}">ICSE</a> and
+      <a href="{{ '/semtl/2026-06-03-polytechnique/' | relative_url }}">SEMLA</a>.
     </p>
     <p>
-      In October 2026, SEMTL becomes SERIQ. The meeting series continues, with a wider
-      scope and mission: the centre extends across Québec and organises its research
-      around the four axes.
+      Group discussions among SEMTL members also produced a vision paper, presented
+      in the main track at
+      <a href="{{ '/semtl/2024-09-27-models/' | relative_url }}">MODELS 2024</a>.
     </p>
     <p>
-      Earlier meetings remain available at their original addresses. They are not
-      reproduced here.
+      In October 2026, SEMTL becomes SERIQ. The meeting series continues. The centre
+      extends across Québec and organises its research around the four axes above.
     </p>
-    <p><a href="https://semtl.github.io/">SEMTL archive, 2019–2026</a></p>
   </div>
 </section>
