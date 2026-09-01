@@ -68,6 +68,10 @@
 
   /* Measure */
   --measure: 64ch;
+  /* The prose column. In rem, not ch: `ch` resolves against each element's own
+     font, so a display-font heading and a body-font paragraph would compute
+     different widths and fail to line up. ~56 characters at the base size. */
+  --prose: 34rem;
   --wrap: 64rem;
 
   /* Margin column that carries labels and the wire at wide widths */

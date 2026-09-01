@@ -73,6 +73,18 @@ section.band h2 {
 :where(section.band p) { max-width: var(--measure); margin: 0 0 .8rem; }
 :where(section.band p:last-child) { margin-bottom: 0; }
 
+/* Body prose sits in one centred column, justified on both edges. Only
+   unclassed direct children of a band's wrap: components (.axes, .event-list,
+   .lede) carry their own width and alignment and must keep it. */
+section.band > .wrap > :is(h2, h3, p, ul, ol, dl, blockquote):not([class]) {
+  max-width: var(--prose);
+  margin-inline: auto;
+}
+section.band > .wrap > p:not([class]) {
+  text-align: justify;
+  hyphens: auto;
+}
+
 /* Next meeting — the one time-critical item, so it gets the inverted band */
 .band--feature {
   background: var(--feature-bg); color: var(--feature-ink);
