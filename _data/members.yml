@@ -2,7 +2,7 @@
   institution: mcgill
   photo: "https://conf.researchr.org/getProfileImage/arenbabikian/2a80c8b7-87b9-4689-b0fc-f8675d80b9cb/small?1783979685000"
   url: https://www.arenbabikian.com/
-  axes: [hybrid]
+  axes: [cps]
 
 - name: Baudry, Benoit
   institution: udem
@@ -15,31 +15,31 @@
   institution: ets
   photo: "https://conf.researchr.org/getProfileImage/francisbordeleau/3ac1c656-0cdc-451f-8a41-d5a14393d7bf/small?1783977120000"
   url: https://www.linkedin.com/in/francis-bordeleau-b2aa273/
-  axes: [ecosystems, interdisciplinary]
+  axes: [ecosystems, design]
 
 - name: El Boussaidi, Ghizlane
   institution: ets
   photo: https://www.etsmtl.ca/uploads/_1100xAUTO_fit_center-center_70_none/P20210512-ElBoussaidi-Ghizlane-002.jpg
   url: https://www.etsmtl.ca/programmes-et-formations/corps-enseignant/gelboussaidi
-  axes: [hybrid, interdisciplinary]
+  axes: [cps, design]
 
 - name: Famelis, Michalis
   institution: udem
   photo: https://michalis.famelis.info/wp-content/uploads/2023/08/pxl_20230806_173631490.portrait.jpg
   url: https://michalis.famelis.info/
-  axes: [interdisciplinary, human]
+  axes: [design, human]
 
 - name: Moha, Naouel
   institution: ets
   photo: https://www.etsmtl.ca/uploads/_1100xAUTO_fit_center-center_70_none/P20201027-Moha-Naouel-001.jpg
   url: https://www.etsmtl.ca/en/professors/nmoha
-  axes: [hybrid, ecosystems]
+  axes: [cps, ecosystems]
 
 - name: Oakes, Bentley
   institution: poly
   photo: https://bentleyoakes.com/assets/img/BentleyOakes-headshot.jpg
   url: https://bentleyoakes.com/
-  axes: [hybrid]
+  axes: [cps]
 
 - name: Robillard, Martin
   institution: mcgill
@@ -51,10 +51,10 @@
   institution: udem
   photo: https://geodes.iro.umontreal.ca/images/people/houari.jpg
   url: https://www.iro.umontreal.ca/~sahraouh/
-  axes: [interdisciplinary, human]
+  axes: [design, human]
 
 - name: Syriani, Eugène
   institution: udem
   photo: https://geodes.iro.umontreal.ca/images/people/eugene.jpg
   url: https://www.iro.umontreal.ca/~syriani/
-  axes: [interdisciplinary]
+  axes: [design]

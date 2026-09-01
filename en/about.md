@@ -76,35 +76,34 @@ permalink: /en/about/
     </p>
     <ol class="axes">
       <li data-label="Axis">
-        <h3>{{ site.data.i18n[page.lang].axes.hybrid }}</h3>
+        <h3>{{ site.data.i18n[page.lang].axes.cps }}</h3>
         <p>
           Software is no longer confined to purely digital systems; it is embedded in
           physical, biological and social contexts. Digital twins, the internet of
-          things, cyber-physical systems.
+          things, operating systems.
         </p>
       </li>
       <li data-label="Axis">
         <h3>{{ site.data.i18n[page.lang].axes.ecosystems }}</h3>
         <p>
-          Software infrastructure now rests on cloud services, shared platforms and
-          heterogeneous supply chains, raising problems of security, resilience and
-          traceability.
+          Software infrastructure now rests on shared platforms and heterogeneous
+          supply chains. Software supply chain, cloud and high-performance computing,
+          product lines.
         </p>
       </li>
       <li data-label="Axis">
-        <h3>{{ site.data.i18n[page.lang].axes.interdisciplinary }}</h3>
+        <h3>{{ site.data.i18n[page.lang].axes.design }}</h3>
         <p>
-          Software development does not rest on computing expertise alone. This axis
-          covers the methods, collaborative modelling tools and languages that let
-          domain specialists take part at every stage.
+          Designing a system does not rest on computing expertise alone; it also
+          involves domain specialists. Low-code, domain-specific modelling,
+          requirements engineering.
         </p>
       </li>
       <li data-label="Axis">
         <h3>{{ site.data.i18n[page.lang].axes.human }}</h3>
         <p>
           People remain at the centre of software systems, as users, operators and
-          designers. Empirical studies, societal impact, collaborative development,
-          user experience and documentation.
+          designers. Accessibility, human-computer interaction, documentation.
         </p>
       </li>
     </ol>

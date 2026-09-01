@@ -79,36 +79,34 @@ permalink: /a-propos/
     </p>
     <ol class="axes">
       <li data-label="Axe">
-        <h3>{{ site.data.i18n[page.lang].axes.hybrid }}</h3>
+        <h3>{{ site.data.i18n[page.lang].axes.cps }}</h3>
         <p>
           Le logiciel ne se limite plus à des systèmes purement numériques&nbsp;: il
           s'intègre à des contextes physiques, biologiques et sociaux. Jumeaux
-          numériques, internet des objets, systèmes cyber-physiques.
+          numériques, internet des objets, systèmes d'exploitation.
         </p>
       </li>
       <li data-label="Axe">
         <h3>{{ site.data.i18n[page.lang].axes.ecosystems }}</h3>
         <p>
-          Les infrastructures logicielles s'appuient sur l'infonuagique, des
-          plateformes partagées et des chaînes d'approvisionnement hétérogènes, ce qui
-          pose des défis de sécurité, de résilience et de traçabilité.
+          Les infrastructures logicielles s'appuient sur des plateformes partagées et
+          des chaînes d'approvisionnement hétérogènes. Chaîne d'approvisionnement
+          logicielle, infonuagique et calcul haute performance, lignes de produits.
         </p>
       </li>
       <li data-label="Axe">
-        <h3>{{ site.data.i18n[page.lang].axes.interdisciplinary }}</h3>
+        <h3>{{ site.data.i18n[page.lang].axes.design }}</h3>
         <p>
-          Le développement logiciel ne repose pas sur la seule expertise
-          informatique. Cet axe porte sur les méthodes, les outils de modélisation
-          collaboratifs et les langages qui permettent aux spécialistes des domaines
-          de participer à chaque étape.
+          La conception d'un système ne repose pas sur la seule expertise
+          informatique&nbsp;: elle engage aussi les spécialistes des domaines.
+          Low-code, modélisation spécifique aux domaines, ingénierie des exigences.
         </p>
       </li>
       <li data-label="Axe">
         <h3>{{ site.data.i18n[page.lang].axes.human }}</h3>
         <p>
           L'humain reste au cœur des systèmes logiciels, comme utilisateur, opérateur
-          ou concepteur. Études empiriques, impact sociétal, développement
-          collaboratif, expérience utilisateur et documentation.
+          ou concepteur. Accessibilité, interaction humain-machine, documentation.
         </p>
       </li>
     </ol>

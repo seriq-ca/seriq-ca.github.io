@@ -19,9 +19,9 @@ footer:
   source: Code source sur GitHub
 
 axes:
-  hybrid: Systèmes hybrides
-  ecosystems: Écosystèmes et infrastructures
-  interdisciplinary: Développement interdisciplinaire
+  cps: Systèmes cyber-physiques
+  ecosystems: Écosystème et infrastructure
+  design: Architecture et conception
   human: Aspects humains
 
 institutions:
