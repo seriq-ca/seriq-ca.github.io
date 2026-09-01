@@ -203,7 +203,7 @@ section.band img { max-width: 100%; height: auto; }
   display: flex; gap: 1rem; align-items: flex-start;
 }
 .member-text { min-width: 0; }
-.portrait {
+.member-list .portrait {
   flex: none; width: 72px; height: 72px; border-radius: 50%;
   object-fit: cover; background: var(--surface);
 }
