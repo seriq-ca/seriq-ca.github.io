@@ -76,12 +76,12 @@
    follow. */
 .logo__word, .logo__run { fill: var(--wire); }
 .logo__node { fill: var(--node); }
-
-/* The section mark: a stub of run standing in for a heading rule. */
-section.band h2::before {
-  content: ""; display: block; width: 18px; height: var(--run);
-  background: var(--mark); margin-bottom: .55rem;
-}
+/* The casing, on every node on the site. In user units, not a non-scaling
+   stroke: the casing is a sixth of the node it encloses, and it should stay
+   that fraction wherever the drawing is shown — including the raster copies,
+   which are this same figure at 15x. 36 units is 1px at the 4rem header size,
+   where the node itself is 6px. */
+.logo__node rect { stroke: var(--node-line); stroke-width: 36; }
 
 /* The home title's wire network. Markup in _includes/wire-network.html.
 
@@ -129,6 +129,10 @@ section.band h2::before {
    the pulses inherit their own stroke and dash from the clone. */
 .wire-net > .wire-net__run { stroke: var(--wire); stroke-width: 2; }
 .wire-net > .wire-net__node { fill: var(--node); }
+/* 1 unit against a 6-unit node: the same sixth, and 1px at the width the
+   network is drawn for. Scaled down on narrow screens the casing thins with
+   the node rather than swallowing it. */
+.wire-net > .wire-net__node rect { stroke: var(--node-line); stroke-width: 1; }
 
 /* Drawing in. Everything grows out of the hub: the node lands first, the stem
    pushes up to the bus, and from there the frame and the two secondary buses
@@ -200,6 +204,8 @@ section.band h2::before {
    node centred on it. The frame is inset so nothing clips. */
 .event {
   --arm: 20px; --box: var(--node-size); --inset: 4px;
+  /* The cased node, centred on the same point as the node it encloses. */
+  --boxc: calc(var(--box) + 2px);
   background-repeat: no-repeat;
   background-image:
     linear-gradient(var(--amber), var(--amber)),
@@ -217,7 +223,15 @@ section.band h2::before {
     linear-gradient(var(--amber), var(--amber)),
     linear-gradient(var(--amber), var(--amber)),
     linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber));
+    linear-gradient(var(--amber), var(--amber)),
+    linear-gradient(var(--node-line), var(--node-line)),
+    linear-gradient(var(--node-line), var(--node-line)),
+    linear-gradient(var(--node-line), var(--node-line)),
+    linear-gradient(var(--node-line), var(--node-line)),
+    linear-gradient(var(--node-line), var(--node-line)),
+    linear-gradient(var(--node-line), var(--node-line)),
+    linear-gradient(var(--node-line), var(--node-line)),
+    linear-gradient(var(--node-line), var(--node-line));
   background-size:
     var(--arm) var(--run),
     var(--run) var(--arm),
@@ -234,7 +248,15 @@ section.band h2::before {
     var(--box) var(--box),
     var(--box) var(--box),
     var(--box) var(--box),
-    var(--box) var(--box);
+    var(--box) var(--box),
+    var(--boxc) var(--boxc),
+    var(--boxc) var(--boxc),
+    var(--boxc) var(--boxc),
+    var(--boxc) var(--boxc),
+    var(--boxc) var(--boxc),
+    var(--boxc) var(--boxc),
+    var(--boxc) var(--boxc),
+    var(--boxc) var(--boxc);
   background-position:
     left var(--inset) top var(--inset),
     left var(--inset) top var(--inset),
@@ -251,7 +273,15 @@ section.band h2::before {
     left calc(var(--inset) + var(--arm) - var(--box) / 2) bottom calc(var(--inset) + 1px - var(--box) / 2),
     left calc(var(--inset) + 1px - var(--box) / 2) bottom calc(var(--inset) + var(--arm) - var(--box) / 2),
     right calc(var(--inset) + var(--arm) - var(--box) / 2) bottom calc(var(--inset) + 1px - var(--box) / 2),
-    right calc(var(--inset) + 1px - var(--box) / 2) bottom calc(var(--inset) + var(--arm) - var(--box) / 2);
+    right calc(var(--inset) + 1px - var(--box) / 2) bottom calc(var(--inset) + var(--arm) - var(--box) / 2),
+    left calc(var(--inset) + var(--arm) - var(--boxc) / 2) top calc(var(--inset) + 1px - var(--boxc) / 2),
+    left calc(var(--inset) + 1px - var(--boxc) / 2) top calc(var(--inset) + var(--arm) - var(--boxc) / 2),
+    right calc(var(--inset) + var(--arm) - var(--boxc) / 2) top calc(var(--inset) + 1px - var(--boxc) / 2),
+    right calc(var(--inset) + 1px - var(--boxc) / 2) top calc(var(--inset) + var(--arm) - var(--boxc) / 2),
+    left calc(var(--inset) + var(--arm) - var(--boxc) / 2) bottom calc(var(--inset) + 1px - var(--boxc) / 2),
+    left calc(var(--inset) + 1px - var(--boxc) / 2) bottom calc(var(--inset) + var(--arm) - var(--boxc) / 2),
+    right calc(var(--inset) + var(--arm) - var(--boxc) / 2) bottom calc(var(--inset) + 1px - var(--boxc) / 2),
+    right calc(var(--inset) + 1px - var(--boxc) / 2) bottom calc(var(--inset) + var(--arm) - var(--boxc) / 2);
 }
 
 /* One run down the axes gutter, with a node on each row and a signal riding
@@ -298,6 +328,7 @@ section.band h2::before {
     /* Opaque, so the run stops behind it rather than showing through and
        striping it — the run is the muted one here, the node is the mark. */
     background: var(--node);
+    box-shadow: 0 0 0 1px var(--node-line);
   }
 
   /* The signal, the same one the home network carries and on the same clock: a
@@ -365,6 +396,7 @@ section.band h2::before {
     top:  calc(var(--node-y) - var(--node-size) / 2);
     width: var(--node-size); height: var(--node-size);
     background: var(--node);
+    box-shadow: 0 0 0 1px var(--node-line);
   }
   .cross-axes::after {
     top: calc(var(--node-y) - var(--pulse-h) / 2); height: var(--pulse-h);
@@ -386,6 +418,7 @@ section.band h2::before {
 .event-list .name::before {
   content: ""; display: inline-block; width: 6px; height: 6px;
   margin-right: .6rem; vertical-align: .16em; background: var(--node);
+  box-shadow: 0 0 0 1px var(--node-line);
 }
 
 /* A node terminating each onward link, the same 6px box that ends every
@@ -395,4 +428,5 @@ section.band h2::before {
   content: ""; flex: none;
   width: var(--node-size); height: var(--node-size);
   background: var(--node); transform: translateY(.05em);
+  box-shadow: 0 0 0 1px var(--node-line);
 }

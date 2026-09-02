@@ -22,7 +22,7 @@ STROKE, CASING = 1.6, 5.0
 STEP = 1.0  # sampling interval along x; the cosine is drawn as a polyline
 
 # Wire blue and node amber, the site's two ornament colours (--wire, --node).
-STRANDS_LIGHT = ["#0f3a86", "#bf7a00"]
+STRANDS_LIGHT = ["#0f3a86", "#f2a413"]
 STRANDS_DARK = ["#7ea6ff", "#f5b73f"]
 
 

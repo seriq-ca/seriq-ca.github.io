@@ -13,15 +13,19 @@
   --blue-soft: #e3e9f5;
   --blue-deep: #0a2558;
   --amber:     #f2a413;
-  /* Amber only carries on the blue grounds. On paper the ornament and
-     the nodes take the deeper cut, which clears 3:1 against the ground. */
-  --mark:      #bf7a00;
+  /* One amber, both grounds. A node clears the paper on the 1px --node-line
+     cased around it rather than on its own fill contrast, so the bright stop
+     carries here as well as on the blue. */
   --amber-ink: #8a5200;
   --amber-soft:#fdf0d6;
 
   --wire: var(--blue);
   --pulse: #3775dc;  /* a signal on the wire: lighter than --wire, both themes */
-  --node: var(--mark);
+  --node: var(--amber);
+  /* Every node is cased in a hairline of ink, which is what separates it from
+     its ground. It follows the ink, so it is near-black on paper and near-white
+     on the dark theme's. */
+  --node-line: var(--ink);
   --accent: var(--blue);
   --accent-soft: var(--blue-soft);
 
@@ -93,7 +97,6 @@
     --blue-deep: #0b1c3d;
     --pulse:     #bcd3ff;
     --amber:     #f5b73f;
-    --mark:      #f5b73f;
     --amber-ink: #f0b352;
     --amber-soft:#23190c;
 
