@@ -364,7 +364,7 @@ section.band img { max-width: 100%; height: auto; }
    drawn in _decorations.scss. */
 .onward {
   list-style: none; padding: 0; margin: 1.5rem 0 0; max-width: none;
-  display: flex; flex-wrap: wrap; gap: .6rem 2rem;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem 2rem;
   font-size: var(--t-sm);
 }
 .onward li { margin: 0; display: flex; align-items: baseline; gap: .6rem; }
