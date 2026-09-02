@@ -1,0 +1,12 @@
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+  <style>
+    .bg{fill:#f2f4f7} .w{fill:#0f3a86} .n{fill:#bf7a00}
+    @media (prefers-color-scheme:dark){
+      .bg{fill:#0b1016} .w{fill:#7ea6ff} .n{fill:#f5b73f}
+    }
+  </style>
+  <rect class="bg" width="16" height="16"/>
+  <rect class="w" x="0" y="0" width="16" height="1"/><rect class="w" x="0" y="15" width="16" height="1"/><rect class="w" x="0" y="0" width="1" height="16"/><rect class="w" x="15" y="0" width="1" height="16"/>
+  <g class="w" transform="translate(3.6707,13.8429) scale(0.01571,-0.01571)"><path d="M275 25Q335 25 374.5 53.5Q414 82 414 143Q414 188 387.5 218.0Q361 248 293 268L200 296Q130 317 92.5 368.5Q55 420 55 497Q55 548 78.5 592.0Q102 636 150.5 663.0Q199 690 273 690Q354 690 404.0 660.5Q454 631 474.0 584.0Q494 537 484 483L369 462Q385 555 355.5 605.0Q326 655 260 655Q209 655 178.5 625.0Q148 595 148 539Q148 493 174.5 458.0Q201 423 262 404L355 376Q431 354 469.0 309.5Q507 265 507 186Q507 130 481.5 85.5Q456 41 404.5 15.5Q353 -10 276 -10Q220 -10 170.0 6.5Q120 23 86.5 61.0Q53 99 44 164L111 188Q116 124 139.5 88.5Q163 53 198.5 39.0Q234 25 275 25Z"/></g>
+  <rect class="n" x="0" y="0" width="2" height="2"/><rect class="n" x="14" y="14" width="2" height="2"/>
+</svg>

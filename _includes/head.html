@@ -11,6 +11,9 @@
 <title>{{ head_title }}</title>
 <meta name="description" content="{{ head_desc | escape }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="icon" href="{{ '/assets/img/favicon.png' | relative_url }}" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
 
 {%- assign translatable = site.pages | concat: site.events -%}
 {%- assign pair = translatable | where: "ref", page.ref -%}
