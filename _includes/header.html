@@ -4,7 +4,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="{{ home | relative_url }}">
-      <span class="brand-mark">SERIQ</span>
+      {% include logo.html %}
       <span class="brand-sub">{{ t.brand_sub }}</span>
     </a>
     <nav class="site-nav" aria-label="{{ t.nav.label }}">

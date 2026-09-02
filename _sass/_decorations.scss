@@ -31,6 +31,52 @@
   opacity: .75;
 }
 
+/* The logo. Drawn in _includes/logo.html — the markup carries no commentary,
+   so the reasoning lives here with the rest of the ornament grammar.
+
+   The wordmark is Inria Serif 700 as outlines, not live text, so it cannot
+   reflow or fall back to Georgia; the geometry is in font units, where the em
+   is 1000, the cap line 680 and the baseline 0, so the frame is measured
+   against the letters rather than guessed. Regenerate rather than hand-edit.
+
+   The bus runs under the word at y=-540, clear of the Q's tail at -208. A
+   riser stands at each end and two arms return inward along the top, leaving
+   the middle open: a bracket, not a box. The left arm stops over the E; the
+   right runs further, to the I, then drops to the node that ends it. Both
+   terminals sit on a letter's stem centre (E at x=732, I at x=1966), which is
+   why the drop looks aimed rather than approximate. Only the right arm dips —
+   two dips would make it a pattern instead of a joke. Two taps hang below the
+   bus under the S and the Q, the outer letters, so they brace it rather than
+   cluster at its centre.
+
+   The I is not the whole letter. It is clipped to its foot at y=84, where the
+   bottom serif's bracket resolves into the full-width stem, and the stem is
+   then drawn as a rect up to y=503 — 74% of the cap height, with no top serif.
+   Nothing is scaled: the stem keeps the glyph's own 120-unit width, so the
+   letter stays the weight and colour of its neighbours. Scaling the glyph
+   instead thins it, and the I reads as a lighter, different face.
+
+   The node sits half a run above the stem's end, which puts its top 73 units
+   proud of the cap line. That is the value the sweep settled on: a full run of
+   clearance floats it into a dead zone where it reads as neither aligned nor
+   deliberately raised, and letting the stem run into the node drops the node's
+   top below the cap line, so the word dips in the middle. The foot is what
+   keeps this readable as an I rather than as a divider between R and Q — with
+   both serifs gone the stem has nothing holding it to the baseline.
+
+   Every L-joint overshoots by half a run. Drawing each member to the other's
+   centreline instead leaves a half-run notch in all four corners.
+
+   Runs are 71 units and nodes 214 — 2px and 6px, the ornament's real weights,
+   at the 4rem header size set in _layout.scss. Scaled far below that the runs
+   fall under a pixel and the figure silts up, which is why the favicon is a
+   separate drawing.
+
+   Coloured with the same two tokens as every other wire, so both themes
+   follow. */
+.logo__word, .logo__run { fill: var(--wire); }
+.logo__node { fill: var(--node); }
+
 /* The section mark: a stub of run standing in for a heading rule. */
 section.band h2::before {
   content: ""; display: block; width: 18px; height: var(--run);

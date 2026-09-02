@@ -9,10 +9,11 @@
   padding-top: 1.15rem; padding-bottom: 1.15rem;
 }
 .brand { text-decoration: none; color: inherit; display: block; }
-.brand-mark {
-  display: block; font-family: var(--f-display); font-size: var(--t-xl);
-  font-weight: 700;  letter-spacing: -.01em; line-height: 1; color: var(--ink);
-}
+/* The logo, from _includes/logo.html. Height rather than font-size, because
+   the mark is drawn art: it is 2302 units tall and its runs are 71 of them, so
+   4rem puts a run at just under 2px — the weight it was drawn at — and the cap
+   height at 19px, the size the wordmark was while it was still text. */
+.brand .logo { display: block; height: 4rem; width: auto; }
 .brand-sub {
   display: block; margin-top: .3rem;
   font-family: var(--f-mono); font-size: var(--t-xs); font-weight: 400;
@@ -84,6 +85,13 @@ section.band > .wrap > :is(h2, h3, p, ul, ol, dl, blockquote):not([class]) {
    paragraph that introduces it, and a ragged one under a justified one reads
    as two different settings. Headings stay out — they are display type. */
 section.band > .wrap > :is(p, ul, ol, dl, blockquote):not([class]) {
+  text-align: justify;
+}
+/* A note sitting directly in a band is prose too, not a component: it belongs
+   in the same column as the text it qualifies. */
+section.band > .wrap > p.note {
+  max-width: var(--prose);
+  margin-inline: auto;
   text-align: justify;
 }
 
