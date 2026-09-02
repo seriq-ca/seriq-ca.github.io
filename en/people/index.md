@@ -4,6 +4,7 @@ ref: people
 title: Members
 description: "The Centre's researchers at its four partner institutions: Université de Montréal, Polytechnique Montréal, McGill University and the ÉTS."
 permalink: /en/people/
+published: false
 ---
 
 {%- assign t = site.data.i18n[page.lang] -%}

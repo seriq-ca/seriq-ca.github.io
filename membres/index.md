@@ -4,6 +4,7 @@ ref: people
 title: Membres
 description: "Les chercheuses et chercheurs du Centre, dans ses quatre établissements partenaires : UdeM, Polytechnique Montréal, McGill et l'ÉTS."
 permalink: /membres/
+published: false
 ---
 
 {%- assign t = site.data.i18n[page.lang] -%}
