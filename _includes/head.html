@@ -1,6 +1,5 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{%- comment -%} One title and one description, reused by the link-preview tags below. {%- endcomment -%}
 {%- if page.title_head -%}
   {%- assign head_title = page.title_head -%}
 {%- elsif page.title -%}
@@ -13,7 +12,6 @@
 <meta name="description" content="{{ head_desc | escape }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 
-{%- comment -%} hreflang alternates for the translation pair {%- endcomment -%}
 {%- assign translatable = site.pages | concat: site.events -%}
 {%- assign pair = translatable | where: "ref", page.ref -%}
 {%- for p in pair %}
@@ -24,10 +22,6 @@
 <link rel="alternate" hreflang="x-default" href="{{ default_page.url | absolute_url }}">
 {%- endif %}
 
-{%- comment -%}
-  Link previews. og:image waits on the logo (§3); until it lands the cards are
-  text-only, and twitter:card becomes summary_large_image at the same time.
-{%- endcomment -%}
 {%- if page.lang == "en" -%}
   {%- assign og_locale = "en_CA" -%}{%- assign og_locale_alt = "fr_CA" -%}
 {%- else -%}
@@ -42,10 +36,6 @@
 <meta property="og:locale:alternate" content="{{ og_locale_alt }}">
 <meta name="twitter:card" content="summary">
 
-{%- comment -%}
-  Type is self-hosted from assets/fonts/; the faces are declared in main.css.
-  Only the two that carry first paint are preloaded.
-{%- endcomment %}
 <link rel="preload" as="font" type="font/woff2" crossorigin
       href="{{ '/assets/fonts/archivo-latin.woff2' | relative_url }}">
 <link rel="preload" as="font" type="font/woff2" crossorigin

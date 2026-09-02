@@ -1,4 +1,3 @@
-{%- comment -%} Counterpart by `ref`; falls back to that language's home page. {%- endcomment -%}
 {%- if page.lang == "fr" -%}{%- assign alt_lang = "en" -%}
 {%- else -%}{%- assign alt_lang = "fr" -%}{%- endif -%}
 {%- assign translatable = site.pages | concat: site.events -%}

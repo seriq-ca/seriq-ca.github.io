@@ -1,37 +1,6 @@
 {%- comment -%}
-  The home title's wire network. Inline SVG rather than a stack of gradients:
-  a graph needs branches and turns, and the two colours have to follow the
-  theme, which a background-image cannot do. Purely decorative, so it is
-  hidden from assistive tech. Styled in _sass/_decorations.scss.
-
-  Geometry, in viewBox units, which are CSS pixels at full width. The bus runs
-  at y=118 between two risers that turn up at x=6 and x=1018 and return inward
-  along the top, bracketing the title between them; the network is pulled up
-  over the title by a negative margin, so the risers run alongside it rather
-  than under it.
-
-  Under the centre of the bus hangs the hub — one oversized node, SERIQ — and
-  everything else leaves it. A secondary bus runs out from each side of the hub
-  at y=136; taps drop off it to y=152, and two of those turn and run again
-  before ending, so the fan branches three deep. The levels are 16 to 18 units
-  apart: any closer and they read as one thick band rather than as a network
-  once the SVG is scaled down on a narrow screen.
-
-  Every path is written outward from the hub — the frame in two halves meeting
-  at the stem, every branch starting where it taps — because the draw-in dashes
-  each one from its own start point. Reverse a d and that run grows the wrong
-  way. Every segment is orthogonal; every node is 6 units centred on a 2-unit
-  run, so centres land on whole units.
-
-  The third level and the taps that feed it carry .wire-net__detail: below the
-  wide breakpoint the SVG has scaled down far enough that they silt up into one
-  smudge, so they are dropped and the frame, hub and secondary buses carry the
-  figure alone.
-
-  --i is the element's place in that outward order and --dur is how long its
-  run takes to draw; the delays come off them in _decorations.scss.
-  pathLength="1" normalises every run to a length of 1, so the animation can
-  dash them without measuring a path.
+  Every path is written outward from the hub, because the draw-in dashes each
+  one from its own start point. Reverse a d and that run grows the wrong way.
 {%- endcomment -%}
 <svg class="wire-net" viewBox="0 0 1024 172" width="1024" height="172"
      aria-hidden="true" focusable="false">
@@ -49,12 +18,6 @@
     <path style="--i:8;--dur:.3s"  class="wire-net__detail" pathLength="1" d="M224 136 V152"/>
     <path style="--i:8;--dur:.3s"  class="wire-net__detail" pathLength="1" d="M800 136 V152"/>
   </g>
-  {%- comment -%}
-    The signals. Each is the whole run group cloned, so a pulse rides every
-    wire at once and the geometry stays defined in one place — and because
-    every run is written hub-outward, one clone dashed forward travels away
-    from the hub and one dashed backward travels home to it.
-  {%- endcomment -%}
   <use class="wire-net__pulse wire-net__pulse--out" href="#wire-net-runs"/>
   <use class="wire-net__pulse wire-net__pulse--in"  href="#wire-net-runs"/>
   <g class="wire-net__node">

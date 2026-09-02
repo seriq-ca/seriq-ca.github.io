@@ -1,15 +1,3 @@
-{%- comment -%}
-  The next upcoming meeting, rendered from the events collection so the home
-  page and the events index cannot drift apart. Both used to hardcode it.
-
-  Dates are compared as YYYYMMDD integers because `where_exp` takes no filters,
-  so the "first event not yet past" search is a hand-rolled loop. Emits nothing
-  when every event is in the past.
-
-  `name_lang` on the event marks the language of its title and venue, so the
-  proper names carry a lang attribute when the surrounding page is in the
-  other language.
-{%- endcomment -%}
 {%- assign t = site.data.i18n[page.lang] -%}
 {%- assign today = site.time | date: "%Y%m%d" | plus: 0 -%}
 {%- assign upcoming = site.events | where_exp: "e", "e.lang == page.lang" | sort: "event_date" -%}
@@ -20,11 +8,9 @@
 {%- endfor -%}
 {%- if next_event -%}
 {%- comment -%}
-  Built as a whole attribute rather than tested inline: an empty string is
-  truthy in Liquid, so testing the bare variable emits lang="" on the page
-  whose own language already matches.
+  An empty string is truthy in Liquid: testing the bare variable emits lang="".
 {%- endcomment -%}
-{%- assign name_attr = "" -%}
+  {%- assign name_attr = "" -%}
 {%- if next_event.name_lang and next_event.name_lang != page.lang -%}
   {%- capture name_attr %} lang="{{ next_event.name_lang }}"{% endcapture -%}
 {%- endif %}

@@ -1,13 +1,3 @@
-{%- comment -%}
-  Where the home page hands off to the rest of the site. The destinations are
-  resolved by `ref` in the page's own language, the same lookup the header nav
-  uses, so a page that does not exist in a language drops out of the list
-  rather than linking across languages. Labels come from `home.onward` in
-  _data/i18n/*.yml — longer than the nav's, since these stand alone.
-
-  Emits nothing when none of the three pages exist. Styled in
-  _sass/_components.scss; the node marking each item is in _decorations.scss.
-{%- endcomment -%}
 {%- assign t = site.data.i18n[page.lang] -%}
 {%- assign about  = site.pages | where: "ref", "about"  | where_exp: "p", "p.lang == page.lang" | first -%}
 {%- assign people = site.pages | where: "ref", "people" | where_exp: "p", "p.lang == page.lang" | first -%}
