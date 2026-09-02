@@ -23,7 +23,7 @@ published: false
       <li>
         {%- if m.photo %}
         <img class="portrait" src="{{ '/assets/img/members/' | append: m.photo | relative_url }}"
-             alt="" width="72" height="72" loading="lazy" decoding="async">
+             alt="" width="48" height="48" loading="lazy" decoding="async">
         {%- else %}
         <span class="portrait portrait--empty" aria-hidden="true"></span>
         {%- endif %}

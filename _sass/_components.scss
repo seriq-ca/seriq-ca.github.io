@@ -236,32 +236,115 @@ section.band img { max-width: 100%; height: auto; }
 }
 
 /* Members. The social register: no rules and no corners, just soft panels.
-   Entries are short — name plus institution — so they run in two columns
-   once there is room. */
+   Entries are short — name plus institution — so they run in columns once
+   there is room. */
 .member-list {
+  /* Whole pixels throughout, as in _decorations.scss: a hairline placed on a
+     half pixel is drawn as two columns of half-strength blue, which reads as
+     paler and fuzzier than the borders it meets. So the gutter, the padding and
+     the portrait are px, and every wire is positioned off an edge at an integer
+     offset — never centred with a percentage or a transform. */
+  --card-gap: 14px;
+  --card-pad: 8px;
+  --card-pad-x: 10px;
+  --node-r: 25px;   /* half the 48px portrait plus its own 1px casing */
+  /* A stub is positioned against the card's padding box, so reaching a node's
+     centre from that edge means crossing the padding first. */
+  --node-y: calc(var(--card-pad) + var(--node-r));
+  --node-x: calc(var(--card-pad-x) + var(--node-r));
+  /* Odd, so the 1px wire lands on the port's exact middle pixel. The stub then
+     overruns by --port-off at each end, which centres a port on each card's
+     1px border, and is --card-gap + --port + 1px long overall. */
+  --port: 3px;
+  --port-off: 1px;
   list-style: none; padding: 0; margin: 1.25rem 0 0; max-width: none;
-  display: grid; grid-template-columns: 1fr; gap: .75rem;
+  display: grid; grid-template-columns: 1fr; gap: var(--card-gap);
 }
 .member-list li {
-  margin: 0; padding: 1rem 1.1rem;
+  position: relative;
+  margin: 0; padding: var(--card-pad) var(--card-pad-x);
   background: var(--warm-soft); border-radius: var(--r-soft);
-  display: flex; gap: 1rem; align-items: flex-start;
+  /* Wire encloses, amber marks: the panel is bracketed the way the wordmark and
+     the home page's network are, so the register carries both site colours
+     rather than reading as an unstructured amber block. */
+  border: 1px solid var(--wire);
+  /* Portraits pinned to the top rather than centred, so a node's centre is a
+     fixed --node-r from the card's edge whatever the text below it does. That
+     is what lets the wires meet the nodes on every card at a whole pixel. */
+  display: flex; gap: 10px; align-items: flex-start;
 }
+
+/* Wires across the gutters, so the register reads as a connected network rather
+   than nine loose panels. Each card draws the wire on its own left and top —
+   never its right or bottom — because "is there a card before me in this row"
+   and "is there a row above me" are answered by first-column and first-row
+   selectors, which hold for any number of members. Drawing rightwards instead
+   would need last-row rules, and those depend on the count dividing evenly.
+   The stubs overrun by 2px at each end to bridge both cards' 1px borders. */
+.member-list li::before,
+.member-list li::after { content: ""; position: absolute; display: none; }
+/* Both stubs run node-to-node: they leave at the centre of this card's portrait
+   and arrive at the centre of the neighbour's.
+
+   A wire and a card border are both a 1px --wire stroke, so a wire that merely
+   stopped against a border read as a line running into a wall. It ends in a
+   port instead: a small square centred on the card edge it serves, in the wire's
+   own blue and only three times its weight, which is enough to terminate the
+   line without competing with the amber portraits. The
+   stub therefore overruns by half a port at each end, which is why it is
+   --card-gap + --port long.
+
+   Three background layers, painted front to back: the two ports, then the wire
+   beneath them, placed at an explicit --port-off so it runs through the middle
+   of both. */
+.member-list li::before,
+.member-list li::after {
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(var(--wire), var(--wire)),
+    linear-gradient(var(--wire), var(--wire)),
+    linear-gradient(var(--wire), var(--wire));
+}
+.member-list li::before {          /* westward, across a column gutter */
+  top: calc(var(--node-y) - var(--port-off));
+  right: calc(100% - var(--port-off));
+  width: calc(var(--card-gap) + var(--port) + 1px); height: var(--port);
+  background-size: var(--port) var(--port), var(--port) var(--port), 100% 1px;
+  background-position: left center, right center, left top var(--port-off);
+}
+.member-list li::after {           /* northward, across a row gutter */
+  left: calc(var(--node-x) - var(--port-off));
+  bottom: calc(100% - var(--port-off));
+  width: var(--port); height: calc(var(--card-gap) + var(--port) + 1px);
+  background-size: var(--port) var(--port), var(--port) var(--port), 1px 100%;
+  background-position: center top, center bottom, left var(--port-off) top;
+}
+/* One column: no card sits beside another, so only the vertical wire runs. */
+.member-list li:not(:first-child)::after { display: block; }
+
 .member-text { min-width: 0; }
+/* A portrait is read as a node: the amber ground of the home page's network,
+   cased in the same hairline of ink that separates every node from its own.
+   A photo covers the amber; an entry without one is left as a bare node. */
 .member-list .portrait {
-  flex: none; width: 72px; height: 72px; border-radius: 50%;
-  object-fit: cover; background: var(--surface);
+  flex: none; width: 48px; height: 48px; border-radius: 50%;
+  object-fit: cover;
+  background: var(--node); border: 1px solid var(--node-line);
 }
-.portrait--empty { background: var(--surface); }
+.portrait--empty { background: var(--node); }
 .member-list .name {
   margin: 0; font-family: var(--f-display); font-size: var(--t-md);
+  /* Sits the name's cap-height beside the node's centre. */
+  padding-top: 1px;
   font-weight: 700;  letter-spacing: -.01em;
 }
 .member-list .name a { text-decoration: none; color: var(--ink); }
 .member-list .name a:hover { text-decoration: underline; }
+/* Mono labels are blue everywhere else on the site — the kicker, the axis
+   numerals, the event meta. This one was the exception. */
 .member-list .meta {
-  margin: .3rem 0 0; font-family: var(--f-mono); font-size: var(--t-xs);
-  color: var(--ink-2); letter-spacing: .02em;
+  margin: .2rem 0 0; font-family: var(--f-mono); font-size: var(--t-xs);
+  color: var(--wire); letter-spacing: .02em;
 }
 .member-list .role { color: var(--warm-ink); }
 .member-axes {
@@ -274,7 +357,22 @@ section.band img { max-width: 100%; height: auto; }
   font-family: var(--f-mono); font-size: var(--t-xs);
   letter-spacing: .02em;
 }
-@media (min-width: 44rem) { .member-list { grid-template-columns: 1fr 1fr; gap: .75rem; } }
+@media (min-width: 44rem) {
+  .member-list { grid-template-columns: 1fr 1fr; }
+  /* Two columns: wire west unless first in a row, north unless in the first. */
+  .member-list li:not(:nth-child(2n + 1))::before { display: block; }
+  .member-list li:not(:nth-child(-n + 2))::after  { display: block; }
+  .member-list li:nth-child(-n + 2)::after        { display: none; }
+}
+@media (min-width: 66rem) {
+  .member-list { grid-template-columns: 1fr 1fr 1fr; }
+  /* Hiding the first column needs a selector as specific as the two-column
+     rule above, which :not() makes heavier than a bare li::before. */
+  .member-list li:nth-child(3n + 1)::before       { display: none; }
+  .member-list li:not(:nth-child(3n + 1))::before { display: block; }
+  .member-list li:not(:nth-child(-n + 3))::after  { display: block; }
+  .member-list li:nth-child(-n + 3)::after        { display: none; }
+}
 
 /* Partner logos. Four official marks in four different palettes and two
    different proportions; greyscale is what makes them sit together as a row
