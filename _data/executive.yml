@@ -1,0 +1,12 @@
+# Comité exécutif. Each entry is a `name` from _data/members.yml, which stays the
+# single record for institution, homepage and portrait. The director sits ex
+# officio and chairs the committee, so that entry leads; the rest are alphabetical.
+- Baudry, Benoit
+- Benzarti, Imen
+- El Boussaidi, Ghizlane
+- Marsso, Lina
+- Oakes, Bentley
+- Robillard, Martin
+- Sahraoui, Houari
+- Sharafi, Zohreh
+- Wei, Lili

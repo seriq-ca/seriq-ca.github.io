@@ -67,6 +67,12 @@ permalink: /en/about/
   </div>
 </section>
 
+<section class="band band--paper">
+  <div class="wrap">
+    {%- include executive.html -%}
+  </div>
+</section>
+
 <section class="band band--surface">
   <div class="wrap">
     <h2>Research axes</h2>

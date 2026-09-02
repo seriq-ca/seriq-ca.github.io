@@ -1,0 +1,35 @@
+{%- comment %}
+  Executive committee. Membership lives in _data/executive.yml as names; the
+  card content comes from _data/members.yml so there is one record per person.
+  Same markup as the members page, minus the axis chips — the axes are set out
+  in full in the section immediately below this one.
+{% endcomment -%}
+{%- assign t = site.data.i18n[page.lang] -%}
+<h2>{{ t.about.executive.heading }}</h2>
+<p>{{ t.about.executive.intro }}</p>
+<ul class="member-list">
+  {%- for n in site.data.executive %}
+  {%- assign m = site.data.members | where: "name", n | first -%}
+  {%- if m %}
+  <li>
+    {%- if m.photo %}
+    {%- if m.photo contains '://' %}{% assign photo_src = m.photo %}
+    {%- else %}{% assign photo_src = '/assets/img/members/' | append: m.photo | relative_url %}{% endif %}
+    <img class="portrait" src="{{ photo_src }}" referrerpolicy="no-referrer"
+         alt="" width="72" height="72" loading="lazy" decoding="async">
+    {%- else %}
+    <span class="portrait portrait--empty" aria-hidden="true"></span>
+    {%- endif %}
+    <div class="member-text">
+      <p class="name">
+        {%- if m.url %}<a href="{{ m.url }}">{{ m.name }}</a>{% else %}{{ m.name }}{% endif -%}
+      </p>
+      <p class="meta">
+        {{- t.institutions[m.institution] -}}
+        {%- if m.role %} · <span class="role">{{ t.people.roles[m.role] }}</span>{% endif -%}
+      </p>
+    </div>
+  </li>
+  {%- endif %}
+  {%- endfor %}
+</ul>

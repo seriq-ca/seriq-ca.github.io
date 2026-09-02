@@ -43,6 +43,13 @@ home:
     people: The members of the Centre
     events: Upcoming and past meetings
 
+about:
+  executive:
+    heading: Executive committee
+    intro: >-
+      The committee is chaired by the Centre's director and brings together the
+      co-leaders of the research axes.
+
 people:
   lede: >-
     The Centre's researchers at its four partner institutions.

@@ -70,6 +70,12 @@ permalink: /a-propos/
   </div>
 </section>
 
+<section class="band band--paper">
+  <div class="wrap">
+    {%- include executive.html -%}
+  </div>
+</section>
+
 <section class="band band--surface">
   <div class="wrap">
     <h2>Axes de recherche</h2>

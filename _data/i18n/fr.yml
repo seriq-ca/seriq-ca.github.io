@@ -43,6 +43,13 @@ home:
     people: Les membres du Centre
     events: Les rencontres à venir et passées
 
+about:
+  executive:
+    heading: Comité exécutif
+    intro: >-
+      Le comité est présidé par la direction du Centre et réunit les co-leaders des
+      axes de recherche.
+
 people:
   lede: >-
     Les chercheuses et chercheurs du Centre dans ses quatre établissements
