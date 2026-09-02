@@ -13,9 +13,7 @@
   {%- if m %}
   <li>
     {%- if m.photo %}
-    {%- if m.photo contains '://' %}{% assign photo_src = m.photo %}
-    {%- else %}{% assign photo_src = '/assets/img/members/' | append: m.photo | relative_url %}{% endif %}
-    <img class="portrait" src="{{ photo_src }}" referrerpolicy="no-referrer"
+    <img class="portrait" src="{{ '/assets/img/members/' | append: m.photo | relative_url }}"
          alt="" width="72" height="72" loading="lazy" decoding="async">
     {%- else %}
     <span class="portrait portrait--empty" aria-hidden="true"></span>

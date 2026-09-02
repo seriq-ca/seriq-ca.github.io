@@ -22,11 +22,7 @@ published: false
       {%- for m in members %}
       <li>
         {%- if m.photo %}
-        {%- comment %} Interim: absolute URLs hotlink institutional portraits.
-             Replace with self-hosted filenames — see assets/img/members/README.md. {% endcomment -%}
-        {%- if m.photo contains '://' %}{% assign photo_src = m.photo %}
-        {%- else %}{% assign photo_src = '/assets/img/members/' | append: m.photo | relative_url %}{% endif %}
-        <img class="portrait" src="{{ photo_src }}" referrerpolicy="no-referrer"
+        <img class="portrait" src="{{ '/assets/img/members/' | append: m.photo | relative_url }}"
              alt="" width="72" height="72" loading="lazy" decoding="async">
         {%- else %}
         <span class="portrait portrait--empty" aria-hidden="true"></span>
