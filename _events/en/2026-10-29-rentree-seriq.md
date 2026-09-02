@@ -9,6 +9,7 @@ event_time: 3:00–7:00 p.m.
 event_start: 2026-10-29T15:00:00-04:00
 event_end: 2026-10-29T19:00:00-04:00
 event_venue: Université de Montréal
+registration_url: https://event.fourwaves.com/seriq-rentree
 name_lang: fr
 summary: >-
   The <i lang="fr">rentrée</i> marks the return of the meeting series
@@ -40,6 +41,9 @@ summary: >-
       </dl>
       <p class="note">
         The building and room will be confirmed before the meeting.
+      </p>
+      <p class="more">
+        <a class="cta" href="{{ page.registration_url }}">Register</a>
       </p>
     </div>
   </div>
@@ -75,12 +79,5 @@ summary: >-
       reception can submit a proposal with the
       <a href="https://forms.gle/jUGuScfx11nuFTti7">submission form</a>.
     </p>
-  </div>
-</section>
-
-<section class="band band--paper">
-  <div class="wrap">
-    <h2>Registration</h2>
-    <p>Registration details will be published on this page.</p>
   </div>
 </section>

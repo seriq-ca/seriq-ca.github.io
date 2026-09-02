@@ -9,6 +9,7 @@ event_time: de 15 h à 19 h
 event_start: 2026-10-29T15:00:00-04:00
 event_end: 2026-10-29T19:00:00-04:00
 event_venue: Université de Montréal
+registration_url: https://event.fourwaves.com/seriq-rentree
 name_lang: fr
 summary: >-
   La rentrée marque la reprise des rencontres sous la bannière SERIQ,
@@ -40,6 +41,9 @@ summary: >-
       </dl>
       <p class="note">
         Le pavillon et le local seront précisés d'ici la rencontre.
+      </p>
+      <p class="more">
+        <a class="cta" href="{{ page.registration_url }}">S'inscrire</a>
       </p>
     </div>
   </div>
@@ -78,12 +82,5 @@ summary: >-
       la période de réseautage peuvent soumettre leur proposition avec le
       <a href="https://forms.gle/jUGuScfx11nuFTti7">formulaire de soumission</a>.
     </p>
-  </div>
-</section>
-
-<section class="band band--paper">
-  <div class="wrap">
-    <h2>Inscription</h2>
-    <p>Les modalités d'inscription seront publiées sur cette page.</p>
   </div>
 </section>

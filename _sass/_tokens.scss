@@ -30,6 +30,9 @@
   --accent-soft: var(--blue-soft);
 
   /* The social register borrows the amber family, never the blue. */
+  /* The label on an amber fill. Fixed, not --ink: the amber is the same on
+     both grounds, so the text on it must be too. */
+  --warm-on:   #12161c;
   --warm:      var(--amber);
   --warm-ink:  var(--amber-ink);
   --warm-soft: var(--amber-soft);

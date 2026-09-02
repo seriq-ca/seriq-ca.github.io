@@ -39,7 +39,7 @@ faculties:
 
 home:
   onward:
-    about: The Centre, its research axes and its partners
+    about: Further information on the Centre
     people: The members of the Centre
     events: Upcoming and past meetings
 
@@ -61,6 +61,7 @@ events:
   archive_kicker: SEMTL meeting
   time: Time
   venue: Venue
+  register: Register
   next_details: Meeting details
   past_heading: Past meetings
   archive_source: >-

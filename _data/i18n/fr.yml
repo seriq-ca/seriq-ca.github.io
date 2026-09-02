@@ -39,7 +39,7 @@ faculties:
 
 home:
   onward:
-    about: Le Centre, ses axes de recherche et ses partenaires
+    about: Plus d'information sur le Centre
     people: Les membres du Centre
     events: Les rencontres à venir et passées
 
@@ -62,6 +62,7 @@ events:
   archive_kicker: Rencontre SEMTL
   time: Heure
   venue: Lieu
+  register: S'inscrire
   next_details: Détails de la rencontre
   past_heading: Rencontres passées
   archive_source: >-

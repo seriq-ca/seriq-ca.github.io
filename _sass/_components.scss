@@ -466,3 +466,28 @@ section.band img { max-width: 100%; height: auto; }
   font-size: var(--t-sm);
 }
 .onward li { margin: 0; display: flex; align-items: baseline; gap: .6rem; }
+
+/* Primary action — registration and the like. The social register, so amber
+   fill and a generous radius; the near-black label reads on the amber in both
+   themes, where the theme's own ink would fail on one of them. */
+.cta {
+  display: inline-block;
+  padding: .55rem 1.1rem;
+  background: var(--warm); color: var(--warm-on);
+  border-radius: var(--r-soft);
+  font-family: var(--f-mono); font-size: var(--t-xs); font-weight: 500;
+  letter-spacing: .02em; text-transform: uppercase;
+  text-decoration: none;
+}
+/* Cased on hover the way a node is, rather than recoloured: the amber and its
+   label already read on both grounds. */
+.cta:hover { box-shadow: inset 0 0 0 2px var(--warm-on); }
+/* The inverted band colours its links with the band ink, which is a step more
+   specific than .cta and would leave the label near-white on the amber. */
+.band--feature .cta { color: var(--warm-on); }
+
+/* The action sits beside the details link rather than under it, so the two
+   share a line while there is room for them. */
+.event .more {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.1rem;
+}

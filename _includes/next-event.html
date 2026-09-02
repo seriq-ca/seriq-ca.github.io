@@ -30,7 +30,12 @@
       {%- if next_event.summary %}
       <p class="note">{{ next_event.summary }}</p>
       {%- endif %}
-      <p class="more"><a href="{{ next_event.url | relative_url }}">{{ t.events.next_details }}</a></p>
+      <p class="more">
+        {%- if next_event.registration_url %}
+        <a class="cta" href="{{ next_event.registration_url }}">{{ t.events.register }}</a>
+        {%- endif %}
+        <a href="{{ next_event.url | relative_url }}">{{ t.events.next_details }}</a>
+      </p>
     </div>
   </div>
 </section>
