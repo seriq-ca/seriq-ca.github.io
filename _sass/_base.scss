@@ -1,6 +1,28 @@
 *, *::before, *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+/* The root size the whole system is measured from: every token in
+   _tokens.scss is in rem, so the page scales as one when this changes —
+   type, the 34rem prose measure, the 64rem wrap, the logo's 4rem height.
+
+   The browser's own default up to a 600px viewport, then growing to 1.5x of it
+   by 1600px — the size the site reads at when a desktop browser is zoomed to
+   150%, which is where it wants to be. At 16px and a 1024px wrap, a full-width
+   desktop screen left the page small in the middle of a wide field of paper;
+   this grows the page with the screen rather than widening the measure, which
+   would have made the lines too long to read.
+
+   The ramp starts at 600px so phones are untouched: they have no field of
+   paper to fill, and 1.5x on a 390px screen would leave four or five words to
+   the line.
+
+   Written in rem rather than px so a reader who has set a larger default text
+   size keeps it — 1rem here is that default, not 16px. Media queries are
+   unaffected: they resolve against the initial font size, not this one, so
+   every breakpoint in the sheet still fires where it did. */
+html {
+  -webkit-text-size-adjust: 100%;
+  font-size: clamp(1rem, .8vw + .7rem, 1.5rem);
+}
 
 body {
   margin: 0;
