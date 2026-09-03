@@ -45,7 +45,11 @@ home:
 
 about:
   executive:
-    heading: Executive committee
+    # Named a steering committee, not an executive committee: the executive
+    # committee is a formal body of the charter, to be constituted and named
+    # under its terms. The `executive` keys below and in _data/executive.yml
+    # keep their name so the change is one string in each language.
+    heading: Steering committee
     intro: >-
       The committee is chaired by the Centre's director and brings together the
       co-leaders of the research axes.

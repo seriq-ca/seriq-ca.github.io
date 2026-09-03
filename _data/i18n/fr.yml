@@ -45,7 +45,11 @@ home:
 
 about:
   executive:
-    heading: Comité exécutif
+    # Named a steering committee, not an executive committee: the executive
+    # committee is a formal body of the charter, to be constituted and named
+    # under its terms. The `executive` keys below and in _data/executive.yml
+    # keep their name so the change is one string in each language.
+    heading: Comité de pilotage
     intro: >-
       Le comité est présidé par la direction du Centre et réunit les co-leaders des
       axes de recherche.
