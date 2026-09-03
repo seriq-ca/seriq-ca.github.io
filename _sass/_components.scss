@@ -430,6 +430,27 @@ section.band img { max-width: 100%; height: auto; }
 .partner-logos a:hover .partner-logo,
 .partner-logos a:focus-visible .partner-logo { opacity: 1; }
 
+/* Hover and focus draw a run under the mark. Every other link on the site
+   underlines on hover; this is that same answer, in the ornament vocabulary of
+   _sass/_decorations.scss — a run at its standard 2px weight, in utility blue,
+   sitting on the pad's own bottom edge. It is in pixels for the same reason
+   every other ornament is.
+
+   A rule, not a figure: it grows from the centre outward, and there is nothing
+   at its ends to close it into a shape around the logo.
+
+   Set inside the pad rather than on its edge — flush with the edge, the dark
+   mode's light ground curves away behind the ends of the rule and it reads as
+   though it were clipped. */
+.partner-logos a::after {
+  content: ''; position: absolute;
+  left: 0; right: 0; bottom: -.3rem; height: var(--run);
+  background: var(--wire);
+  transform: scaleX(0); transform-origin: center;
+  transition: transform .18s ease-out;
+}
+.partner-logos a:hover::after,
+.partner-logos a:focus-visible::after { transform: scaleX(1); }
 .partner-faculty {
   /* Same label treatment as .member-list .meta — mono, quiet, one step down.
      Centred on the mark it names. */
@@ -454,7 +475,12 @@ section.band img { max-width: 100%; height: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* The run still appears — it is the hover feedback, not decoration on top of
+     it — but it arrives whole rather than growing. */
   .partner-logos a::before, .partner-logos .partner-logo { transition: none; }
+  .partner-logos a::after { transition: none; transform: scaleX(1); opacity: 0; }
+  .partner-logos a:hover::after,
+  .partner-logos a:focus-visible::after { opacity: 1; }
 }
 
 /* Onward links: where the home page hands off to the rest of the site. A row
