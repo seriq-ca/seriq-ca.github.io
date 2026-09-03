@@ -14,10 +14,25 @@
    4rem puts a run at just under 2px — the weight it was drawn at — and the cap
    height at 19px, the size the wordmark was while it was still text. */
 .brand .logo { display: block; height: 4rem; width: auto; }
+/* The Centre's full name, set as a justified two-line block under the mark
+   rather than as one long line — a masthead sits under its logo, it does not
+   run out past it. The measure is what makes it two lines: 45ch is a little
+   wider than half of either language's name (83 characters in French, 89 in
+   English), so both break once and neither reaches a third line. Mono, so `ch`
+   is the real character width and the two languages measure alike.
+
+   `text-align-last` is what justifies the second line; `justify` alone leaves
+   the last line of a block ragged, which here is half of it. */
 .brand-sub {
-  display: block; margin-top: .3rem;
+  display: block; margin-top: .35rem;
   font-family: var(--f-mono); font-size: var(--t-xs); font-weight: 400;
   line-height: 1.45; color: var(--ink-2);
+}
+@media (min-width: 34rem) {
+  .brand-sub {
+    max-width: 45ch;
+    text-align: justify; text-align-last: justify;
+  }
 }
 .site-nav {
   display: flex; flex-wrap: wrap; align-items: center;
