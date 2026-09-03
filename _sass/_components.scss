@@ -374,12 +374,10 @@ section.band img { max-width: 100%; height: auto; }
   .member-list li:nth-child(-n + 3)::after        { display: none; }
 }
 
-/* Partner logos. Four official marks in four different palettes and two
-   different proportions; greyscale is what makes them sit together as a row
-   rather than four competing signs. Hover restores the real colours, which is
-   also the only state where the institution's own branding is on show — the
-   filter is a display treatment over an unmodified file, never a recolour of
-   the mark itself.
+/* Partner logos. Four official marks, each shown in its own colours at the
+   size the row can carry — these are the institutions the Centre is made of,
+   so they are on show rather than muted into a uniform grey row. Nothing here
+   recolours a mark: every file is the official asset, unaltered.
 
    Each mark carries the name of the partner faculty beneath it, where there is
    one — see the `faculties` note in _data/institutions.yml. Those captions are
@@ -407,28 +405,31 @@ section.band img { max-width: 100%; height: auto; }
   /* One box height for all four, set by the tallest mark, so the logos centre
      against a common line and every caption starts at the same height
      regardless of how deep its logo is. */
-  min-height: 46px;
+  min-height: 3.375rem;
   /* Shrink to the mark: the link would otherwise run the full column and the
      dark-mode hover ground would show as a slab reaching well past the logo.
      Being fit-content is also what lets the flex centring above place it. */
   width: fit-content;
   position: relative; isolation: isolate;
 }
-/* The hover ground, inset outward so it reads as a pad around the mark without
-   displacing it. Isolated so the negative z-index stays inside the link and
-   does not fall behind the section's own background. */
+/* The ground behind a mark, inset outward so it reads as a pad around the logo
+   without displacing it. Transparent on the light page, where the marks sit on
+   paper already; it carries the light ground in dark mode. Isolated so the
+   negative z-index stays inside the link and does not fall behind the section's
+   own background. */
 .partner-logos a::before {
-  content: ''; position: absolute; inset: -.5rem; z-index: -1;
+  content: ''; position: absolute; inset: -.6rem; z-index: -1;
   border-radius: var(--r-soft);
   background: transparent; transition: background .18s ease;
 }
 .partner-logos .partner-logo {
   display: block; width: auto; height: var(--logo-h);
-  filter: grayscale(1); opacity: .68;
-  transition: filter .18s ease, opacity .18s ease;
+  opacity: .92;
+  transition: opacity .18s ease;
 }
 .partner-logos a:hover .partner-logo,
-.partner-logos a:focus-visible .partner-logo { filter: none; opacity: 1; }
+.partner-logos a:focus-visible .partner-logo { opacity: 1; }
+
 .partner-faculty {
   /* Same label treatment as .member-list .meta — mono, quiet, one step down.
      Centred on the mark it names. */
@@ -443,13 +444,13 @@ section.band img { max-width: 100%; height: auto; }
 @media (min-width: 34rem) { .partner-logos { grid-template-columns: 1fr 1fr; } }
 
 @media (prefers-color-scheme: dark) {
-  /* Every one of these marks is dark ink on transparent, so greyscale alone
-     would leave them invisible; inverting keeps the silhouette. Full colour
-     then needs a light ground under it, faded in on the same hover so the
-     logos never shift position. */
-  .partner-logos .partner-logo { filter: grayscale(1) invert(1); opacity: .78; }
-  .partner-logos a:hover::before,
-  .partner-logos a:focus-visible::before { background: #fff; }
+  /* Every one of these marks is dark ink on transparent, so on a dark page the
+     colours need a light ground under them to read at all. The pad is on
+     permanently rather than on hover: the marks are meant to be legible, and a
+     ground that appears under the cursor would make the row flicker. Slightly
+     off-white and a touch dimmed so four pale slabs do not outshout the page. */
+  .partner-logos a::before { background: #f4f2ee; }
+  .partner-logos .partner-logo { opacity: .88; }
 }
 
 @media (prefers-reduced-motion: reduce) {

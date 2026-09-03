@@ -2,11 +2,14 @@
 # them. Display names come from `institutions:` in _data/i18n/*.yml, so this
 # file carries only what differs per institution: the logo and the homepage.
 #
-# `height` is the rendered height in CSS pixels, tuned per logo so the four read
+# `height` is the rendered height, tuned per logo so the four read
 # as the same optical size despite their different proportions — the ÉTS mark is
 # a near-square lockup, the McGill one a long horizontal wordmark. `width` is
-# `height` times the logo's own aspect ratio; both are written to the <img> so
-# the row reserves its space before the images load.
+# `height` times the logo's own aspect ratio; both are written to the <img> in
+# pixels so the row reserves its space before the images load. The height the
+# page actually renders at is the same number in rem (divided by 16, the root
+# size these were tuned against), so the marks scale with the rest of the page
+# on a large screen — see the root `font-size` in _sass/_base.scss.
 #
 # `faculties` is a list of keys into `faculties:` in _data/i18n/*.yml, naming
 # the partner unit within the institution. Only UdeM and McGill carry one:
@@ -19,9 +22,9 @@
 # official mark, taken from the source below and cropped to its drawing bounds —
 # no recolouring, no redrawing. All four are vector. The graphic standards all require
 # the official asset used unaltered, so replacing one means fetching it again
-# rather than editing what is here. The page renders them monochrome and lifts
-# them to full colour on hover, which is a CSS filter over the unmodified file;
-# see `.partner-logos` in _sass/_components.scss.
+# rather than editing what is here. The page shows each mark in its own colours,
+# over a light ground in dark mode so the dark ink still reads; see
+# `.partner-logos` in _sass/_components.scss.
 #
 #   udem.svg   Extracted from the base64 `.udem-logo-udem` background image in
 #              the compiled stylesheet at umontreal.ca; the site publishes no
@@ -62,16 +65,16 @@
 - key: udem
   logo: udem.svg
   faculties: [udem-fas]
-  height: 35
-  width: 92
+  height: 48
+  width: 126
   url:
     fr: https://www.umontreal.ca/
     en: https://www.umontreal.ca/en/
 
 - key: poly
   logo: poly.svg
-  height: 29
-  width: 106
+  height: 40
+  width: 146
   url:
     fr: https://www.polymtl.ca/
     en: https://www.polymtl.ca/en/
@@ -79,16 +82,16 @@
 - key: mcgill
   logo: mcgill.svg
   faculties: [mcgill-eng, mcgill-sci]
-  height: 31
-  width: 132
+  height: 43
+  width: 183
   url:
     fr: https://www.mcgill.ca/
     en: https://www.mcgill.ca/
 
 - key: ets
   logo: ets.svg
-  height: 46
-  width: 87
+  height: 54
+  width: 102
   url:
     fr: https://www.etsmtl.ca/
     en: https://www.etsmtl.ca/en/

@@ -37,7 +37,7 @@ permalink: /a-propos/
           <img class="partner-logo" src="{{ '/assets/img/institutions/' | append: inst.logo | relative_url }}"
                alt="{{ site.data.i18n[page.lang].institutions[inst.key] }}"
                width="{{ inst.width }}" height="{{ inst.height }}"
-               style="--logo-h: {{ inst.height }}px"
+               style="--logo-h: {{ inst.height | divided_by: 16.0 }}rem"
                loading="lazy" decoding="async">
         </a>
         {%- if inst.faculties %}
