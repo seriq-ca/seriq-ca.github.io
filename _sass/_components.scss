@@ -327,7 +327,13 @@ section.band img { max-width: 100%; height: auto; }
    cased in the same hairline of ink that separates every node from its own.
    A photo covers the amber; an entry without one is left as a bare node. */
 .member-list .portrait {
-  flex: none; width: 3rem; height: 3rem; border-radius: 50%;
+  /* px, not rem, for the reason set out at the top of this component: --node-r
+     is half this number and the wires are positioned off it, and the root font
+     size scales with the viewport (clamp(1rem, .8vw + .7rem, 1.5rem)). A 3rem
+     portrait grew to 72px on a wide window while --node-r stayed at 25px, so
+     every wire arrived 11px above the node it was supposed to meet. The img
+     width/height attributes and the 144x144 sources both already say 48. */
+  flex: none; width: 48px; height: 48px; border-radius: 50%;
   object-fit: cover;
   background: var(--node); border: 1px solid var(--node-line);
 }
