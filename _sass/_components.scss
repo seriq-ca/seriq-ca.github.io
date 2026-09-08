@@ -374,6 +374,67 @@ section.band img { max-width: 100%; height: auto; }
   .member-list li:nth-child(-n + 3)::after        { display: none; }
 }
 
+/* Invited speakers. The same card, wire and portrait node as the committee
+   register above — a speaker is another node on the same network, and the two
+   registers should not read as two different components.
+
+   What differs is the payload: a committee card is a name and an institution,
+   a speaker card carries a talk title, an abstract and a bio. That prose needs
+   a measure, so the list stays one column at every width instead of going to
+   two and three, and only the vertical wire is ever drawn. The overrides carry
+   both class names so they match the specificity of the multi-column rules
+   above and win on source order.
+
+   The committee register breaks out of the prose column because three columns
+   of name-and-institution need the room. One column of abstract does not: left
+   at the band's full width it sets ~130-character lines and starts out of line
+   with the heading above it, so this one keeps the prose measure, the way
+   .partner-logos does.
+
+   A card with no title yet is a name, an affiliation and a portrait. That is
+   the intended state while the programme is still being built, not a gap to be
+   padded with placeholder text. */
+.member-list.speaker-list {
+  grid-template-columns: 1fr;
+  max-width: var(--prose); margin-inline: auto;
+  /* A speaker is the draw, so the portrait is given the room a committee
+     thumbnail does not need. Sized in px rather than rem, as this component's
+     opening comment asks: --node-r has to be exactly half the portrait for the
+     wires between cards to leave and arrive at a node's centre, and the root
+     font size scales with the viewport, so a rem portrait would drift away
+     from a px wire as the window grows. */
+  --node-r: 61px;   /* half the 120px portrait plus its own 1px casing */
+}
+.member-list.speaker-list .portrait { width: 120px; height: 120px; }
+.member-list.speaker-list li::before { display: none; }
+.member-list.speaker-list li:not(:first-child)::after { display: block; }
+.member-list.speaker-list li:first-child::after { display: none; }
+
+/* Keynote tag. The chip vocabulary the axis labels already use, so it reads as
+   part of the same system: mono, small, on the page's own surface colour, which
+   is what separates it from the card's warm ground. It sits above the name
+   rather than beside it, so a long affiliation cannot push it off the line. */
+.speaker-tag {
+  display: inline-block; margin: 0 0 .35rem;
+  padding: .2rem .6rem; border-radius: 999px;
+  background: var(--surface); color: var(--warm-ink);
+  font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: .02em;
+}
+
+.speaker-title {
+  margin: .5rem 0 0; font-family: var(--f-display); font-size: var(--t-md);
+}
+/* The site sets talk titles in italic; the card's own cite carries that, so it
+   does not need a second slant from the browser default. */
+.speaker-title cite { font-style: italic; }
+.speaker-abstract, .speaker-bio { margin-top: .5rem; }
+.speaker-abstract p, .speaker-bio p {
+  margin: .4rem 0 0; font-size: var(--t-sm); color: var(--ink-2);
+  max-width: none;   /* the card is already the measure */
+}
+/* A bio is context for the abstract above it, not a peer of it. */
+.speaker-bio p { font-size: var(--t-xs); }
+
 /* Partner logos. Four official marks, each shown in its own colours at the
    size the row can carry — these are the institutions the Centre is made of,
    so they are on show rather than muted into a uniform grey row. Nothing here

@@ -1,0 +1,88 @@
+{%- comment %}
+  Invited speakers for one event. Call with the basename of a file under
+  _data/speakers/, e.g. {% include speakers.html event="rentree-2026" %}.
+
+  Shared by both language versions of an event page, so the two cannot drift:
+  the roster and the order are stated once, and each card picks the prose for
+  `page.lang`. Speakers confirm one at a time and their material arrives late,
+  so `title`, `abstract` and `bio` are all optional — a card with none of them
+  is a name, an affiliation and a portrait, which is the honest state of a
+  programme still being built.
+
+  Cards reuse .member-list wholesale: the wire, the ports and the portrait node
+  are the same component as the committee register on About, and only the
+  speaker's own prose is styled here.
+
+  `photo` takes either a filename in assets/img/speakers/ or an absolute URL.
+  The members register deliberately dropped its remote branch, but speakers are
+  not ours to ask for a file, so a URL hotlinks their own copy: it can break or
+  change under us, and it tells their host the IP of everyone who loads this
+  page. `referrerpolicy` keeps the referring URL out of that request; nothing
+  keeps the IP out of it.
+
+  A field that is present but empty counts as absent, so the keys can sit in the
+  data file as a form to fill in. Liquid treats "" as truthy, so a bare `if` on a
+  field would emit an empty element; each value is piped through `strip` — which
+  also turns a missing key into "" — and compared against "" explicitly.
+
+  Abstracts and bios usually arrive in one language only. Rather than drop the
+  field or silently show French prose as though it were English, the card falls
+  back to whichever language exists and marks it with `lang`, so screen readers
+  and hyphenation treat it correctly.
+{% endcomment -%}
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign speakers = site.data.speakers[include.event] -%}
+{%- assign other_lang = "fr" -%}
+{%- if page.lang == "fr" %}{% assign other_lang = "en" %}{% endif -%}
+<ul class="member-list speaker-list">
+  {%- for s in speakers %}
+  <li>
+    {%- if s.photo %}
+    {%- assign src = '/assets/img/speakers/' | append: s.photo | relative_url -%}
+    {%- if s.photo contains '://' %}{% assign src = s.photo %}{% endif -%}
+    <img class="portrait" src="{{ src }}"
+         alt="" width="120" height="120" loading="lazy" decoding="async"
+         referrerpolicy="no-referrer">
+    {%- else %}
+    <span class="portrait portrait--empty" aria-hidden="true"></span>
+    {%- endif %}
+    <div class="member-text">
+      {%- if s.keynote %}
+      <p class="speaker-tag">{{ t.events.keynote }}</p>
+      {%- endif %}
+      <p class="name">
+        {%- if s.url %}<a href="{{ s.url }}">{{ s.name }}</a>{% else %}{{ s.name }}{% endif -%}
+      </p>
+      {%- comment %}A plain string affiliation is the same in both languages; a
+      mapping names it per language.{% endcomment -%}
+      {%- if s.affiliation %}
+      <p class="meta">{% if s.affiliation.fr %}{{ s.affiliation[page.lang] }}{% else %}{{ s.affiliation }}{% endif %}</p>
+      {%- endif %}
+
+      {%- assign title = s.title[page.lang] | strip -%}
+      {%- assign title_lang = "" -%}
+      {%- if title == "" %}{% assign title = s.title[other_lang] | strip %}{% assign title_lang = other_lang %}{% endif -%}
+      {%- if title == "" %}{% assign title_lang = "" %}{% endif -%}
+      {%- if title != "" %}
+      <p class="speaker-title"{% if title_lang != "" %} lang="{{ title_lang }}"{% endif %}><cite>{{ title }}</cite></p>
+      {%- endif %}
+
+      {%- assign abstract = s.abstract[page.lang] | strip -%}
+      {%- assign abstract_lang = "" -%}
+      {%- if abstract == "" %}{% assign abstract = s.abstract[other_lang] | strip %}{% assign abstract_lang = other_lang %}{% endif -%}
+      {%- if abstract == "" %}{% assign abstract_lang = "" %}{% endif -%}
+      {%- if abstract != "" %}
+      <div class="speaker-abstract"{% if abstract_lang != "" %} lang="{{ abstract_lang }}"{% endif %}>{{ abstract | markdownify }}</div>
+      {%- endif %}
+
+      {%- assign bio = s.bio[page.lang] | strip -%}
+      {%- assign bio_lang = "" -%}
+      {%- if bio == "" %}{% assign bio = s.bio[other_lang] | strip %}{% assign bio_lang = other_lang %}{% endif -%}
+      {%- if bio == "" %}{% assign bio_lang = "" %}{% endif -%}
+      {%- if bio != "" %}
+      <div class="speaker-bio"{% if bio_lang != "" %} lang="{{ bio_lang }}"{% endif %}>{{ bio | markdownify }}</div>
+      {%- endif %}
+    </div>
+  </li>
+  {%- endfor %}
+</ul>

@@ -69,6 +69,7 @@ events:
   register: S'inscrire
   next_details: Détails de la rencontre
   past_heading: Rencontres passées
+  keynote: Conférence d'ouverture
   archive_source: >-
     Publié à l'origine sur le site SEMTL :
 

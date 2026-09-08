@@ -52,12 +52,11 @@ summary: >-
 <section class="band band--paper">
   <div class="wrap">
     <h2>Programme</h2>
-    <p class="note">Le programme est préliminaire.</p>
     <ul>
       <li>
-        Quatre ou cinq conférencières et conférenciers invités, 15 minutes
-        chacun, provenant d'ici et de l'étranger, du milieu de la recherche
-        comme de l'industrie.
+        Des conférencières et conférenciers invités, 15 minutes chacun,
+        provenant d'ici et de l'étranger, du milieu de la recherche comme de
+        l'industrie.
       </li>
       <li>
         Une table ronde où les conférencières et conférenciers discutent plus
@@ -71,6 +70,13 @@ summary: >-
         Une période de réseautage, avec des affiches étudiantes.
       </li>
     </ul>
+
+    <h3>Conférencières et conférenciers invités</h3>
+    <p class="note">
+      Les autres conférencières et conférenciers seront annoncés à mesure de
+      leur confirmation.
+    </p>
+    {% include speakers.html event="rentree-2026" %}
   </div>
 </section>
 

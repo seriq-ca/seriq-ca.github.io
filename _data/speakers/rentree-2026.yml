@@ -1,0 +1,40 @@
+# Invited speakers for the 2026-10-29 rentrée, rendered by _includes/speakers.html
+# on both _events/2026-10-29-rentree-seriq.md and its English counterpart.
+#
+# Speaker prose is content, not interface, so it lives here with `fr:`/`en:`
+# subkeys rather than in _data/i18n/*.yml, which is for UI strings only.
+#
+# `title`, `abstract` and `bio` are optional and may be left empty: the card
+# renders whatever is set and stays a name-and-affiliation card until the rest
+# arrives. An empty string and an absent key behave the same, so the keys can
+# sit here as a form to fill in. Order is the order of the programme once slots
+# are assigned; for now it is confirmation order.
+#
+# `keynote: true` tags a speaker as the keynote on the card. The label itself is
+# interface text, so it lives under `events.keynote` in _data/i18n/*.yml rather
+# than here.
+#
+# `photo` is either a filename in assets/img/speakers/, which is self-hosted and
+# is what the rest of the site does, or an absolute URL, which hotlinks the
+# speaker's own copy. See the README in that directory for the trade-off.
+
+- name: Daniel Lemire
+  # Free text rather than a key into `institutions:` in _data/i18n/*.yml: that
+  # table covers the four partner institutions, and speakers come from
+  # elsewhere in Quebec, abroad and from industry. Add `fr:`/`en:` subkeys here
+  # if a speaker's affiliation is actually named differently per language.
+  affiliation: Université TÉLUQ
+  url: https://lemire.me/en/
+  # Hotlinked from the speaker's own site rather than self-hosted.
+  photo: https://lemire.me/img/portrait2018.jpg
+  # Expected to be the keynote, not yet confirmed.
+  keynote: false
+  title:
+    fr: ""
+    en: ""
+  abstract:
+    fr: ""
+    en: ""
+  bio:
+    fr: ""
+    en: ""

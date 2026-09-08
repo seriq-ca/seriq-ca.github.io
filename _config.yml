@@ -59,5 +59,6 @@ exclude:
   - TODO.md
   - README.md
   - assets/img/members/README.md
+  - assets/img/speakers/README.md
   - vendor
   - "*.pdf"

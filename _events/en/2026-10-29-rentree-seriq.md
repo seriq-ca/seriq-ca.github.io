@@ -52,11 +52,10 @@ summary: >-
 <section class="band band--paper">
   <div class="wrap">
     <h2>Programme</h2>
-    <p class="note">The programme is preliminary.</p>
     <ul>
       <li>
-        Four or five guest speakers, 15 minutes each, a mix of local and
-        international speakers from research and industry.
+        Guest speakers, 15 minutes each, local and international, from
+        research and industry.
       </li>
       <li>
         A panel where the speakers discuss the topics more broadly.
@@ -68,6 +67,12 @@ summary: >-
         A networking reception, with student posters.
       </li>
     </ul>
+
+    <h3>Guest speakers</h3>
+    <p class="note">
+      Further speakers will be announced as they are confirmed.
+    </p>
+    {% include speakers.html event="rentree-2026" %}
   </div>
 </section>
 
