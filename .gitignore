@@ -22,3 +22,6 @@ Thumbs.db
 
 # Local tool config, not shared.
 .claude/launch.json
+
+# Headless-browser profile used for rendering screenshots locally.
+.shots/
