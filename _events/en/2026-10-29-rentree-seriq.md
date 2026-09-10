@@ -54,8 +54,12 @@ summary: >-
     <h2>Programme</h2>
     <ul>
       <li>
-        Guest speakers, 15 minutes each, local and international, from
-        research and industry.
+        Guest speakers from research and industry. Each presents their view of
+        software research in 15 minutes:
+        <ul>
+          <li><a href="https://lemire.me/en/">Daniel Lemire</a></li>
+          <li><a href="https://www.lbriand.info/">Lionel Briand</a></li>
+        </ul>
       </li>
       <li>
         A panel where the speakers discuss the topics more broadly.
