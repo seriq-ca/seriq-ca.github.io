@@ -41,3 +41,25 @@ recherche et d'ingénierie portent sur le calcul haute performance, les structur
 efficaces et l'optimisation de la performance logicielle. Il est l'auteur de bibliothèques libres
 largement adoptées : on trouve ses algorithmes et son code dans plusieurs bibliothèques standards et systèmes majeurs, dont .NET, Rust, Go, Node.js, Google Chrome et Safari. Il figure parmi les 2 % de scientifiques les plus cités au monde selon le classement Université Stanford / Elsevier. Il est rédacteur de la revue Software: Practice and Experience (Wiley, fondée en 1971) et a reçu le Prix d'excellence en recherche 2020 de l'Université du Québec pour ses travaux sur l'accélération du traitement des documents JSON. Sur GitHub, il fait partie des 1000 développeurs les plus suivis parmi plus de 100 millions. Il est @lemire sur X et tient un blogue hebdomadaire à l'adresse https://lemire.me/."
     en: ""
+
+- name: Lionel Briand
+  # Free text rather than a key into `institutions:` in _data/i18n/*.yml: that
+  # table covers the four partner institutions, and speakers come from
+  # elsewhere in Quebec, abroad and from industry. Add `fr:`/`en:` subkeys here
+  # if a speaker's affiliation is actually named differently per language.
+  affiliation: University of Ottawa
+  url: https://www.lbriand.info/
+  # Hotlinked from the speaker's own site rather than self-hosted.
+  photo: https://lh3.googleusercontent.com/sitesv/AG8ngQVXDbNgyfndZsgn7ChYrGzIyc6ZF5KZ--W6J8Ac13nyAmkByappCMKffQSQnx_K6BegXjTF1p2x-deb3OIuaSzjv_GNMCHLsXgZQkRimEk2QxPNg5HwAC9BuUQpICj7xIMKxhv7dDbPeAwKDjqgnqHHlqcYE6gzvoqGEdzGekHdCRuHLkPRLx4_AZd5LBboWHQes4OH-H7Ktt8ZFUxPiMO5_XF7pwBPuPcfoCD9yN0=w1280
+  # Expected to be the keynote, not yet confirmed.
+  keynote: false
+  title:
+    fr: ""
+    en: ""
+  abstract:
+    fr: ""
+    en: ""
+  bio:
+    fr: ""
+    en: ""
+

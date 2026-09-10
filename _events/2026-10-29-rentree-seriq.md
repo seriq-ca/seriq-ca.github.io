@@ -54,10 +54,13 @@ summary: >-
     <h2>Programme</h2>
     <ul>
       <li>
-        Des conférencières et conférenciers invités, 15 minutes chacun,
-        provenant d'ici et de l'étranger, du milieu de la recherche comme de
-        l'industrie.
+        Des conférencières et conférenciers invités, du milieu de la recherche comme de
+        l'industrie. Chaque invité.e expose sa vision de la recherche en logiciel en 15 minutes:
       </li>
+        <ul>
+          <li><a href="https://lemire.me/en/">Daniel Lemire</a></li>
+          <li><a href="https://www.lbriand.info/">Lionel Briand</a></li>
+        </ul>
       <li>
         Une table ronde où les conférencières et conférenciers discutent plus
         largement des sujets abordés.
