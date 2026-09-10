@@ -66,7 +66,7 @@ summary: >-
         largement des sujets abordés.
       </li>
       <li>
-        Des représentantes et représentants des universités prennent ensuite
+        Des représentant.e.s des universités prennent ensuite
         la parole.
       </li>
       <li>
@@ -87,7 +87,7 @@ summary: >-
   <div class="wrap">
     <h2>Affiches étudiantes</h2>
     <p>
-      Les étudiantes et étudiants qui souhaitent présenter une affiche pendant
+      Les étudiant.e.s qui souhaitent présenter une affiche pendant
       la période de réseautage peuvent soumettre leur proposition avec le
       <a href="https://forms.gle/jUGuScfx11nuFTti7">formulaire de soumission</a>.
     </p>
