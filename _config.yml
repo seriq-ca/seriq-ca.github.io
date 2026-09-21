@@ -47,6 +47,11 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  # Sets `last_modified_at` from each file's last git commit, which
+  # jekyll-sitemap prefers over `page.date`. Without it, an event's
+  # <lastmod> is the date in its filename — for upcoming events, a date
+  # in the future, which Google discards as implausible.
+  - jekyll-last-modified-at
 
 # Belt and braces: even if one of these is ever committed, Jekyll must not
 # copy it into _site/ and publish it. Mirrors .gitignore.

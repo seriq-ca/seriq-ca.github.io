@@ -24,6 +24,10 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+        with:
+          # jekyll-last-modified-at reads each file's commit date, so the
+          # build needs the full history, not the default shallow clone.
+          fetch-depth: 0
 
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
