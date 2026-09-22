@@ -68,6 +68,8 @@ summary: >-
         <ul>
           <li><a href="https://lemire.me/en/">Daniel Lemire</a></li>
           <li><a href="https://www.lbriand.info/">Lionel Briand</a></li>
+          <li><a href="https://discover.research.utoronto.ca/24922-marsha-chechik">Marsha Chechik</a></li>
+          <li><a href="https://www.linkedin.com/in/yves-daoust-3aa594/">Yves Daoust</a></li>
         </ul>
       </li>
       <li>

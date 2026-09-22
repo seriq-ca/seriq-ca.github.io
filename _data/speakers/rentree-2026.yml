@@ -63,3 +63,45 @@ largement adoptées : on trouve ses algorithmes et son code dans plusieurs bibli
     fr: ""
     en: ""
 
+
+- name: Marsh Chechik
+  # Free text rather than a key into `institutions:` in _data/i18n/*.yml: that
+  # table covers the four partner institutions, and speakers come from
+  # elsewhere in Quebec, abroad and from industry. Add `fr:`/`en:` subkeys here
+  # if a speaker's affiliation is actually named differently per language.
+  affiliation: University of Toronto
+  url: https://discover.research.utoronto.ca/24922-marsha-chechik
+  # Hotlinked from the speaker's own site rather than self-hosted.
+  photo: https://discover.research.utoronto.ca/24922-marsha-chechik/thumbnail
+  # Expected to be the keynote, not yet confirmed.
+  keynote: false
+  title:
+    fr: 
+    en: 
+  abstract:
+    fr: 
+    en: 
+  bio:
+    fr: 
+    en: 
+
+- name: Yves Daoust
+  # Free text rather than a key into `institutions:` in _data/i18n/*.yml: that
+  # table covers the four partner institutions, and speakers come from
+  # elsewhere in Quebec, abroad and from industry. Add `fr:`/`en:` subkeys here
+  # if a speaker's affiliation is actually named differently per language.
+  affiliation: Fermes d'hiver
+  url: https://www.linkedin.com/in/yves-daoust-3aa594/
+  # Hotlinked from the speaker's own site rather than self-hosted.
+  photo: https://media.licdn.com/dms/image/v2/C4D03AQFvaGVXLrozVw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516242467997?e=1791417600&v=beta&t=0j_6NNhbQSHoYTt9WjWLvwIzNUO-WJByTwDI9AnlgJA
+  # Expected to be the keynote, not yet confirmed.
+  keynote: false
+  title:
+    fr: 
+    en: 
+  abstract:
+    fr: 
+    en: 
+  bio:
+    fr: 
+    en: 
