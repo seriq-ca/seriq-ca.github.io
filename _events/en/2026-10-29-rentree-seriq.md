@@ -10,6 +10,14 @@ event_start: 2026-10-29T15:00:00-04:00
 event_end: 2026-10-29T19:00:00-04:00
 event_venue: Université de Montréal
 registration_url: https://event.fourwaves.com/seriq-rentree
+# Registration window, emitted as the Offer `validFrom`/`validThrough` in
+# _includes/schema.html. Times are EDT (-04:00); both dates fall inside
+# daylight time, so neither needs the -05:00 winter offset.
+registration_opens: 2026-09-02T09:30:00-04:00
+registration_closes: 2026-10-23T17:00:00-04:00
+# Basename of the file under _data/speakers/. Read by _includes/speakers.html
+# for the cards and by _includes/schema.html for the Event `performer` list.
+speakers: rentree-2026
 name_lang: fr
 summary: >-
   The <i lang="fr">rentrée</i> marks the return of the meeting series
@@ -76,7 +84,7 @@ summary: >-
     <p class="note">
       Further speakers will be announced as they are confirmed.
     </p>
-    {% include speakers.html event="rentree-2026" %}
+    {% include speakers.html event=page.speakers %}
   </div>
 </section>
 

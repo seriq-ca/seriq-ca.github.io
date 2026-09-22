@@ -20,7 +20,45 @@
       "addressCountry": "CA"
     }
   },
-  "organizer": { "@id": "{{ org_id }}" },
+  "organizer": {
+    "@type": "Organization",
+    "@id": "{{ org_id }}",
+    "name": {{ site.title | jsonify }},
+    "url": "{{ '/' | absolute_url }}"
+  },
+{%- assign event_speakers = site.data.speakers[page.speakers] %}
+{%- if event_speakers %}
+  "performer": [
+    {%- for s in event_speakers %}
+    {
+      "@type": "Person",
+      "name": {{ s.name | jsonify }}
+      {%- if s.url %},
+      "url": {{ s.url | jsonify }}
+      {%- endif %}
+      {%- if s.affiliation %},
+      "affiliation": { "@type": "Organization", "name": {{ s.affiliation | jsonify }} }
+      {%- endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ],
+{%- endif %}
+  "image": "{{ page.image | default: '/assets/img/og.png' | absolute_url }}",
+{%- if page.registration_url %}
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CAD",
+    "availability": "https://schema.org/InStock",
+    "url": {{ page.registration_url | jsonify }}
+    {%- if page.registration_opens %},
+    "validFrom": "{{ page.registration_opens | date_to_xmlschema }}"
+    {%- endif %}
+    {%- if page.registration_closes %},
+    "validThrough": "{{ page.registration_closes | date_to_xmlschema }}"
+    {%- endif %}
+  },
+{%- endif %}
   "description": {{ schema_desc | jsonify }},
   "url": "{{ page.url | absolute_url }}"
 }
