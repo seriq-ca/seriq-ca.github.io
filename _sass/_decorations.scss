@@ -1,3 +1,6 @@
+@use "sass:list";
+@use "sass:map";
+
 /* Decorations — the one place the site draws a wire.
 
    The ornament vocabulary is three primitives: a RUN (a 2px line in utility
@@ -200,88 +203,92 @@
   .wire-net__pulse, .axes::after, .cross-axes::after { display: none; }
 }
 
-/* Corner brackets on the meeting panel: a run along each arm, ending in a
-   node centred on it. The frame is inset so nothing clips. */
+/* Corner brackets on the meeting panel. At each corner an amber bracket: a run along
+   each arm ending in a cased node, with a thinner blue rail running inside it
+   and stopping short in a node of its own, the way the header braid pairs a
+   blue strand with an amber one.
+
+       ■━━━━━━━━━━━■
+       ┃ ┌──────■
+       ┃ │
+       ┃ ■
+       ■
+
+   Every layer is a gradient on the panel's own background, so the frame costs
+   no markup and no pseudo-element. The four corners are the same drawing: each
+   position is written as an offset from its own two edges, which mirrors it.
+   Offsets are to a run's near edge; a node is centred on the run's middle. The
+   frame is inset so nothing clips. */
+$event-corners: (left top, right top, left bottom, right bottom);
+
+@function event-frame-layers() {
+  // Each layer is an (image, size, position) triple, split apart at the end.
+  $layers: ();
+  $amber: linear-gradient(var(--amber), var(--amber));
+  $rail: linear-gradient(var(--rail), var(--rail));
+  $casing: linear-gradient(var(--node-line), var(--node-line));
+  // Layers paint first-on-top: nodes over casings over runs.
+  @each $h, $v in $event-corners {
+    // The amber arm ends and the rail ends.
+    $layers: list.append($layers, ($amber, var(--box) var(--box),
+      #{$h} calc(var(--inset) + var(--arm) - var(--box) / 2)
+      #{$v} calc(var(--inset) + 1px - var(--box) / 2)), comma);
+    $layers: list.append($layers, ($amber, var(--box) var(--box),
+      #{$h} calc(var(--inset) + 1px - var(--box) / 2)
+      #{$v} calc(var(--inset) + var(--arm) - var(--box) / 2)), comma);
+    $layers: list.append($layers, ($rail, var(--rail-box) var(--rail-box),
+      #{$h} calc(var(--rail-at) + var(--rail-arm) - var(--rail-box) / 2)
+      #{$v} calc(var(--rail-at) + .5px - var(--rail-box) / 2)), comma);
+    $layers: list.append($layers, ($rail, var(--rail-box) var(--rail-box),
+      #{$h} calc(var(--rail-at) + .5px - var(--rail-box) / 2)
+      #{$v} calc(var(--rail-at) + var(--rail-arm) - var(--rail-box) / 2)), comma);
+  }
+  @each $h, $v in $event-corners {
+    $layers: list.append($layers, ($casing, var(--boxc) var(--boxc),
+      #{$h} calc(var(--inset) + var(--arm) - var(--boxc) / 2)
+      #{$v} calc(var(--inset) + 1px - var(--boxc) / 2)), comma);
+    $layers: list.append($layers, ($casing, var(--boxc) var(--boxc),
+      #{$h} calc(var(--inset) + 1px - var(--boxc) / 2)
+      #{$v} calc(var(--inset) + var(--arm) - var(--boxc) / 2)), comma);
+  }
+  @each $h, $v in $event-corners {
+    // Amber arms, then the rail inside them.
+    $layers: list.append($layers, ($amber, calc(var(--arm) + var(--run)) var(--run),
+      #{$h} var(--inset) #{$v} var(--inset)), comma);
+    $layers: list.append($layers, ($amber, var(--run) calc(var(--arm) + var(--run)),
+      #{$h} var(--inset) #{$v} var(--inset)), comma);
+    $layers: list.append($layers, ($rail, var(--rail-arm) 1px,
+      #{$h} var(--rail-at) #{$v} var(--rail-at)), comma);
+    $layers: list.append($layers, ($rail, 1px var(--rail-arm),
+      #{$h} var(--rail-at) #{$v} var(--rail-at)), comma);
+  }
+  $images: ();
+  $sizes: ();
+  $positions: ();
+  @each $image, $size, $position in $layers {
+    $images: list.append($images, $image, comma);
+    $sizes: list.append($sizes, $size, comma);
+    $positions: list.append($positions, $position, comma);
+  }
+  @return (images: $images, sizes: $sizes, positions: $positions);
+}
+
+$event-frame: event-frame-layers();
+
 .event {
-  --arm: 20px; --box: var(--node-size); --inset: 4px;
+  --arm: 44px; --box: var(--node-size); --inset: 4px;
   /* The cased node, centred on the same point as the node it encloses. */
   --boxc: calc(var(--box) + 2px);
+  /* The rail: 1px, --rail-gap inside the amber run, three fifths its length. */
+  --rail: var(--pulse);
+  --rail-gap: 6px;
+  --rail-at: calc(var(--inset) + var(--run) + var(--rail-gap));
+  --rail-arm: 26px;
+  --rail-box: 4px;
   background-repeat: no-repeat;
-  background-image:
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--amber), var(--amber)),
-    linear-gradient(var(--node-line), var(--node-line)),
-    linear-gradient(var(--node-line), var(--node-line)),
-    linear-gradient(var(--node-line), var(--node-line)),
-    linear-gradient(var(--node-line), var(--node-line)),
-    linear-gradient(var(--node-line), var(--node-line)),
-    linear-gradient(var(--node-line), var(--node-line)),
-    linear-gradient(var(--node-line), var(--node-line)),
-    linear-gradient(var(--node-line), var(--node-line));
-  background-size:
-    var(--arm) var(--run),
-    var(--run) var(--arm),
-    var(--arm) var(--run),
-    var(--run) var(--arm),
-    var(--arm) var(--run),
-    var(--run) var(--arm),
-    var(--arm) var(--run),
-    var(--run) var(--arm),
-    var(--box) var(--box),
-    var(--box) var(--box),
-    var(--box) var(--box),
-    var(--box) var(--box),
-    var(--box) var(--box),
-    var(--box) var(--box),
-    var(--box) var(--box),
-    var(--box) var(--box),
-    var(--boxc) var(--boxc),
-    var(--boxc) var(--boxc),
-    var(--boxc) var(--boxc),
-    var(--boxc) var(--boxc),
-    var(--boxc) var(--boxc),
-    var(--boxc) var(--boxc),
-    var(--boxc) var(--boxc),
-    var(--boxc) var(--boxc);
-  background-position:
-    left var(--inset) top var(--inset),
-    left var(--inset) top var(--inset),
-    right var(--inset) top var(--inset),
-    right var(--inset) top var(--inset),
-    left var(--inset) bottom var(--inset),
-    left var(--inset) bottom var(--inset),
-    right var(--inset) bottom var(--inset),
-    right var(--inset) bottom var(--inset),
-    left calc(var(--inset) + var(--arm) - var(--box) / 2) top calc(var(--inset) + 1px - var(--box) / 2),
-    left calc(var(--inset) + 1px - var(--box) / 2) top calc(var(--inset) + var(--arm) - var(--box) / 2),
-    right calc(var(--inset) + var(--arm) - var(--box) / 2) top calc(var(--inset) + 1px - var(--box) / 2),
-    right calc(var(--inset) + 1px - var(--box) / 2) top calc(var(--inset) + var(--arm) - var(--box) / 2),
-    left calc(var(--inset) + var(--arm) - var(--box) / 2) bottom calc(var(--inset) + 1px - var(--box) / 2),
-    left calc(var(--inset) + 1px - var(--box) / 2) bottom calc(var(--inset) + var(--arm) - var(--box) / 2),
-    right calc(var(--inset) + var(--arm) - var(--box) / 2) bottom calc(var(--inset) + 1px - var(--box) / 2),
-    right calc(var(--inset) + 1px - var(--box) / 2) bottom calc(var(--inset) + var(--arm) - var(--box) / 2),
-    left calc(var(--inset) + var(--arm) - var(--boxc) / 2) top calc(var(--inset) + 1px - var(--boxc) / 2),
-    left calc(var(--inset) + 1px - var(--boxc) / 2) top calc(var(--inset) + var(--arm) - var(--boxc) / 2),
-    right calc(var(--inset) + var(--arm) - var(--boxc) / 2) top calc(var(--inset) + 1px - var(--boxc) / 2),
-    right calc(var(--inset) + 1px - var(--boxc) / 2) top calc(var(--inset) + var(--arm) - var(--boxc) / 2),
-    left calc(var(--inset) + var(--arm) - var(--boxc) / 2) bottom calc(var(--inset) + 1px - var(--boxc) / 2),
-    left calc(var(--inset) + 1px - var(--boxc) / 2) bottom calc(var(--inset) + var(--arm) - var(--boxc) / 2),
-    right calc(var(--inset) + var(--arm) - var(--boxc) / 2) bottom calc(var(--inset) + 1px - var(--boxc) / 2),
-    right calc(var(--inset) + 1px - var(--boxc) / 2) bottom calc(var(--inset) + var(--arm) - var(--boxc) / 2);
+  background-image: map.get($event-frame, images);
+  background-size: map.get($event-frame, sizes);
+  background-position: map.get($event-frame, positions);
 }
 
 /* One run down the axes gutter, with a node on each row and a signal riding

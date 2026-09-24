@@ -72,7 +72,10 @@
       {%- if abstract == "" %}{% assign abstract = s.abstract[other_lang] | strip %}{% assign abstract_lang = other_lang %}{% endif -%}
       {%- if abstract == "" %}{% assign abstract_lang = "" %}{% endif -%}
       {%- if abstract != "" %}
-      <div class="speaker-abstract"{% if abstract_lang != "" %} lang="{{ abstract_lang }}"{% endif %}>{{ abstract | markdownify }}</div>
+      <details class="speaker-abstract">
+        <summary>{{ t.events.abstract }}</summary>
+        <div{% if abstract_lang != "" %} lang="{{ abstract_lang }}"{% endif %}>{{ abstract | markdownify }}</div>
+      </details>
       {%- endif %}
 
       {%- assign bio = s.bio[page.lang] | strip -%}
@@ -80,7 +83,10 @@
       {%- if bio == "" %}{% assign bio = s.bio[other_lang] | strip %}{% assign bio_lang = other_lang %}{% endif -%}
       {%- if bio == "" %}{% assign bio_lang = "" %}{% endif -%}
       {%- if bio != "" %}
-      <div class="speaker-bio"{% if bio_lang != "" %} lang="{{ bio_lang }}"{% endif %}>{{ bio | markdownify }}</div>
+      <details class="speaker-bio">
+        <summary>{{ t.events.bio }}</summary>
+        <div{% if bio_lang != "" %} lang="{{ bio_lang }}"{% endif %}>{{ bio | markdownify }}</div>
+      </details>
       {%- endif %}
     </div>
   </li>

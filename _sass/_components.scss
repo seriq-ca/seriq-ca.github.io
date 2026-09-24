@@ -20,6 +20,28 @@
   letter-spacing: -.01em; line-height: 1.04; text-wrap: balance;
 }
 .event .kicker { order: 2; margin: .45rem 0 0; }
+/* The meeting's name, on the homepage card only: the event page's own panel
+   sits under the page title and would only repeat it. Set in the display face
+   as a title, at a size that keeps the date the larger of the two. */
+.event .event-name {
+  order: 0; margin: 0 0 .35rem;
+  font-family: var(--f-display); font-size: var(--t-xl); font-weight: 700;
+  line-height: 1.15;
+}
+/* On the homepage card the name, the date and the time all lead to the
+   meeting's page; they read as text until hovered. */
+.event--next .event-name a, .event--next .when a, .event--next .event-details a {
+  color: inherit; text-decoration: none;
+}
+.event--next .event-name a:hover, .event--next .when a:hover,
+.event--next .event-details a:hover { text-decoration: underline; }
+/* The card carries the summary at reading size, with more room inside the
+   frame. */
+.event--next { --pad-x: 1.4rem; padding: 2rem var(--pad-x) 2.5rem; }
+/* Narrow, the kicker says what the card is before the name rather than after
+   the date; wide, it is placed in the margin column regardless. */
+.event--next .kicker { order: -1; margin: 0 0 .45rem; }
+.event--next .note { font-size: var(--t-base); }
 .event-details {
   order: 3;
   display: grid; grid-template-columns: auto 1fr;
@@ -83,13 +105,20 @@
   .event .kicker {
     grid-column: 1; grid-row: 1; margin: 0; padding-top: .45rem;
   }
-  .event .when, .event-details { grid-column: 2; }
+  .event .event-name, .event .when, .event-details { grid-column: 2; }
   .event .note, .event .more {
     grid-column: 3; margin-top: 0;
     padding-left: var(--gutter-gap); border-left: 1px solid var(--feature-rule);
   }
   .event .note { grid-row: 1; padding-top: .3rem; }
   .event .more { grid-row: 2; padding-bottom: .3rem; }
+  /* With the name above the date the middle column has three rows; the note
+     spans the first two so it does not stretch the name's row on its own. */
+  /* The date row takes any height the note needs beyond the name and date, so
+     the slack falls below the date rather than between it and the name. */
+  .event--next { --pad-x: 2.5rem; grid-template-rows: auto 1fr auto; }
+  .event--next .note { grid-row: 1 / span 2; }
+  .event--next .more { grid-row: 3; }
 }
 
 /* Research axes — numbered because the axes are numbered in the charter.
@@ -434,6 +463,23 @@ section.band img { max-width: 100%; height: auto; }
    does not need a second slant from the browser default. */
 .speaker-title cite { font-style: italic; }
 .speaker-abstract, .speaker-bio { margin-top: .5rem; }
+/* Both are collapsed behind a label so the cards stay short and even; the
+   title above is what a reader scans. The label is the mono register of the
+   site's other labels, with a +/− in place of the browser's triangle. */
+.speaker-abstract summary, .speaker-bio summary {
+  display: inline-flex; align-items: baseline; gap: .45rem;
+  cursor: pointer; list-style: none;
+  font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: .02em;
+  text-transform: uppercase; color: var(--ink-2);
+}
+.speaker-abstract summary::-webkit-details-marker,
+.speaker-bio summary::-webkit-details-marker { display: none; }
+.speaker-abstract summary::before, .speaker-bio summary::before {
+  content: "+"; color: var(--warm-ink); font-weight: 700;
+}
+.speaker-abstract[open] summary::before,
+.speaker-bio[open] summary::before { content: "−"; }
+.speaker-abstract summary:hover, .speaker-bio summary:hover { color: var(--ink); }
 .speaker-abstract p, .speaker-bio p {
   margin: .4rem 0 0; font-size: var(--t-sm); color: var(--ink-2);
   max-width: none;   /* the card is already the measure */
@@ -571,7 +617,7 @@ section.band img { max-width: 100%; height: auto; }
   border-radius: var(--r-soft);
   font-family: var(--f-mono); font-size: var(--t-xs); font-weight: 500;
   letter-spacing: .02em; text-transform: uppercase;
-  text-decoration: none;
+  text-decoration: none; white-space: nowrap;
 }
 /* Cased on hover the way a node is, rather than recoloured: the amber and its
    label already read on both grounds. */
@@ -579,9 +625,17 @@ section.band img { max-width: 100%; height: auto; }
 /* The inverted band colours its links with the band ink, which is a step more
    specific than .cta and would leave the label near-white on the amber. */
 .band--feature .cta { color: var(--warm-on); }
+/* Secondary action beside it: the same shape, outlined rather than filled,
+   so registration stays the one filled button. */
+.cta--ghost {
+  background: transparent; color: var(--warm);
+  box-shadow: inset 0 0 0 1px var(--warm);
+}
+.cta--ghost:hover { box-shadow: inset 0 0 0 2px var(--warm); }
+.band--feature .cta--ghost { color: var(--feature-warm); }
 
 /* The action sits beside the details link rather than under it, so the two
    share a line while there is room for them. */
 .event .more {
-  display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.1rem;
+  display: flex; flex-wrap: wrap; align-items: center; gap: .6rem;
 }

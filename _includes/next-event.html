@@ -16,12 +16,13 @@
 {%- endif %}
 <section class="band band--feature">
   <div class="wrap">
-    <div class="event">
-      <p class="kicker"{{ name_attr }}>{{ next_event.title }}</p>
-      <p class="when">{% include date.html date=next_event.event_date lang=page.lang weekday=true %}</p>
+    <div class="event event--next">
+      <p class="kicker">{{ t.events.next_kicker }}</p>
+      <p class="event-name"{{ name_attr }}><a href="{{ next_event.url | relative_url }}">{{ next_event.title }}</a></p>
+      <p class="when"><a href="{{ next_event.url | relative_url }}">{% include date.html date=next_event.event_date lang=page.lang weekday=true %}</a></p>
       <dl class="event-details">
         {%- if next_event.event_time %}
-        <dt>{{ t.events.time }}</dt><dd>{{ next_event.event_time }}</dd>
+        <dt>{{ t.events.time }}</dt><dd><a href="{{ next_event.url | relative_url }}">{{ next_event.event_time }}</a></dd>
         {%- endif %}
         {%- if next_event.event_venue %}
         <dt>{{ t.events.venue }}</dt><dd{{ name_attr }}>{{ next_event.event_venue }}</dd>
@@ -34,7 +35,7 @@
         {%- if next_event.registration_url %}
         <a class="cta" href="{{ next_event.registration_url }}">{{ t.events.register }}</a>
         {%- endif %}
-        <a href="{{ next_event.url | relative_url }}">{{ t.events.next_details }}</a>
+        <a class="cta cta--ghost" href="{{ next_event.url | relative_url }}">{{ t.events.next_details }}</a>
       </p>
     </div>
   </div>

@@ -62,6 +62,9 @@ people:
     director: Director
 
 events:
+  next_kicker: Next meeting
+  abstract: Abstract
+  bio: Biography
   archive_kicker: SEMTL meeting
   time: Time
   venue: Venue

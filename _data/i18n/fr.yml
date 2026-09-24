@@ -63,6 +63,9 @@ people:
     director: Directeur.rice
 
 events:
+  next_kicker: Prochaine rencontre
+  abstract: Résumé
+  bio: Biographie
   archive_kicker: Rencontre SEMTL
   time: Heure
   venue: Lieu
