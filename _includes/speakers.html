@@ -11,7 +11,8 @@
 
   Cards reuse .member-list wholesale: the wire, the ports and the portrait node
   are the same component as the committee register on About, and only the
-  speaker's own prose is styled here.
+  speaker's own prose is styled here. The list sits inside the programme's
+  talks item.
 
   `photo` takes either a filename in assets/img/speakers/ or an absolute URL.
   The members register deliberately dropped its remote branch, but speakers are
@@ -40,9 +41,13 @@
     {%- if s.photo %}
     {%- assign src = '/assets/img/speakers/' | append: s.photo | relative_url -%}
     {%- if s.photo contains '://' %}{% assign src = s.photo %}{% endif -%}
+    {%- comment %}The same link as the name, kept out of the tab order and the
+    accessibility tree so it is not announced twice.{% endcomment %}
+    {%- if s.url %}<a class="portrait-link" href="{{ s.url }}" tabindex="-1" aria-hidden="true">{% endif %}
     <img class="portrait" src="{{ src }}"
-         alt="" width="120" height="120" loading="lazy" decoding="async"
+         alt="" width="152" height="152" loading="lazy" decoding="async"
          referrerpolicy="no-referrer">
+    {%- if s.url %}</a>{% endif %}
     {%- else %}
     <span class="portrait portrait--empty" aria-hidden="true"></span>
     {%- endif %}
@@ -71,22 +76,25 @@
       {%- assign abstract_lang = "" -%}
       {%- if abstract == "" %}{% assign abstract = s.abstract[other_lang] | strip %}{% assign abstract_lang = other_lang %}{% endif -%}
       {%- if abstract == "" %}{% assign abstract_lang = "" %}{% endif -%}
-      {%- if abstract != "" %}
-      <details class="speaker-abstract">
-        <summary>{{ t.events.abstract }}</summary>
-        <div{% if abstract_lang != "" %} lang="{{ abstract_lang }}"{% endif %}>{{ abstract | markdownify }}</div>
-      </details>
-      {%- endif %}
-
       {%- assign bio = s.bio[page.lang] | strip -%}
       {%- assign bio_lang = "" -%}
       {%- if bio == "" %}{% assign bio = s.bio[other_lang] | strip %}{% assign bio_lang = other_lang %}{% endif -%}
       {%- if bio == "" %}{% assign bio_lang = "" %}{% endif -%}
-      {%- if bio != "" %}
-      <details class="speaker-bio">
-        <summary>{{ t.events.bio }}</summary>
-        <div{% if bio_lang != "" %} lang="{{ bio_lang }}"{% endif %}>{{ bio | markdownify }}</div>
-      </details>
+      {%- if abstract != "" or bio != "" %}
+      <div class="speaker-more">
+        {%- if abstract != "" %}
+        <details class="speaker-abstract">
+          <summary>{{ t.events.abstract }}</summary>
+          <div{% if abstract_lang != "" %} lang="{{ abstract_lang }}"{% endif %}>{{ abstract | markdownify }}</div>
+        </details>
+        {%- endif %}
+        {%- if bio != "" %}
+        <details class="speaker-bio">
+          <summary>{{ t.events.bio }}</summary>
+          <div{% if bio_lang != "" %} lang="{{ bio_lang }}"{% endif %}>{{ bio | markdownify }}</div>
+        </details>
+        {%- endif %}
+      </div>
       {%- endif %}
     </div>
   </li>

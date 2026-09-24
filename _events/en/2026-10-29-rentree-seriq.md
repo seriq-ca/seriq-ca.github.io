@@ -47,7 +47,7 @@ summary: >-
         <dt>Time</dt><dd>{{ page.event_time }}</dd>
         <dt>Venue</dt><dd lang="fr">{{ page.event_venue }}</dd>
         <dt>Language</dt><dd>Bilingual (French and English)</dd>
-        <dt>Register by</dt><dd>{% include date.html date=page.registration_closes lang=page.lang %}</dd>
+        <dt>Register</dt><dd>by {% include date.html date=page.registration_closes lang=page.lang %}</dd>
       </dl>
       <p class="note">
         The building and room will be confirmed before the meeting.
@@ -69,12 +69,7 @@ summary: >-
       <li>
         <strong>3:15–4:30 p.m.</strong> Guest talks from research and industry.
         Each speaker presents their view of software research in 15 minutes:
-        <ul>
-          <li><a href="https://lemire.me/en/">Daniel Lemire</a></li>
-          <li><a href="https://www.lbriand.info/">Lionel Briand</a></li>
-          <li><a href="https://discover.research.utoronto.ca/24922-marsha-chechik">Marsha Chechik</a></li>
-          <li><a href="https://www.linkedin.com/in/yves-daoust-3aa594/">Yves Daoust</a></li>
-        </ul>
+        {% include speakers.html event=page.speakers %}
       </li>
       <li>
         <strong>4:30–5:00 p.m.</strong> Break.
@@ -92,21 +87,14 @@ summary: >-
       <li>
         <strong>6:15–7:00 p.m.</strong> Networking reception, with student
         posters.
+        <ul>
+          <li>
+            Students can submit a poster proposal with the
+            <a href="https://forms.gle/jUGuScfx11nuFTti7">submission form</a>
+            by October 9, 2026.
+          </li>
+        </ul>
       </li>
     </ul>
-
-    <h3>Guest speakers</h3>
-    {% include speakers.html event=page.speakers %}
-  </div>
-</section>
-
-<section class="band band--paper">
-  <div class="wrap">
-    <h2>Student posters</h2>
-    <p>
-      Students who would like to present a poster during the networking
-      reception can submit a proposal with the
-      <a href="https://forms.gle/jUGuScfx11nuFTti7">submission form</a>.
-    </p>
   </div>
 </section>

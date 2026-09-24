@@ -47,7 +47,7 @@ summary: >-
         <dt>Heure</dt><dd>{{ page.event_time }}</dd>
         <dt>Lieu</dt><dd>{{ page.event_venue }}</dd>
         <dt>Langue</dt><dd>Bilingue (français et anglais)</dd>
-        <dt>Inscription d'ici le</dt><dd>{% include date.html date=page.registration_closes lang=page.lang %}</dd>
+        <dt>Inscription</dt><dd>d'ici le {% include date.html date=page.registration_closes lang=page.lang %}</dd>
       </dl>
       <p class="note">
         Le pavillon et le local seront précisés d'ici la rencontre.
@@ -70,12 +70,7 @@ summary: >-
         <strong>15 h 15 – 16 h 30</strong> Conférences invitées, du milieu de la
         recherche comme de l'industrie. Chaque invité.e expose sa vision de la
         recherche en logiciel en 15 minutes :
-        <ul>
-          <li><a href="https://lemire.me/en/">Daniel Lemire</a></li>
-          <li><a href="https://www.lbriand.info/">Lionel Briand</a></li>
-          <li><a href="https://discover.research.utoronto.ca/24922-marsha-chechik">Marsha Chechik</a></li>
-          <li><a href="https://www.linkedin.com/in/yves-daoust-3aa594/">Yves Daoust</a></li>
-        </ul>
+        {% include speakers.html event=page.speakers %}
       </li>
       <li>
         <strong>16 h 30 – 17 h</strong> Pause.
@@ -93,21 +88,14 @@ summary: >-
       <li>
         <strong>18 h 15 – 19 h</strong> Réseautage, avec des affiches
         étudiantes.
+        <ul>
+          <li>
+            Les étudiant.e.s peuvent proposer une affiche avec le
+            <a href="https://forms.gle/jUGuScfx11nuFTti7">formulaire de soumission</a>
+            d'ici le 9 octobre 2026.
+          </li>
+        </ul>
       </li>
     </ul>
-
-    <h3>Conférencières et conférenciers invités</h3>
-    {% include speakers.html event=page.speakers %}
-  </div>
-</section>
-
-<section class="band band--paper">
-  <div class="wrap">
-    <h2>Affiches étudiantes</h2>
-    <p>
-      Les étudiant.e.s qui souhaitent présenter une affiche pendant
-      la période de réseautage peuvent soumettre leur proposition avec le
-      <a href="https://forms.gle/jUGuScfx11nuFTti7">formulaire de soumission</a>.
-    </p>
   </div>
 </section>

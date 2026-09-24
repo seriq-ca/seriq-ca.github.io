@@ -432,15 +432,21 @@ section.band img { max-width: 100%; height: auto; }
 .member-list.speaker-list {
   grid-template-columns: 1fr;
   max-width: var(--prose); margin-inline: auto;
+  /* Nested in the programme, whose prose is justified; a short title set that
+     way opens rivers between its words. */
+  text-align: left;
   /* A speaker is the draw, so the portrait is given the room a committee
      thumbnail does not need. Sized in px rather than rem, as this component's
      opening comment asks: --node-r has to be exactly half the portrait for the
      wires between cards to leave and arrive at a node's centre, and the root
      font size scales with the viewport, so a rem portrait would drift away
      from a px wire as the window grows. */
-  --node-r: 61px;   /* half the 120px portrait plus its own 1px casing */
+  --node-r: 77px;   /* half the 152px portrait plus its own 1px casing */
 }
-.member-list.speaker-list .portrait { width: 120px; height: 120px; }
+/* As tall as the name, the affiliation and a two-line title beside it, at the
+   width the programme is usually read. */
+.member-list.speaker-list .portrait { width: 152px; height: 152px; }
+.member-list.speaker-list .portrait-link { flex: none; line-height: 0; }
 .member-list.speaker-list li::before { display: none; }
 .member-list.speaker-list li:not(:first-child)::after { display: block; }
 .member-list.speaker-list li:first-child::after { display: none; }
@@ -462,7 +468,13 @@ section.band img { max-width: 100%; height: auto; }
 /* The site sets talk titles in italic; the card's own cite carries that, so it
    does not need a second slant from the browser default. */
 .speaker-title cite { font-style: italic; }
-.speaker-abstract, .speaker-bio { margin-top: .5rem; }
+/* The toggles share a line while closed; an open one takes the full width, so
+   its text runs under both labels rather than beside the other. */
+.speaker-more {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem 1.25rem;
+  margin-top: .5rem;
+}
+.speaker-more details[open] { flex-basis: 100%; }
 /* Both are collapsed behind a label so the cards stay short and even; the
    title above is what a reader scans. The label is the mono register of the
    site's other labels, with a +/− in place of the browser's triangle. */
