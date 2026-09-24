@@ -1,4 +1,5 @@
 {%- assign t = site.data.i18n[include.lang] -%}
+{%- assign day = nil -%}
 {%- assign midx = include.date | date: "%-m" | plus: 0 | minus: 1 -%}
 {%- assign month = t.months[midx] -%}
 {%- if include.weekday -%}

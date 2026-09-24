@@ -36,3 +36,8 @@ intended fallback rather than a broken state.
 Current portraits:
 
   * Daniel Lemire — hotlinked from https://lemire.me/img/portrait2018.jpg
+  * Lionel Briand — hotlinked from his conf.researchr.org profile image
+  * Marsha Chechik — hotlinked from https://discover.research.utoronto.ca/24922-marsha-chechik/thumbnail
+  * Yves Daoust — `daoust.jpg`, cropped from
+    https://www.fermedhiver.com/wp-content/uploads/2023/05/CEO_CTO_FermedHiver-min-scaled.jpg
+    (he is on the left, per the caption on fermedhiver.com)

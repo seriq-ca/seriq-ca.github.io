@@ -46,6 +46,8 @@ summary: >-
       <dl class="event-details">
         <dt>Time</dt><dd>{{ page.event_time }}</dd>
         <dt>Venue</dt><dd lang="fr">{{ page.event_venue }}</dd>
+        <dt>Language</dt><dd>Bilingual (French and English)</dd>
+        <dt>Register by</dt><dd>{% include date.html date=page.registration_closes lang=page.lang %}</dd>
       </dl>
       <p class="note">
         The building and room will be confirmed before the meeting.
@@ -62,28 +64,38 @@ summary: >-
     <h2>Programme</h2>
     <ul>
       <li>
-        Guest speakers from research and industry. Each presents their view of
-        software research in 15 minutes:
+        <strong>3:00 p.m.</strong> Opening.
+      </li>
+      <li>
+        <strong>3:15–4:30 p.m.</strong> Guest talks from research and industry.
+        Each speaker presents their view of software research in 15 minutes:
         <ul>
           <li><a href="https://lemire.me/en/">Daniel Lemire</a></li>
           <li><a href="https://www.lbriand.info/">Lionel Briand</a></li>
+          <li><a href="https://discover.research.utoronto.ca/24922-marsha-chechik">Marsha Chechik</a></li>
+          <li><a href="https://www.linkedin.com/in/yves-daoust-3aa594/">Yves Daoust</a></li>
         </ul>
       </li>
       <li>
-        A panel where the speakers discuss the topics more broadly.
+        <strong>4:30–5:00 p.m.</strong> Break.
       </li>
       <li>
-        University representatives speak after the panel.
+        <strong>5:00–5:45 p.m.</strong> Panel, <em>Software research for
+        society: needs and opportunities</em>, where the speakers discuss the
+        topics more broadly.
       </li>
       <li>
-        A networking reception, with student posters.
+        <strong>5:45–6:15 p.m.</strong> The history and scope of SERIQ, by its
+        director Benoit Baudry, followed by deans and other representatives
+        (to be confirmed).
+      </li>
+      <li>
+        <strong>6:15–7:00 p.m.</strong> Networking reception, with student
+        posters.
       </li>
     </ul>
 
     <h3>Guest speakers</h3>
-    <p class="note">
-      Further speakers will be announced as they are confirmed.
-    </p>
     {% include speakers.html event=page.speakers %}
   </div>
 </section>

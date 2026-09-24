@@ -46,6 +46,8 @@ summary: >-
       <dl class="event-details">
         <dt>Heure</dt><dd>{{ page.event_time }}</dd>
         <dt>Lieu</dt><dd>{{ page.event_venue }}</dd>
+        <dt>Langue</dt><dd>Bilingue (français et anglais)</dd>
+        <dt>Inscription d'ici le</dt><dd>{% include date.html date=page.registration_closes lang=page.lang %}</dd>
       </dl>
       <p class="note">
         Le pavillon et le local seront précisés d'ici la rencontre.
@@ -62,9 +64,12 @@ summary: >-
     <h2>Programme</h2>
     <ul>
       <li>
-        Des conférencières et conférenciers invités, du milieu de la recherche
-        comme de l'industrie. Chaque invité.e expose sa vision de la recherche
-        en logiciel en 15 minutes :
+        <strong>15 h</strong> Mot d'ouverture.
+      </li>
+      <li>
+        <strong>15 h 15 – 16 h 30</strong> Conférences invitées, du milieu de la
+        recherche comme de l'industrie. Chaque invité.e expose sa vision de la
+        recherche en logiciel en 15 minutes :
         <ul>
           <li><a href="https://lemire.me/en/">Daniel Lemire</a></li>
           <li><a href="https://www.lbriand.info/">Lionel Briand</a></li>
@@ -73,23 +78,25 @@ summary: >-
         </ul>
       </li>
       <li>
-        Une table ronde où les conférencières et conférenciers discutent plus
-        largement des sujets abordés.
+        <strong>16 h 30 – 17 h</strong> Pause.
       </li>
       <li>
-        Des représentant.e.s des universités prennent ensuite
-        la parole.
+        <strong>17 h – 17 h 45</strong> Table ronde, <em>La recherche en logiciel
+        pour la société : besoins et possibilités</em>, où les conférencières et
+        conférenciers discutent plus largement des sujets abordés.
       </li>
       <li>
-        Une période de réseautage, avec des affiches étudiantes.
+        <strong>17 h 45 – 18 h 15</strong> L'histoire et la portée de SERIQ, par
+        son directeur Benoit Baudry, suivies d'allocutions de doyen.ne.s et
+        d'autres représentant.e.s (à confirmer).
+      </li>
+      <li>
+        <strong>18 h 15 – 19 h</strong> Réseautage, avec des affiches
+        étudiantes.
       </li>
     </ul>
 
     <h3>Conférencières et conférenciers invités</h3>
-    <p class="note">
-      Les autres conférencières et conférenciers seront annoncés à mesure de
-      leur confirmation.
-    </p>
     {% include speakers.html event=page.speakers %}
   </div>
 </section>

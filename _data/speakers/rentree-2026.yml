@@ -90,10 +90,11 @@ largement adoptées : on trouve ses algorithmes et son code dans plusieurs bibli
   # table covers the four partner institutions, and speakers come from
   # elsewhere in Quebec, abroad and from industry. Add `fr:`/`en:` subkeys here
   # if a speaker's affiliation is actually named differently per language.
-  affiliation: Fermes d'hiver
+  affiliation: Ferme d'Hiver
   url: https://www.linkedin.com/in/yves-daoust-3aa594/
-  # Hotlinked from the speaker's own site rather than self-hosted.
-  photo: https://media.licdn.com/dms/image/v2/C4D03AQFvaGVXLrozVw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516242467997?e=1791417600&v=beta&t=0j_6NNhbQSHoYTt9WjWLvwIzNUO-WJByTwDI9AnlgJA
+  # Cropped from Ferme d'Hiver's photo of its CTO and CEO, then self-hosted:
+  # LinkedIn's image links are signed and expire.
+  photo: daoust.jpg
   # Expected to be the keynote, not yet confirmed.
   keynote: false
   title:
