@@ -178,7 +178,7 @@ permalink: /a-propos/
       deux au début de 2020, avant que la pandémie ne les interrompe.
     </p>
     <p>
-      Les rencontres reprennent en août 2022 à l'initiative de
+      Les rencontres reprennent en août 2022, organisées par
       Bentley Oakes, environ tous les deux mois. Les six
       universités montréalaises les accueillent et les soutiennent à tour de rôle,
       et certaines se tiennent en marge de conférences comme
