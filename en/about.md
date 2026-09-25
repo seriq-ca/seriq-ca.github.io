@@ -170,12 +170,13 @@ permalink: /en/about/
     <h2>From SEMTL meetings to the SERIQ centre</h2>
     <p>
       SEMTL (Software Engineering at Montreal) has brought together Montréal's
-      software engineering research community for more than ten years. The online
+      software engineering research community since the early 2010s. The online
       record begins in 2019: seven meetings that year, then two in early 2020,
       before the pandemic interrupted them.
     </p>
     <p>
-      Meetings resumed in August 2022, roughly every two months. The six Montréal
+      Meetings resumed in August 2022, organised by
+      Bentley Oakes, roughly every two months. The six Montréal
       universities have hosted and supported them in turn, and some have been held
       alongside conferences such as
       <a href="{{ '/semtl/2025-04-27-icse/' | relative_url }}">ICSE</a> and

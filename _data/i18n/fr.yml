@@ -60,7 +60,7 @@ people:
     partenaires.
   list_heading: Membres
   roles:
-    director: Directeur.rice
+    director: Directeur
 
 events:
   next_kicker: Prochaine rencontre

@@ -172,13 +172,14 @@ permalink: /a-propos/
   <div class="wrap">
     <h2>Des rencontres SEMTL au centre SERIQ</h2>
     <p>
-      SEMTL <i lang="en">(Software Engineering at Montreal)</i> réunit depuis plus
-      de dix ans la communauté montréalaise de recherche en génie logiciel. Le
+      SEMTL <i lang="en">(Software Engineering at Montreal)</i> réunit depuis le
+      début des années 2010 la communauté montréalaise de recherche en génie logiciel. Le
       registre en ligne commence en 2019&nbsp;: sept rencontres cette année-là, puis
       deux au début de 2020, avant que la pandémie ne les interrompe.
     </p>
     <p>
-      Les rencontres reprennent en août 2022, environ tous les deux mois. Les six
+      Les rencontres reprennent en août 2022 à l'initiative de
+      Bentley Oakes, environ tous les deux mois. Les six
       universités montréalaises les accueillent et les soutiennent à tour de rôle,
       et certaines se tiennent en marge de conférences comme
       <a href="{{ '/semtl/2025-04-27-icse/' | relative_url }}">ICSE</a> et
