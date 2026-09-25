@@ -2,7 +2,7 @@
 ref: event-2026-10-29
 title: Rentrée SERIQ
 title_head: "Rentrée SERIQ · October 29, 2026"
-description: "The first meeting under the SERIQ banner and the move to a larger network that will grow to cover Quebec. October 29, 2026, from 3:00 to 7:00 p.m. at Université de Montréal. Guest talks, a panel and networking."
+description: "The rentrée of SERIQ, which expands the SEMTL research network to software engineering for the digital society. October 29, 2026, from 3:00 to 7:00 p.m. at Université de Montréal. Guest talks, a panel, a presentation of SERIQ and a networking reception."
 permalink: /en/events/2026-10-29-rentree-seriq/
 event_date: 2026-10-29
 event_time: 3:00–7:00 p.m.
@@ -20,9 +20,9 @@ registration_closes: 2026-10-23T17:00:00-04:00
 speakers: rentree-2026
 name_lang: fr
 summary: >-
-  The <i lang="fr">rentrée</i> marks the return of the meeting series
-  under the SERIQ banner, continuing the SEMTL network and its more than
-  ten years of activity.
+  SERIQ expands the SEMTL research network to software engineering for the
+  digital society. Its <i lang="fr">rentrée</i> brings the community
+  together for guest talks, a panel and a reception.
 ---
 
 <div class="hero">
@@ -30,11 +30,14 @@ summary: >-
     <p class="kicker">SERIQ meeting</p>
     <h1 lang="fr">Rentrée SERIQ</h1>
     <p class="lede">
-      The first meeting under the SERIQ banner, continuing the
-      <a href="https://semtl.github.io/">SEMTL</a> meeting series. It marks the
-      move to a larger network, one that will grow to cover Quebec, and brings
-      the community together to discuss what software engineering contributes
-      to the challenges of the digital society.
+      SERIQ expands the <a href="https://semtl.github.io/">SEMTL</a> research
+      network to work on software engineering for the digital society. For its
+      <i lang="fr">rentrée</i>, we invite researchers, students, industry
+      partners and institutional representatives to an afternoon of guest
+      talks from research and industry, followed by a panel on software
+      research for society. Benoit Baudry will then present the history and
+      scope of SERIQ, followed by remarks, before a networking reception with
+      student posters.
     </p>
   </div>
 </div>

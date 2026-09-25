@@ -2,7 +2,7 @@
 ref: event-2026-10-29
 title: Rentrée SERIQ
 title_head: "Rentrée SERIQ · 29 octobre 2026"
-description: "Première rencontre sous la bannière SERIQ et passage vers un réseau qui s'étendra au Québec. Le 29 octobre 2026 de 15 h à 19 h à l'Université de Montréal. Conférences invitées, table ronde et réseautage."
+description: "La rentrée de SERIQ, qui élargit le réseau de recherche SEMTL au génie logiciel pour la société numérique. Le 29 octobre 2026 de 15 h à 19 h à l'Université de Montréal. Conférences invitées, table ronde, présentation de SERIQ et réception de réseautage."
 permalink: /evenements/2026-10-29-rentree-seriq/
 event_date: 2026-10-29
 event_time: de 15 h à 19 h
@@ -20,9 +20,9 @@ registration_closes: 2026-10-23T17:00:00-04:00
 speakers: rentree-2026
 name_lang: fr
 summary: >-
-  La rentrée marque la reprise des rencontres sous la bannière SERIQ,
-  dans la continuité du réseau SEMTL et de ses plus de dix années
-  d'activité.
+  SERIQ élargit le réseau de recherche SEMTL au génie logiciel pour la
+  société numérique. Sa rentrée réunit la communauté autour de conférences
+  invitées, d'une table ronde et d'une réception.
 ---
 
 <div class="hero">
@@ -30,11 +30,16 @@ summary: >-
     <p class="kicker">Rencontre SERIQ</p>
     <h1>Rentrée SERIQ</h1>
     <p class="lede">
-      Première rencontre sous la bannière SERIQ, dans la continuité des
-      rencontres <a href="https://semtl.github.io/">SEMTL</a>. Elle souligne le
-      passage vers un réseau plus large, qui s'étendra à l'ensemble du Québec,
-      et réunit la communauté pour discuter de l'apport du génie logiciel aux
-      enjeux de la société numérique.
+      SERIQ élargit le réseau de recherche
+      <a href="https://semtl.github.io/">SEMTL</a> et se consacre au génie
+      logiciel pour la société numérique. Pour sa rentrée, nous invitons
+      chercheur.e.s, étudiant.e.s, partenaires de l'industrie et
+      représentant.e.s des institutions à un après-midi de conférences
+      invitées du milieu de la recherche comme de l'industrie, suivies d'une
+      table ronde sur la recherche en logiciel pour la société. Suivront une
+      présentation de l'histoire et de la portée de SERIQ par Benoit Baudry,
+      des allocutions, puis une réception de réseautage autour d'affiches
+      étudiantes.
     </p>
   </div>
 </div>
@@ -86,7 +91,7 @@ summary: >-
         d'autres représentant.e.s (à confirmer).
       </li>
       <li>
-        <strong>18 h 15 – 19 h</strong> Réseautage, avec des affiches
+        <strong>18 h 15 – 19 h</strong> Réception de réseautage, avec des affiches
         étudiantes.
         <ul>
           <li>
