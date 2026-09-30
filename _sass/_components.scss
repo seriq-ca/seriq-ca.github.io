@@ -651,3 +651,28 @@ section.band img { max-width: 100%; height: auto; }
 .event .more {
   display: flex; flex-wrap: wrap; align-items: center; gap: .6rem;
 }
+
+/* Press kit logos. Each preview sits on the ground it is drawn for, fixed
+   rather than themed: the light logo is shown on light paper and the dark one
+   on dark paper in both site themes, so the panel shows what the file is for.
+   The two colours are the themes' --paper values, as in scripts/make_logo.py. */
+.press-logos {
+  list-style: none; padding-left: 0;
+  max-width: var(--prose); margin-inline: auto;
+  margin-top: 1rem; margin-bottom: 1.5rem;
+  display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+}
+@media (min-width: 40rem) {
+  .press-logos { grid-template-columns: 1fr 1fr; }
+}
+.press-logo { margin: 0; }
+.press-logo img {
+  display: block; width: 100%; height: auto; box-sizing: border-box;
+  padding: 1.5rem;
+  border: 1px solid var(--rule);
+}
+.press-logo--light img { background: #f2f4f7; }
+.press-logo--dark img { background: #0b1016; }
+.press-logo p {
+  margin: .6rem 0 0; font-size: var(--t-sm); color: var(--ink-2);
+}

@@ -10,9 +10,9 @@ permalink: /a-propos/
   <div class="wrap">
     <h1>À propos</h1>
     <p class="lede">
-      SERIQ est un centre interuniversitaire de recherche en génie logiciel.
-      Il prend la suite des rencontres SEMTL, tenues à Montréal depuis plus de
-      dix ans.
+      SERIQ est un centre interuniversitaire de recherche en génie logiciel,
+      soutenu par quatre établissements partenaires au Québec. Il prend la suite
+      des rencontres SEMTL, tenues à Montréal depuis le début des années 2010.
     </p>
   </div>
 </div>
@@ -195,5 +195,49 @@ permalink: /a-propos/
       centre s'étend à l'ensemble du Québec et structure la recherche autour des
       quatre axes ci-dessus.
     </p>
+  </div>
+</section>
+
+<section class="band band--surface">
+  <div class="wrap">
+    <h2>Trousse média</h2>
+    <p>Matériel pour les présentations, affiches et articles au sujet du Centre.</p>
+    <h3>Nom</h3>
+    <p>
+      Centre interuniversitaire de recherche en génie logiciel pour la société
+      numérique (SERIQ). Le nom officiel est en français et s'emploie aussi en
+      anglais.
+    </p>
+    <h3>Description</h3>
+    <p>
+      SERIQ est un centre interuniversitaire de recherche en génie logiciel au
+      Québec, soutenu par l'Université de Montréal, Polytechnique Montréal,
+      l'Université McGill et l'École de technologie supérieure.
+    </p>
+    <h3>Logo</h3>
+    <ul class="press-logos">
+      <li class="press-logo press-logo--light">
+        <img src="{{ '/assets/img/press/seriq-logo-light.svg' | relative_url }}" alt=""
+             width="3707" height="2374" loading="lazy" decoding="async">
+        <p>
+          Pour fonds clairs&nbsp;:
+          <a href="{{ '/assets/img/press/seriq-logo-light.svg' | relative_url }}" download>SVG</a> ·
+          <a href="{{ '/assets/img/press/seriq-logo-light.png' | relative_url }}" download>PNG</a> ·
+          <a href="{{ '/assets/img/press/seriq-logo-light-ground.png' | relative_url }}" download>PNG avec fond</a>
+        </p>
+      </li>
+      <li class="press-logo press-logo--dark">
+        <img src="{{ '/assets/img/press/seriq-logo-dark.svg' | relative_url }}" alt=""
+             width="3707" height="2374" loading="lazy" decoding="async">
+        <p>
+          Pour fonds foncés&nbsp;:
+          <a href="{{ '/assets/img/press/seriq-logo-dark.svg' | relative_url }}" download>SVG</a> ·
+          <a href="{{ '/assets/img/press/seriq-logo-dark.png' | relative_url }}" download>PNG</a> ·
+          <a href="{{ '/assets/img/press/seriq-logo-dark-ground.png' | relative_url }}" download>PNG avec fond</a>
+        </p>
+      </li>
+    </ul>
+    <h3>Contact</h3>
+    <p>Pour les demandes des médias, écrivez à <a href="mailto:contact@seriq.ca">contact@seriq.ca</a>.</p>
   </div>
 </section>
