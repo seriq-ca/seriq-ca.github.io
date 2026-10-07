@@ -2,12 +2,12 @@
 ref: event-2026-10-29
 title: Rentrée SERIQ
 title_head: "Rentrée SERIQ · October 29, 2026"
-description: "The rentrée of SERIQ, which expands the SEMTL research network to software engineering for the digital society. October 29, 2026, from 3:00 to 7:00 p.m. at Université de Montréal. Guest talks, a panel, a presentation of SERIQ and a networking reception."
+description: "The rentrée of SERIQ, which expands the SEMTL research network to software engineering for the digital society. October 29, 2026, from 4:00 to 8:00 p.m. at Université de Montréal. Guest talks, a panel, a presentation of SERIQ and a networking reception."
 permalink: /en/events/2026-10-29-rentree-seriq/
 event_date: 2026-10-29
-event_time: 3:00–7:00 p.m.
-event_start: 2026-10-29T15:00:00-04:00
-event_end: 2026-10-29T19:00:00-04:00
+event_time: 4:00–8:00 p.m.
+event_start: 2026-10-29T16:00:00-04:00
+event_end: 2026-10-29T20:00:00-04:00
 event_venue: Université de Montréal
 registration_url: https://event.fourwaves.com/seriq-rentree
 # Registration window, emitted as the Offer `validFrom`/`validThrough` in
@@ -33,9 +33,9 @@ summary: >-
       SERIQ expands the <a href="https://semtl.github.io/">SEMTL</a> research
       network to work on software engineering for the digital society. For its
       <i lang="fr">rentrée</i>, we invite researchers, students, industry
-      partners and institutional representatives to an afternoon of guest
-      talks from research and industry, followed by a panel on software
-      research for society. Benoit Baudry will then present the history and
+      partners and institutional representatives to guest talks from research
+      and industry, followed by a panel on software research for society.
+      Benoit Baudry will then present the history and
       scope of SERIQ, followed by remarks, before a networking reception with
       student posters.
     </p>
@@ -67,28 +67,31 @@ summary: >-
     <h2>Programme</h2>
     <ul>
       <li>
-        <strong>3:00 p.m.</strong> Opening.
+        <strong>3:45–4:00 p.m.</strong> Registration.
       </li>
       <li>
-        <strong>3:15–4:30 p.m.</strong> Guest talks from research and industry.
-        Each speaker presents their view of software research in 15 minutes:
+        <strong>4:00 p.m.</strong> Opening.
+      </li>
+      <li>
+        <strong>4:15–5:30 p.m.</strong> Guest talks from research and industry.
+        Each speaker presents their view on software research in 15 minutes:
         {% include speakers.html event=page.speakers %}
       </li>
       <li>
-        <strong>4:30–5:00 p.m.</strong> Break.
+        <strong>5:30–6:00 p.m.</strong> Break.
       </li>
       <li>
-        <strong>5:00–5:45 p.m.</strong> Panel, <em>Software research for
+        <strong>6:00–6:45 p.m.</strong> Panel, <em>Software research for
         society: needs and opportunities</em>, where the speakers discuss the
-        topics more broadly.
+        topics more broadly. Moderated by Martin Robillard.
       </li>
       <li>
-        <strong>5:45–6:15 p.m.</strong> The history and scope of SERIQ, by its
+        <strong>6:45–7:15 p.m.</strong> The history and scope of SERIQ, by its
         director Benoit Baudry, followed by deans and other representatives
         (to be confirmed).
       </li>
       <li>
-        <strong>6:15–7:00 p.m.</strong> Networking reception, with student
+        <strong>7:15–8:00 p.m.</strong> Networking reception, with student
         posters.
         <ul>
           <li>

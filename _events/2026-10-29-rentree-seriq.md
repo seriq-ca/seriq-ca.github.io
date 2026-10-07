@@ -2,12 +2,12 @@
 ref: event-2026-10-29
 title: Rentrée SERIQ
 title_head: "Rentrée SERIQ · 29 octobre 2026"
-description: "La rentrée de SERIQ, qui élargit le réseau de recherche SEMTL au génie logiciel pour la société numérique. Le 29 octobre 2026 de 15 h à 19 h à l'Université de Montréal. Conférences invitées, table ronde, présentation de SERIQ et réception de réseautage."
+description: "La rentrée de SERIQ, qui élargit le réseau de recherche SEMTL au génie logiciel pour la société numérique. Le 29 octobre 2026 de 16 h à 20 h à l'Université de Montréal. Conférences invitées, table ronde, présentation de SERIQ et réception de réseautage."
 permalink: /evenements/2026-10-29-rentree-seriq/
 event_date: 2026-10-29
-event_time: de 15 h à 19 h
-event_start: 2026-10-29T15:00:00-04:00
-event_end: 2026-10-29T19:00:00-04:00
+event_time: de 16 h à 20 h
+event_start: 2026-10-29T16:00:00-04:00
+event_end: 2026-10-29T20:00:00-04:00
 event_venue: Université de Montréal
 registration_url: https://event.fourwaves.com/seriq-rentree
 # Registration window, emitted as the Offer `validFrom`/`validThrough` in
@@ -34,9 +34,9 @@ summary: >-
       <a href="https://semtl.github.io/">SEMTL</a> et se consacre au génie
       logiciel pour la société numérique. Pour sa rentrée, nous invitons
       chercheur.e.s, étudiant.e.s, partenaires de l'industrie et
-      représentant.e.s des institutions à un après-midi de conférences
-      invitées du milieu de la recherche comme de l'industrie, suivies d'une
-      table ronde sur la recherche en logiciel pour la société. Suivront une
+      représentant.e.s des institutions à des conférences invitées du milieu
+      de la recherche comme de l'industrie, suivies d'une table ronde sur la
+      recherche en logiciel pour la société. Suivront une
       présentation de l'histoire et de la portée de SERIQ par Benoit Baudry,
       des allocutions, puis une réception de réseautage autour d'affiches
       étudiantes.
@@ -69,29 +69,33 @@ summary: >-
     <h2>Programme</h2>
     <ul>
       <li>
-        <strong>15 h</strong> Mot d'ouverture.
+        <strong>15 h 45 – 16 h</strong> Accueil et inscription.
       </li>
       <li>
-        <strong>15 h 15 – 16 h 30</strong> Conférences invitées, du milieu de la
+        <strong>16 h</strong> Mot d'ouverture.
+      </li>
+      <li>
+        <strong>16 h 15 – 17 h 30</strong> Conférences invitées, du milieu de la
         recherche comme de l'industrie. Chaque invité.e expose sa vision de la
         recherche en logiciel en 15 minutes :
         {% include speakers.html event=page.speakers %}
       </li>
       <li>
-        <strong>16 h 30 – 17 h</strong> Pause.
+        <strong>17 h 30 – 18 h</strong> Pause.
       </li>
       <li>
-        <strong>17 h – 17 h 45</strong> Table ronde, <em>La recherche en logiciel
+        <strong>18 h – 18 h 45</strong> Table ronde, <em>La recherche en logiciel
         pour la société : besoins et possibilités</em>, où les conférencières et
-        conférenciers discutent plus largement des sujets abordés.
+        conférenciers discutent plus largement des sujets abordés. Animée par
+        Martin Robillard.
       </li>
       <li>
-        <strong>17 h 45 – 18 h 15</strong> L'histoire et la portée de SERIQ, par
+        <strong>18 h 45 – 19 h 15</strong> L'histoire et la portée de SERIQ, par
         son directeur Benoit Baudry, suivies d'allocutions de doyen.ne.s et
         d'autres représentant.e.s (à confirmer).
       </li>
       <li>
-        <strong>18 h 15 – 19 h</strong> Réception de réseautage, avec des affiches
+        <strong>19 h 15 – 20 h</strong> Réception de réseautage, avec des affiches
         étudiantes.
         <ul>
           <li>
