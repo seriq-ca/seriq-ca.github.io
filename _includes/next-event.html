@@ -25,7 +25,9 @@
         <dt>{{ t.events.time }}</dt><dd><a href="{{ next_event.url | relative_url }}">{{ next_event.event_time }}</a></dd>
         {%- endif %}
         {%- if next_event.event_venue %}
-        <dt>{{ t.events.venue }}</dt><dd{{ name_attr }}>{{ next_event.event_venue }}</dd>
+        <dt>{{ t.events.venue }}</dt><dd><span{{ name_attr }}>{{ next_event.event_venue }}
+          {%- if next_event.event_building %}<br>{{ next_event.event_building }}{% endif %}</span>
+          {%- if next_event.event_room %}<br><span class="room">{{ t.events.room }} {{ next_event.event_room }}</span>{% endif %}</dd>
         {%- endif %}
       </dl>
       {%- if next_event.summary %}

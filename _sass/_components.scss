@@ -58,6 +58,8 @@
   color: var(--ink-2); letter-spacing: .02em;
 }
 .event-details dd { margin: 0; font-variant-numeric: tabular-nums; }
+/* A room number such as S-1-111 would otherwise break at its hyphens. */
+.event-details .room { white-space: nowrap; }
 .event .note {
   order: 4; margin: 1.25rem 0 0; max-width: 42ch;
   color: var(--ink-2); font-size: var(--t-sm);
@@ -674,5 +676,21 @@ section.band img { max-width: 100%; height: auto; }
 .press-logo--light img { background: #f2f4f7; }
 .press-logo--dark img { background: #0b1016; }
 .press-logo p {
+  margin: .6rem 0 0; font-size: var(--t-sm); color: var(--ink-2);
+}
+
+/* Event venue map: an OpenStreetMap embed in the prose column, framed like the
+   press logos. */
+.map {
+  max-width: var(--prose); margin: 1.5rem auto 0;
+}
+.map iframe {
+  display: block; width: 100%; aspect-ratio: 4 / 3; box-sizing: border-box;
+  border: 1px solid var(--rule);
+}
+@media (min-width: 40rem) {
+  .map iframe { aspect-ratio: 16 / 10; }
+}
+.map figcaption {
   margin: .6rem 0 0; font-size: var(--t-sm); color: var(--ink-2);
 }

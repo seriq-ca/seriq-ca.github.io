@@ -12,9 +12,24 @@
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "location": {
     "@type": "Place",
+    {%- if page.event_building %}
+    "name": {{ page.event_building | append: ", " | append: page.event_venue | jsonify }},
+    {%- else %}
     "name": {{ page.event_venue | jsonify }},
+    {%- endif %}
+    {%- if page.event_geo %}
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": {{ page.event_geo[0] }},
+      "longitude": {{ page.event_geo[1] }}
+    },
+    {%- endif %}
     "address": {
       "@type": "PostalAddress",
+      {%- if page.event_street %}
+      "streetAddress": {{ page.event_street | jsonify }},
+      "postalCode": {{ page.event_postcode | jsonify }},
+      {%- endif %}
       "addressLocality": "Montréal",
       "addressRegion": "QC",
       "addressCountry": "CA"

@@ -9,6 +9,12 @@ event_time: de 16 h à 20 h
 event_start: 2026-10-29T16:00:00-04:00
 event_end: 2026-10-29T20:00:00-04:00
 event_venue: Université de Montréal
+event_building: Pavillon Jean-Coutu
+event_room: S-1-111
+event_street: 2940, chemin de Polytechnique
+event_postcode: H3T 1J4
+# Centre of the building, for the map on the page and the schema.org `geo`.
+event_geo: [45.5001, -73.6153]
 registration_url: https://event.fourwaves.com/seriq-rentree
 # Registration window, emitted as the Offer `validFrom`/`validThrough` in
 # _includes/schema.html. Times are EDT (-04:00); both dates fall inside
@@ -50,13 +56,10 @@ summary: >-
       <p class="when">{% include date.html date=page.event_date lang=page.lang weekday=true %}</p>
       <dl class="event-details">
         <dt>Heure</dt><dd>{{ page.event_time }}</dd>
-        <dt>Lieu</dt><dd>{{ page.event_venue }}</dd>
+        <dt>Lieu</dt><dd>{{ page.event_venue }}<br>{{ page.event_building }}<br><span class="room">Local {{ page.event_room }}</span></dd>
         <dt>Langue</dt><dd>Bilingue (français et anglais)</dd>
         <dt>Inscription</dt><dd>d'ici le {% include date.html date=page.registration_closes lang=page.lang %}</dd>
       </dl>
-      <p class="note">
-        Le pavillon et le local seront précisés d'ici la rencontre.
-      </p>
       <p class="more">
         <a class="cta" href="{{ page.registration_url }}">S'inscrire</a>
       </p>
@@ -106,5 +109,23 @@ summary: >-
         </ul>
       </li>
     </ul>
+  </div>
+</section>
+
+<section class="band band--surface">
+  <div class="wrap">
+    <h2>Accès</h2>
+    <p>
+      {{ page.event_building }}, local {{ page.event_room }}<br>
+      {{ page.event_street }}, Montréal (Québec) {{ page.event_postcode }}
+    </p>
+    <p>
+      Le pavillon est à quelques minutes à pied de la station de métro
+      Université-de-Montréal (ligne bleue). Pour venir en voiture, l'UdeM décrit
+      le <a href="https://di.umontreal.ca/services/stationnement/">stationnement
+      pour visiteurs</a> et son <a href="https://plancampus.umontreal.ca/">plan du
+      campus</a>.
+    </p>
+    {% include event-map.html title="Carte du pavillon Jean-Coutu" link="Ouvrir dans OpenStreetMap" %}
   </div>
 </section>

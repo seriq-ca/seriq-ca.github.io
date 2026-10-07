@@ -1,0 +1,18 @@
+{%- comment -%}
+  OpenStreetMap embed centred on the page's `event_geo`. OSM rather than Google
+  Maps: the embed sets no cookies. Google Maps is offered as a plain link. The box is about 800 m wide, enough to show
+  the nearest metro on the UdeM campus.
+{%- endcomment -%}
+{%- assign lat = page.event_geo[0] -%}
+{%- assign lon = page.event_geo[1] -%}
+{%- capture gmaps_query -%}{{ page.event_building }}, {{ page.event_street }}, Montréal {{ page.event_postcode }}{%- endcapture -%}
+{%- capture bbox -%}{{ lon | minus: 0.0055 }},{{ lat | minus: 0.0038 }},{{ lon | plus: 0.0055 }},{{ lat | plus: 0.0038 }}{%- endcapture -%}
+<figure class="map">
+  <iframe
+    src="https://www.openstreetmap.org/export/embed.html?bbox={{ bbox | url_encode }}&amp;layer=mapnik&amp;marker={{ lat }}%2C{{ lon }}"
+    title="{{ include.title }}" loading="lazy"></iframe>
+  <figcaption>
+    <a href="https://www.openstreetmap.org/?mlat={{ lat }}&amp;mlon={{ lon }}#map=17/{{ lat }}/{{ lon }}">{{ include.link }}</a>
+    · <a href="https://www.google.com/maps/search/?api=1&amp;query={{ gmaps_query | url_encode }}">Google Maps</a>
+  </figcaption>
+</figure>

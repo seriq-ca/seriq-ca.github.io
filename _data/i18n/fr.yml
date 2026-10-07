@@ -69,6 +69,7 @@ events:
   archive_kicker: Rencontre SEMTL
   time: Heure
   venue: Lieu
+  room: Local
   register: S'inscrire
   next_details: Détails de la rencontre
   past_heading: Rencontres passées

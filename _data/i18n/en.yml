@@ -68,6 +68,7 @@ events:
   archive_kicker: SEMTL meeting
   time: Time
   venue: Venue
+  room: Room
   register: Register
   next_details: Meeting details
   past_heading: Past meetings
