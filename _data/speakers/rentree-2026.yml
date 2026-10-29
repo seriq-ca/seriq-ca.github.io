@@ -25,8 +25,8 @@
   # if a speaker's affiliation is actually named differently per language.
   affiliation: Université TÉLUQ
   url: https://lemire.me/en/
-  # Hotlinked from the speaker's own site rather than self-hosted.
-  photo: https://lemire.me/img/portrait2026.jpg
+  # Self-hosted copy of the portrait on lemire.me.
+  photo: lemire.jpg
   # Expected to be the keynote, not yet confirmed.
   keynote: false
   title:
@@ -49,8 +49,8 @@ largement adoptées : on trouve ses algorithmes et son code dans plusieurs bibli
   # if a speaker's affiliation is actually named differently per language.
   affiliation: University of Ottawa
   url: https://www.lbriand.info/
-  # Hotlinked from the speaker's own site rather than self-hosted.
-  photo: https://conf.researchr.org/getProfileImage/lionelbriand/c9f095ec-44f6-413a-ac36-62c47cbaa92e/small?1783971207000
+  # Self-hosted copy of the portrait on his conf.researchr.org profile.
+  photo: briand.jpg
   # Expected to be the keynote, not yet confirmed.
   keynote: false
   title:
@@ -81,8 +81,8 @@ largement adoptées : on trouve ses algorithmes et son code dans plusieurs bibli
   # if a speaker's affiliation is actually named differently per language.
   affiliation: University of Toronto
   url: https://discover.research.utoronto.ca/24922-marsha-chechik
-  # Hotlinked from the speaker's own site rather than self-hosted.
-  photo: https://discover.research.utoronto.ca/24922-marsha-chechik/thumbnail
+  # Self-hosted copy of the portrait on discover.research.utoronto.ca.
+  photo: chechik.jpg
   # Expected to be the keynote, not yet confirmed.
   keynote: false
   title:

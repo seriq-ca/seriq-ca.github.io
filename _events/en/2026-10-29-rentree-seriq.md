@@ -112,15 +112,15 @@ summary: >-
               <span><a href="https://fas.umontreal.ca/faculte/direction-et-gouvernance/bureau-du-doyen/">Frédéric Bouchard</a>, Dean of the Faculty of Arts and Science, Université de Montréal</span>
             </li>
             <li>
-              <span class="portrait-sm"><img src="https://www.polymtl.ca/expertises/sites/expertises.lxpolywebprod.polymtl.ca/files/daria-camilla-boffito_1.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>
+              <span class="portrait-sm"><img src="{{ '/assets/img/speakers/boffito.jpg' | relative_url }}" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
               <span><a href="https://www.polymtl.ca/expertises/en/boffito-daria-camilla">Daria Camilla Boffito</a>, Associate Director, Research and Research Support, Polytechnique Montréal</span>
             </li>
             <li>
-              <span class="portrait-sm"><img src="https://www.cs.mcgill.ca/media/professors/Pientka.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>
+              <span class="portrait-sm"><img src="{{ '/assets/img/speakers/pientka.jpg' | relative_url }}" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
               <span><a href="https://www.cs.mcgill.ca/~bpientka/">Brigitte Pientka</a>, Director of the School of Computer Science, McGill University</span>
             </li>
             <li>
-              <span class="portrait-sm"><img src="https://www.etsmtl.ca/uploads/_700xAUTO_fit_center-center_70_none/P20220119-Carter-Alan-002.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" referrerpolicy="no-referrer" style="--zoom: 1.6; --focus: 96% 0%"></span>
+              <span class="portrait-sm"><img src="{{ '/assets/img/speakers/carter.jpg' | relative_url }}" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
               <span><a href="https://www.etsmtl.ca/en/study-at-ets/professors/acarter">Alan Carter</a>, Dean of Research, ÉTS</span>
             </li>
           </ul>

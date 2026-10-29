@@ -319,7 +319,7 @@ section.band .axes + h2 { margin-top: 2.75rem; }
 }
 
 /* Speakers at the SERIQ presentation: one person to a line, since each
-   carries a full title. Portraits are hotlinked, as the invited speakers' are. */
+   carries a full title. Portraits are self-hosted in assets/img/speakers/. */
 .rep-list {
   list-style: none; padding: 0; margin: .6rem 0 0; max-width: none;
   display: grid; gap: .5rem; color: var(--ink-2);
