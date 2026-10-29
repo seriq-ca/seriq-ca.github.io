@@ -41,3 +41,7 @@ Current portraits:
   * Yves Daoust — `daoust.jpg`, cropped from
     https://www.fermedhiver.com/wp-content/uploads/2023/05/CEO_CTO_FermedHiver-min-scaled.jpg
     (he is on the left, per the caption on fermedhiver.com)
+  * Frédéric Bouchard — `bouchard.jpg`, from his fas.umontreal.ca portrait,
+    kept at its native 250×250 (it renders at 56 CSS pixels on the panel).
+    Self-hosted because fas.umontreal.ca resolves to a private address on the
+    UdeM network, which made Chrome ask for local network access.

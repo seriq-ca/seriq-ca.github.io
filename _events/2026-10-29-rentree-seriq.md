@@ -110,7 +110,7 @@ summary: >-
           <p>Benoit Baudry, directeur de SERIQ, en présente l'histoire et la portée. Suivent des allocutions de représentant.e.s des universités :</p>
           <ul class="rep-list">
             <li>
-              <span class="portrait-sm"><img src="https://fas.umontreal.ca/public/FAS/_processed_/9/e/csm_Fre%CC%81de%CC%81ric_UdeM_2022_c_Fre%CC%81de%CC%81riqueMe%CC%81nard-AubinFrederic_786A2606_b492adc6e5.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>
+              <span class="portrait-sm"><img src="{{ '/assets/img/speakers/bouchard.jpg' | relative_url }}" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
               <span><a href="https://fas.umontreal.ca/faculte/direction-et-gouvernance/bureau-du-doyen/">Frédéric Bouchard</a>, doyen de la Faculté des arts et des sciences, Université de Montréal</span>
             </li>
             <li>
