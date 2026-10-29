@@ -17,7 +17,7 @@ description: "SERIQ is an inter-university software engineering research centre 
   </div>
 </div>
 
-{% include next-event.html %}
+{% include next-event.html all=true %}
 
 <section class="band band--paper">
   <div class="wrap">

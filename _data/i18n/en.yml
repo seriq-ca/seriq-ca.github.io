@@ -63,6 +63,7 @@ people:
 
 events:
   next_kicker: Next meeting
+  upcoming_kicker: Upcoming meeting
   abstract: Abstract
   bio: Biography
   archive_kicker: SEMTL meeting
@@ -71,6 +72,7 @@ events:
   room: Room
   register: Register
   next_details: Meeting details
+  upcoming_heading: Upcoming meetings
   past_heading: Past meetings
   keynote: Keynote
   moderator: Moderator

@@ -17,17 +17,41 @@ permalink: /en/events/
 
 {%- comment -%}
   The include renders the next meeting and, because `include` shares this
-  scope, leaves `next_event` and `t` behind for the past list below to use.
+  scope, leaves `next_event`, `today` and `t` behind for the lists below.
 {%- endcomment -%}
 {% include next-event.html %}
 
 {%- assign events = site.events | where_exp: "e", "e.lang == page.lang" -%}
+{%- assign upcoming = "" | split: "" -%}
 {%- assign past = "" | split: "" -%}
 {%- for e in events -%}
   {%- unless next_event and e.url == next_event.url -%}
-    {%- assign past = past | push: e -%}
+    {%- assign d = e.event_date | date: "%Y%m%d" | plus: 0 -%}
+    {%- if d >= today -%}
+      {%- assign upcoming = upcoming | push: e -%}
+    {%- else -%}
+      {%- assign past = past | push: e -%}
+    {%- endif -%}
   {%- endunless -%}
 {%- endfor -%}
+{%- if upcoming.size > 0 %}
+<section class="band band--paper">
+  <div class="wrap">
+    <h2>{{ t.events.upcoming_heading }}</h2>
+    {%- assign upcoming = upcoming | sort: "event_date" %}
+    <ol class="event-list">
+      {%- for e in upcoming %}
+      <li>
+        <p class="name"><a href="{{ e.url | relative_url }}">{{ e.title }}</a></p>
+        <p class="meta">
+          {% include date.html date=e.event_date lang=page.lang %}{% if e.event_venue %} · {{ e.event_venue }}{% endif %}
+        </p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+{%- endif %}
 {%- if past.size > 0 %}
 <section class="band band--paper">
   <div class="wrap">

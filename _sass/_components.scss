@@ -140,11 +140,12 @@
   /* The label sits over the name rather than out in a margin column of its
      own: with the margin, the summary side was left too narrow for its text.
      The details side is only as wide as its content and both sides keep the
-     same distance from the rule, so neither half floats in empty space. */
+     same distance from the rule, so neither half floats in empty space. A
+     long venue line wraps rather than pushing the actions out of the band. */
   .event--next {
     --pad-x: 5rem;
     padding-left: 6.5rem; padding-right: 3.5rem;
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: fit-content(55%) minmax(0, 1fr);
     column-gap: 0;
   }
   .event--next .kicker { padding-top: 0; margin: 0 0 .45rem; }

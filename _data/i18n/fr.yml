@@ -64,6 +64,7 @@ people:
 
 events:
   next_kicker: Prochaine rencontre
+  upcoming_kicker: Rencontre à venir
   abstract: Résumé
   bio: Biographie
   archive_kicker: Rencontre SEMTL
@@ -72,6 +73,7 @@ events:
   room: Local
   register: S'inscrire
   next_details: Détails de la rencontre
+  upcoming_heading: Rencontres à venir
   past_heading: Rencontres passées
   keynote: Conférence d'ouverture
   moderator: Animation

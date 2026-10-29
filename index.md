@@ -17,7 +17,7 @@ description: "SERIQ est un centre interuniversitaire de recherche en génie logi
   </div>
 </div>
 
-{% include next-event.html %}
+{% include next-event.html all=true %}
 
 <section class="band band--paper">
   <div class="wrap">

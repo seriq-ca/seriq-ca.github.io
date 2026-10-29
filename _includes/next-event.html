@@ -1,12 +1,19 @@
 {%- assign t = site.data.i18n[page.lang] -%}
 {%- assign today = site.time | date: "%Y%m%d" | plus: 0 -%}
 {%- assign upcoming = site.events | where_exp: "e", "e.lang == page.lang" | sort: "event_date" -%}
-{%- assign next_event = nil -%}
+{%- assign shown = "" | split: "" -%}
 {%- for e in upcoming -%}
   {%- assign d = e.event_date | date: "%Y%m%d" | plus: 0 -%}
-  {%- if d >= today and next_event == nil -%}{%- assign next_event = e -%}{%- endif -%}
+  {%- if d >= today -%}
+    {%- if include.all or shown.size == 0 -%}{%- assign shown = shown | push: e -%}{%- endif -%}
+  {%- endif -%}
 {%- endfor -%}
-{%- if next_event -%}
+{%- comment -%}
+  With all=true every upcoming meeting gets a block, the next one first; the
+  others take the "upcoming" kicker. The site rebuilds nightly, so a meeting
+  drops off the day after it is held.
+{%- endcomment -%}
+{%- for next_event in shown -%}
 {%- comment -%}
   An empty string is truthy in Liquid: testing the bare variable emits lang="".
 {%- endcomment -%}
@@ -18,7 +25,7 @@
   <div class="wrap">
     <div class="event event--next">
       <div class="event-main">
-      <p class="kicker">{{ t.events.next_kicker }}</p>
+      <p class="kicker">{% if forloop.first %}{{ t.events.next_kicker }}{% else %}{{ t.events.upcoming_kicker }}{% endif %}</p>
       <p class="event-name"{{ name_attr }}><a href="{{ next_event.url | relative_url }}">{{ next_event.title }}</a></p>
       <p class="when"><a href="{{ next_event.url | relative_url }}">{% include date.html date=next_event.event_date lang=page.lang weekday=true %}</a></p>
       <dl class="event-details">
@@ -46,4 +53,6 @@
     </div>
   </div>
 </section>
-{%- endif -%}
+{%- endfor -%}
+{%- comment -%} The events page reads this to keep the next meeting out of its lists. {%- endcomment -%}
+{%- assign next_event = shown.first -%}

@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+  # Rebuild nightly (00:30 Montréal in summer time) so past meetings leave
+  # the home and events pages.
+  schedule:
+    - cron: "30 4 * * *"
 
 # Least privilege: the official Pages deploy needs no write access to the repo.
 permissions:
