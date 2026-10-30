@@ -2,7 +2,7 @@
 ref: event-2026-10-29
 title: Rentrée SERIQ
 title_head: "Rentrée SERIQ · 29 octobre 2026"
-description: "La rentrée de SERIQ, qui élargit le réseau de recherche SEMTL au génie logiciel pour la société numérique. Le 29 octobre 2026 de 16 h à 20 h à l'Université de Montréal. Conférences invitées, table ronde, présentation de SERIQ et réception de réseautage."
+description: "La rentrée de SERIQ, qui élargit le réseau de recherche SEMTL au génie logiciel pour la société numérique, a eu lieu le 29 octobre 2026 à l'Université de Montréal et a réuni une centaine de personnes. Conférences invitées, table ronde, présentation de SERIQ et réception de réseautage."
 permalink: /evenements/2026-10-29-rentree-seriq/
 event_date: 2026-10-29
 event_time: de 16 h à 20 h
@@ -42,10 +42,6 @@ summary: >-
         <dt>Lieu</dt><dd>{{ page.event_venue }},<br><span class="room">{{ page.event_building }}</span>, <span class="room">local {{ page.event_room }}</span></dd>
         <dt>Langue</dt><dd>Bilingue (français et anglais)</dd>
       </dl>
-      <p class="more">
-        <a class="cta" href="{{ page.registration_url }}">S'inscrire</a>
-        <span class="deadline">d'ici le {% include date.html date=page.registration_closes lang=page.lang %}</span>
-      </p>
     </div>
   </div>
 </section>
@@ -53,13 +49,18 @@ summary: >-
 <section class="band band--paper">
   <div class="wrap wrap--gutter">
     <p>
+      La rentrée de SERIQ a eu lieu le 29 octobre 2026 et a réuni une centaine
+      de personnes. Nous remercions chaleureusement toutes celles et ceux qui y
+      ont participé. Les photos seront publiées prochainement.
+    </p>
+    <p>
       SERIQ élargit le réseau de recherche
       <a href="https://semtl.github.io/">SEMTL</a> et se consacre au génie
-      logiciel pour la société numérique. Pour sa rentrée, nous invitons
+      logiciel pour la société numérique. Pour sa rentrée, nous avons invité
       chercheur.e.s, étudiant.e.s, partenaires de l'industrie et
       représentant.e.s des institutions à des conférences invitées du milieu
       de la recherche comme de l'industrie, suivies d'une table ronde sur la
-      recherche en logiciel pour la société. Suivront une
+      recherche en logiciel pour la société. Ont suivi une
       présentation de l'histoire et de la portée de SERIQ par Benoit Baudry,
       des allocutions, puis une réception de réseautage autour d'affiches
       étudiantes.
@@ -136,10 +137,6 @@ summary: >-
         </div>
       </li>
     </ol>
-    <p class="programme-more">
-      <a class="cta" href="{{ page.registration_url }}">S'inscrire</a>
-      <span>d'ici le {% include date.html date=page.registration_closes lang=page.lang %}</span>
-    </p>
   </div>
 </section>
 

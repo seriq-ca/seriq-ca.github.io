@@ -7,7 +7,9 @@
   "@type": "Event",
   "name": {{ page.title | jsonify }},
   "startDate": "{{ page.event_start | date_to_xmlschema }}",
+  {%- if page.event_end %}
   "endDate": "{{ page.event_end | date_to_xmlschema }}",
+  {%- endif %}
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "location": {
@@ -59,7 +61,14 @@
   ],
 {%- endif %}
   "image": "{{ page.image | default: '/assets/img/og.png' | absolute_url }}",
-{%- if page.registration_url %}
+{%- comment -%}
+  The Offer is dropped once registration has closed, or failing a closing
+  date, once the event has started. The site rebuilds nightly, so it
+  disappears the day after.
+{%- endcomment -%}
+{%- assign now_s = site.time | date: "%s" | plus: 0 -%}
+{%- assign closes_s = page.registration_closes | default: page.event_start | date: "%s" | plus: 0 -%}
+{%- if page.registration_url and closes_s > now_s %}
   "offers": {
     "@type": "Offer",
     "price": "0",
